@@ -53,3 +53,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   moveTulips();
 });
+
+  // Инициализация бегущей строки
+  const marqueeContent = document.querySelector('.marquee-content');
+  const marqueeText = marqueeContent.textContent;
+  // Удваиваем текст для плавного перехода
+  marqueeContent.textContent = marqueeText.repeat(3);
