@@ -33,16 +33,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Адаптация изображений для мобильных устройств
-  function adjustHeroImage() {
-    const heroImage = document.querySelector(".hero-image");
-    if (window.innerWidth < 992) {
-      heroImage.style.height = "300px";
-    } else {
-      heroImage.style.height = "400px";
-    }
+  // Анимация тюльпанов - случайное движение
+  const tulips = document.querySelectorAll(".tulip");
+  const heroSection = document.querySelector(".hero");
+
+  function moveTulips() {
+    tulips.forEach((tulip) => {
+      const randomX = Math.random() * 80;
+      const randomY = Math.random() * 80;
+      const randomRotate = Math.random() * 360;
+
+      tulip.style.left = `${randomX}%`;
+      tulip.style.top = `${randomY}%`;
+      tulip.style.transform = `rotate(${randomRotate}deg)`;
+    });
+
+    setTimeout(moveTulips, 15000); // Изменяем позицию каждые 15 секунд
   }
 
-  window.addEventListener("resize", adjustHeroImage);
-  adjustHeroImage();
+  moveTulips();
 });

@@ -128,23 +128,50 @@ body {
 .hero {
   padding: 60px 0;
   background-color: var(--color-bg-light);
+  position: relative;
+  overflow: hidden;
 }
 
 .hero .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  align-items: baseline;
 }
 
 .hero-content {
   flex: 1;
   max-width: 600px;
+  position: relative;
+  z-index: 2;
 }
 
-.hero-image {
+.order-form {
   flex: 1;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
   position: relative;
-  height: 400px;
+  z-index: 2;
+}
+
+.order-form-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.order-form-text {
+  text-align: center;
+  color: var(--color-primary);
+}
+
+.order-form-inner input {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
 h1 {
@@ -165,40 +192,31 @@ h1 {
   gap: 15px;
 }
 
-/* Элементы дизайна */
+/* Элементы дизайна (тюльпаны на фоне) */
 .tulip {
   position: absolute;
   width: 100px;
   height: auto;
+  z-index: 1;
+  opacity: 0.7;
 }
 
 .tulip-1 {
-  top: 50px;
-  left: 50px;
+  top: 20%;
+  left: 10%;
   transform: rotate(15deg);
 }
 
 .tulip-2 {
-  top: 100px;
-  left: 150px;
+  top: 40%;
+  left: 30%;
   transform: rotate(-10deg);
 }
 
 .tulip-3 {
-  top: 70px;
-  left: 250px;
+  top: 30%;
+  left: 70%;
   transform: rotate(5deg);
-}
-
-.box {
-  position: absolute;
-  width: 300px;
-  height: 200px;
-  border: 3px dashed var(--color-primary);
-  border-radius: 15px;
-  top: 100px;
-  left: 100px;
-  opacity: 0.3;
 }
 
 /* Гамбургер меню */
@@ -275,8 +293,9 @@ h1 {
     max-width: 100%;
   }
 
-  .hero-image {
-    height: 300px;
+  .order-form {
+    margin: 0 auto 40px;
+    max-width: 100%;
   }
 
   .cta-buttons {
@@ -348,16 +367,7 @@ h1 {
     width: 100%;
   }
 
-  .hero-image {
-    height: 200px;
-  }
-
   .tulip {
     width: 60px;
-  }
-
-  .box {
-    width: 200px;
-    height: 150px;
   }
 }
