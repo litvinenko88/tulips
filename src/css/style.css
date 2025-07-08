@@ -567,6 +567,9 @@ h1 {
     right: 20px;
     top: 15px;
   }
+  .tulip-menu-line {
+    background: #2e8b57;
+  }
   .tulip-contact-wrapper {
     flex-direction: column;
     padding: 0;
