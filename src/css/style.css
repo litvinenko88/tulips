@@ -618,6 +618,31 @@ h1 {
   .tulip-form-title {
     font-size: 16px;
   }
+  .tulip-mobile-menu {
+    top: 10px;
+    right: 10px;
+  }
+  .tulip-bg-flower {
+    width: 40px;
+  }
+}
+@media (max-width: 320px) {
+  .tulip-mobile-menu {
+    width: 25px;
+    height: 20px;
+  }
+  .tulip-hero-content h1 {
+    font-size: 1.5rem;
+  }
+  .tulip-hero-subtitle {
+    font-size: 1rem;
+  }
+  .tulip-btn {
+    font-size: 0.8rem;
+  }
+  .tulip-form-inner input {
+    padding: 10px 15px;
+  }
 }
 
 @media (max-width: 845px) {
