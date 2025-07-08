@@ -101,6 +101,7 @@ body {
   padding: 15px 20px;
   border-radius: 5px;
   font-weight: bold;
+  font-size: 16px;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.3s;
@@ -177,7 +178,6 @@ body {
   transform: translateY(-10px) rotate(-45deg);
 }
 
-/* Герой секция */
 /* Герой секция */
 .tulip-hero-section {
   padding: 60px 0;
@@ -302,7 +302,7 @@ h1 {
   position: fixed;
   left: 0;
   right: 0;
-  bottom: 65px;
+  bottom: 70px;
   background-color: rgba(255, 255, 255, 0.9);
   padding: 8px 0;
   z-index: 1000;
@@ -364,6 +364,94 @@ h1 {
 
 .tulip-social-icon:hover {
   transform: scale(1.1);
+}
+
+/* Стили для чата и уведомлений */
+.tulip-chat-btn {
+  cursor: pointer;
+}
+
+.tulip-chat-notification {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: 300px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: none;
+  animation: tulipFadeIn 0.5s;
+}
+
+.tulip-chat-notification p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.tulip-close-notification,
+.tulip-close-form {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #888;
+}
+
+.tulip-special-offer-form {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: 280px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: none;
+  animation: tulipFadeIn 0.5s;
+}
+
+.tulip-timer {
+  font-size: 12px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+.tulip-input-name,
+.tulip-input-phone {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.tulip-get-offer-btn {
+  width: 100%;
+  padding: 10px;
+  background: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@keyframes tulipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes tulip-pulse {
