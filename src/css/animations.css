@@ -1,5 +1,4 @@
-/* Анимации */
-@keyframes pulse {
+@keyframes tulip-pulse {
   0% {
     transform: scale(1);
     box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7);
@@ -14,28 +13,28 @@
   }
 }
 
-.pulse {
-  animation: pulse 2s infinite;
+.tulip-btn-animated {
+  animation: tulip-pulse 2s infinite;
 }
 
 /* Анимация тюльпанов */
-.tulip {
-  animation: float 15s ease-in-out infinite;
+.tulip-bg-flower {
+  animation: tulip-float 15s ease-in-out infinite;
 }
 
-.tulip-1 {
+.tulip-flower-1 {
   animation-delay: 0s;
 }
 
-.tulip-2 {
+.tulip-flower-2 {
   animation-delay: 3s;
 }
 
-.tulip-3 {
+.tulip-flower-3 {
   animation-delay: 6s;
 }
 
-@keyframes float {
+@keyframes tulip-float {
   0% {
     transform: translate(0, 0) rotate(0deg);
   }

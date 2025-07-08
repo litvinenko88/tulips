@@ -11,25 +11,25 @@
   </head>
   <body>
     <!-- Верхняя информационная панель -->
-    <div class="top-bar">
-      <div class="container">
-        <div class="logo">TulipHolland</div>
-        <div class="slogan">Тюльпаны напрямую от фермеров</div>
-        <div class="phone">
+    <div class="tulip-top-panel">
+      <div class="tulip-container-main">
+        <div class="tulip-logo-brand">TulipHolland</div>
+        <div class="tulip-slogan-text">Тюльпаны напрямую от фермеров</div>
+        <div class="tulip-phone-contact">
           <a href="tel:+78124096021">+7 (996) 417-90-01</a>
         </div>
       </div>
     </div>
 
     <!-- Основная навигация -->
-    <nav class="main-nav">
-      <div class="container">
-        <div class="hamburger" id="hamburger">
+    <nav class="tulip-main-navigation">
+      <div class="tulip-container-main">
+        <div class="tulip-mobile-menu" id="tulipMobileMenu">
           <span></span>
           <span></span>
           <span></span>
         </div>
-        <ul class="nav-links" id="navLinks">
+        <ul class="tulip-nav-items" id="tulipNavItems">
           <li><a href="#">Главная</a></li>
           <li><a href="#">Каталог</a></li>
           <li><a href="#">Доставка</a></li>
@@ -37,67 +37,89 @@
           <li><a href="#">Блог</a></li>
           <li><a href="#">Контакты</a></li>
         </ul>
-        <button class="btn btn-price">Получить прайс</button>
+        <button class="tulip-btn tulip-btn-price-list">Получить прайс</button>
       </div>
     </nav>
 
     <!-- Герой-секция с основным УТП -->
-    <section class="hero">
+    <section class="tulip-hero-section">
       <!-- Тюльпаны на фоне -->
-      <img src="/src/assets/img/tul1.png" class="tulip tulip-1" alt="Тюльпан" />
-      <img src="/src/assets/img/tul2.png" class="tulip tulip-2" alt="Тюльпан" />
-      <img src="/src/assets/img/tul3.png" class="tulip tulip-3" alt="Тюльпан" />
+      <img
+        src="/src/assets/img/tul1.png"
+        class="tulip-bg-flower tulip-flower-1"
+        alt="Тюльпан" />
+      <img
+        src="/src/assets/img/tul2.png"
+        class="tulip-bg-flower tulip-flower-2"
+        alt="Тюльпан" />
+      <img
+        src="/src/assets/img/tul3.png"
+        class="tulip-bg-flower tulip-flower-3"
+        alt="Тюльпан" />
 
-      <div class="container">
-        <div class="hero-content">
+      <div class="tulip-container-main">
+        <div class="tulip-hero-content">
           <h1>
             Луковицы тюльпанов оптом из Голландии для выгонки с доставкой по
             России и СНГ
           </h1>
-          <p class="subtitle">
+          <p class="tulip-hero-subtitle">
             Прямые оптовые поставки тюльпанов от фермеров от 19₽/луковица.
             Гарантия сортового соответствия!
           </p>
 
-          <div class="cta-buttons">
-            <button class="btn btn-primary pulse">Получить прайс</button>
-            <a href="#" class="btn btn-secondary">Смотреть каталог</a>
+          <div class="tulip-action-buttons">
+            <button class="tulip-btn tulip-btn-main tulip-btn-animated">
+              Получить прайс
+            </button>
+            <a href="#" class="tulip-btn tulip-btn-alt">Смотреть каталог</a>
           </div>
         </div>
 
-        <div class="order-form">
-          <form class="order-form-inner">
-            <h2 class="order-form-text">Получить консультацию</h2>
+        <div class="tulip-contact-form">
+          <form class="tulip-form-inner">
+            <h2 class="tulip-form-title">Получить консультацию</h2>
             <input type="text" placeholder="Ваше имя" required />
             <input type="tel" placeholder="Телефон" required />
-            <button type="submit" class="btn btn-primary">Заказать</button>
+            <button type="submit" class="tulip-btn tulip-btn-main">
+              Заказать
+            </button>
           </form>
         </div>
       </div>
     </section>
     <!-- Бегущая строка -->
-    <div class="marquee-bar">
-      <div class="marquee-content">
+    <div class="tulip-scrolling-bar">
+      <div class="tulip-scrolling-content">
         Принимаем заказы на бронирование ассортимента Осень 2025 • Для крупного
         опта индивидуальные условия •
       </div>
     </div>
 
     <!-- Фиксированная панель контактов -->
-    <div class="contact-bar">
-      <div class="contact-container">
-        <div class="contact-text">
+    <div class="tulip-fixed-contact-bar">
+      <div class="tulip-contact-wrapper">
+        <div class="tulip-contact-question">
           Остались вопросы? Позвоните нам или напишите
         </div>
-        <div class="social-icons">
-          <a href="#" class="social-link">
-            <img src="/src/icon/wat.png" alt="WhatsApp" class="social-icon" />
+        <div class="tulip-social-links">
+          <a href="#" class="tulip-social-item">
+            <img
+              src="/src/icon/wat.png"
+              alt="WhatsApp"
+              class="tulip-social-icon" />
           </a>
-          <a href="#" class="social-link">
-            <img src="/src/icon/tel.png" alt="Telegram" class="social-icon" />
+          <a href="#" class="tulip-social-item">
+            <img
+              src="/src/icon/tel.png"
+              alt="Telegram"
+              class="tulip-social-icon" />
           </a>
-          <a href="#" class="social-link">
-            <img src="/src/icon/iph.png" alt="Позвонить" class="social-icon" />
+          <a href="#" class="tulip-social-item">
+            <img
+              src="/src/icon/iph.png"
+              alt="Позвонить"
+              class="tulip-social-icon" />
           </a>
         </div>
       </div>

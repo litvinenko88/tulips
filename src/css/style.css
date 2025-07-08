@@ -4,13 +4,13 @@
 
 :root {
   /* Основные цвета */
-  --color-primary: #2e8b57;
-  --color-secondary: #6a1b9a;
-  --color-accent: #ff6b6b;
-  --color-text: #343a40;
-  --color-text-light: #ffffff;
-  --color-bg: #ffffff;
-  --color-bg-light: #f8f9fa;
+  --tulip-color-primary: #2e8b57;
+  --tulip-color-secondary: #6a1b9a;
+  --tulip-color-accent: #ff6b6b;
+  --tulip-color-text: #343a40;
+  --tulip-color-text-light: #ffffff;
+  --tulip-color-bg: #ffffff;
+  --tulip-color-bg-light: #f8f9fa;
 }
 
 * {
@@ -21,13 +21,13 @@
 }
 
 body {
-  color: var(--color-text);
-  background-color: var(--color-bg);
+  color: var(--tulip-color-text);
+  background-color: var(--tulip-color-bg);
   line-height: 1.6;
   overflow-x: hidden;
 }
 
-.container {
+.tulip-container-main {
   width: 100%;
   max-width: 1600px;
   margin: 0 auto;
@@ -35,65 +35,65 @@ body {
 }
 
 /* Верхняя панель */
-.top-bar {
-  background-color: var(--color-primary);
-  color: var(--color-text-light);
+.tulip-top-panel {
+  background-color: var(--tulip-color-primary);
+  color: var(--tulip-color-text-light);
   padding: 10px 0;
   font-size: 14px;
 }
 
-.top-bar .container {
+.tulip-top-panel .tulip-container-main {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.logo {
+.tulip-logo-brand {
   font-weight: bold;
   font-size: 18px;
 }
 
-.phone a {
-  color: var(--color-text-light);
+.tulip-phone-contact a {
+  color: var(--tulip-color-text-light);
   text-decoration: none;
   font-weight: bold;
 }
 
 /* Основная навигация */
-.main-nav {
+.tulip-main-navigation {
   padding: 15px 0;
   border-bottom: 1px solid #eee;
   position: relative;
 }
 
-.main-nav .container {
+.tulip-main-navigation .tulip-container-main {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.nav-links {
+.tulip-nav-items {
   display: flex;
   list-style: none;
 }
 
-.nav-links li {
+.tulip-nav-items li {
   margin-right: 25px;
 }
 
-.nav-links a {
-  color: var(--color-text);
+.tulip-nav-items a {
+  color: var(--tulip-color-text);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
 }
 
-.nav-links a:hover {
-  color: var(--color-primary);
+.tulip-nav-items a:hover {
+  color: var(--tulip-color-primary);
 }
 
 /* Кнопки */
-.btn {
+.tulip-btn {
   display: inline-block;
   padding: 15px 20px;
   border-radius: 5px;
@@ -104,49 +104,49 @@ body {
   border: none;
 }
 
-.btn-primary {
-  background-color: var(--color-accent);
-  color: var(--color-text-light);
+.tulip-btn-main {
+  background-color: var(--tulip-color-accent);
+  color: var(--tulip-color-text-light);
 }
 
-.btn-secondary {
-  background-color: var(--color-secondary);
-  color: var(--color-text-light);
+.tulip-btn-alt {
+  background-color: var(--tulip-color-secondary);
+  color: var(--tulip-color-text-light);
 }
 
-.btn-price {
-  background-color: var(--color-primary);
-  color: var(--color-text-light);
+.tulip-btn-price-list {
+  background-color: var(--tulip-color-primary);
+  color: var(--tulip-color-text-light);
 }
 
-.btn:hover {
+.tulip-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Герой секция */
-.hero {
+.tulip-hero-section {
   padding: 60px 0;
-  background-color: var(--color-bg-light);
+  background-color: var(--tulip-color-bg-light);
   position: relative;
   overflow: hidden;
 }
 
-.hero .container {
+.tulip-hero-section .tulip-container-main {
   display: flex;
   align-items: center;
   justify-content: space-between;
   align-items: baseline;
 }
 
-.hero-content {
+.tulip-hero-content {
   flex: 1;
   max-width: 600px;
   position: relative;
   z-index: 2;
 }
 
-.order-form {
+.tulip-contact-form {
   flex: 1;
   background: white;
   padding: 30px;
@@ -157,17 +157,17 @@ body {
   z-index: 2;
 }
 
-.order-form-inner {
+.tulip-form-inner {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.order-form-text {
+.tulip-form-title {
   text-align: center;
-  color: var(--color-primary);
+  color: var(--tulip-color-primary);
 }
 
-.order-form-inner input {
+.tulip-form-inner input {
   padding: 15px 20px;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -177,23 +177,23 @@ body {
 h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: var(--color-primary);
+  color: var(--tulip-color-primary);
   line-height: 1.2;
 }
 
-.subtitle {
+.tulip-hero-subtitle {
   font-size: 1.2rem;
   margin-bottom: 30px;
-  color: var(--color-text);
+  color: var(--tulip-color-text);
 }
 
-.cta-buttons {
+.tulip-action-buttons {
   display: flex;
   gap: 15px;
 }
 
 /* Элементы дизайна (тюльпаны на фоне) */
-.tulip {
+.tulip-bg-flower {
   position: absolute;
   width: 100px;
   height: auto;
@@ -201,26 +201,26 @@ h1 {
   opacity: 0.7;
 }
 
-.tulip-1 {
+.tulip-flower-1 {
   top: 20%;
   left: 10%;
   transform: rotate(15deg);
 }
 
-.tulip-2 {
+.tulip-flower-2 {
   top: 40%;
   left: 30%;
   transform: rotate(-10deg);
 }
 
-.tulip-3 {
+.tulip-flower-3 {
   top: 30%;
   left: 70%;
   transform: rotate(5deg);
 }
 
 /* Гамбургер меню */
-.hamburger {
+.tulip-mobile-menu {
   display: none;
   width: 30px;
   height: 20px;
@@ -229,12 +229,12 @@ h1 {
   z-index: 1000;
 }
 
-.hamburger span {
+.tulip-mobile-menu span {
   display: block;
   position: absolute;
   height: 3px;
   width: 100%;
-  background: var(--color-text);
+  background: var(--tulip-color-text);
   border-radius: 3px;
   opacity: 1;
   left: 0;
@@ -242,41 +242,41 @@ h1 {
   transition: 0.25s ease-in-out;
 }
 
-.hamburger span:nth-child(1) {
+.tulip-mobile-menu span:nth-child(1) {
   top: 0;
 }
 
-.hamburger span:nth-child(2),
-.hamburger span:nth-child(3) {
+.tulip-mobile-menu span:nth-child(2),
+.tulip-mobile-menu span:nth-child(3) {
   top: 10px;
 }
 
-.hamburger span:nth-child(4) {
+.tulip-mobile-menu span:nth-child(4) {
   top: 20px;
 }
 
-.hamburger.open span:nth-child(1) {
+.tulip-mobile-menu.open span:nth-child(1) {
   top: 10px;
   width: 0%;
   left: 50%;
 }
 
-.hamburger.open span:nth-child(2) {
+.tulip-mobile-menu.open span:nth-child(2) {
   transform: rotate(45deg);
 }
 
-.hamburger.open span:nth-child(3) {
+.tulip-mobile-menu.open span:nth-child(3) {
   transform: rotate(-45deg);
 }
 
-.hamburger.open span:nth-child(4) {
+.tulip-mobile-menu.open span:nth-child(4) {
   top: 10px;
   width: 0%;
   left: 50%;
 }
 
 /* Бегущая строка */
-.marquee-bar {
+.tulip-scrolling-bar {
   position: fixed;
   left: 0;
   right: 0;
@@ -287,14 +287,14 @@ h1 {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.marquee-content {
+.tulip-scrolling-content {
   white-space: nowrap;
-  animation: marquee 20s linear infinite;
+  animation: tulip-marquee 20s linear infinite;
   font-size: 14px;
-  color: var(--color-primary);
+  color: var(--tulip-color-primary);
 }
 
-@keyframes marquee {
+@keyframes tulip-marquee {
   0% {
     transform: translateX(100%);
   }
@@ -304,7 +304,7 @@ h1 {
 }
 
 /* Фиксированная панель контактов */
-.contact-bar {
+.tulip-fixed-contact-bar {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -312,11 +312,10 @@ h1 {
   background-color: rgba(255, 255, 255, 0.95);
   padding: 15px 0;
   z-index: 1000;
-  /* box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); */
   border-top: 1px solid #eee;
 }
 
-.contact-container {
+.tulip-contact-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -325,79 +324,79 @@ h1 {
   padding: 0 100px;
 }
 
-.contact-text {
+.tulip-contact-question {
   font-size: 16px;
   font-weight: 500;
-  color: var(--color-text);
+  color: var(--tulip-color-text);
 }
 
-.social-icons {
+.tulip-social-links {
   display: flex;
   gap: 15px;
 }
 
-.social-icon {
+.tulip-social-icon {
   width: 30px;
   height: 30px;
   transition: transform 0.3s;
 }
 
-.social-icon:hover {
+.tulip-social-icon:hover {
   transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
-  .contact-container {
+  .tulip-contact-wrapper {
     flex-direction: column;
     gap: 10px;
     padding: 0 20px;
   }
 
-  .marquee-content {
+  .tulip-scrolling-content {
     font-size: 12px;
   }
 }
 
 /* Адаптация под мобильные устройства */
 @media (max-width: 1200px) {
-  .container {
+  .tulip-container-main {
     padding: 0 50px;
   }
 }
 
 @media (max-width: 992px) {
-  .hero .container {
+  .tulip-hero-section .tulip-container-main {
     flex-direction: column;
     text-align: center;
   }
 
-  .hero-content {
+  .tulip-hero-content {
     margin-bottom: 40px;
     max-width: 100%;
   }
 
-  .order-form {
+  .tulip-contact-form {
     margin: 0 auto 40px;
     max-width: 100%;
   }
 
-  .cta-buttons {
+  .tulip-action-buttons {
     justify-content: center;
   }
 }
 
 @media (max-width: 768px) {
-  .container {
+  .tulip-container-main {
     padding: 0 20px;
   }
 
-  .nav-links {
+  .tulip-nav-items {
     position: fixed;
     top: 0;
     right: -100%;
     width: 80%;
     height: 100vh;
-    background: var(--color-bg);
+    background: var(--tulip-color-bg);
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -406,19 +405,19 @@ h1 {
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
   }
 
-  .nav-links.active {
+  .tulip-nav-items.active {
     right: 0;
   }
 
-  .nav-links li {
+  .tulip-nav-items li {
     margin: 15px 0;
   }
 
-  .hamburger {
+  .tulip-mobile-menu {
     display: block;
   }
 
-  .btn-price {
+  .tulip-btn-price-list {
     display: none;
   }
 
@@ -426,31 +425,31 @@ h1 {
     font-size: 2rem;
   }
 
-  .subtitle {
+  .tulip-hero-subtitle {
     font-size: 1rem;
   }
 }
 
 @media (max-width: 576px) {
-  .top-bar .container {
+  .tulip-top-panel .tulip-container-main {
     flex-direction: column;
     gap: 10px;
   }
 
-  .hero {
+  .tulip-hero-section {
     padding: 30px 0;
   }
 
-  .cta-buttons {
+  .tulip-action-buttons {
     flex-direction: column;
     gap: 10px;
   }
 
-  .btn {
+  .tulip-btn {
     width: 100%;
   }
 
-  .tulip {
+  .tulip-bg-flower {
     width: 60px;
   }
 }
