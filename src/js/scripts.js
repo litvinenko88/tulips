@@ -75,6 +75,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const nameInput = document.querySelector(".tulip-input-name");
   const phoneInput = document.querySelector(".tulip-input-phone");
 
+  // Аудио элементы
+  const notificationSound = new Audio("sound/notification.mp3");
+  const offerSound = new Audio("sound/offer.mp3");
+
   // Таймеры
   let notificationTimer;
   let autoCloseTimer;
@@ -84,9 +88,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Настройки времени (в миллисекундах)
   const TIMING = {
-    NOTIFICATION_DELAY: 20000, // 12 сек до показа уведомления
+    NOTIFICATION_DELAY: 17000, // 12 сек до показа уведомления
     NOTIFICATION_AUTO_CLOSE: 10000, // 5 сек до автозакрытия уведомления
-    FORM_DELAY: 8000, // 5 сек до показа формы после уведомления
+    FORM_DELAY: 12000, // 5 сек до показа формы после уведомления
     CONFIRMATION_AUTO_CLOSE: 5000, // 5 сек до автозакрытия подтверждения
     OFFER_DAYS: 2, // 2 дня для таймера
   };
@@ -95,6 +99,10 @@ document.addEventListener("DOMContentLoaded", function () {
   initChatFunctionality();
 
   function initChatFunctionality() {
+    // Позиционирование элементов при загрузке
+    positionElements();
+    window.addEventListener("resize", positionElements);
+
     // Показ уведомления через заданное время
     notificationTimer = setTimeout(showNotification, TIMING.NOTIFICATION_DELAY);
 
@@ -105,8 +113,38 @@ document.addEventListener("DOMContentLoaded", function () {
     submitBtn.addEventListener("click", handleFormSubmit);
   }
 
+  // Позиционирование уведомлений относительно кнопки чата
+  function positionElements() {
+    const chatBtnRect = chatBtn.getBoundingClientRect();
+    const offset = 20;
+
+    if (window.innerWidth > 768) {
+      notification.style.right = `${
+        window.innerWidth - chatBtnRect.right + offset
+      }px`;
+      notification.style.bottom = `${
+        window.innerHeight - chatBtnRect.top + offset
+      }px`;
+
+      offerForm.style.right = `${
+        window.innerWidth - chatBtnRect.right + offset
+      }px`;
+      offerForm.style.bottom = `${
+        window.innerHeight - chatBtnRect.top + offset
+      }px`;
+    } else {
+      // Для мобильных устройств
+      notification.style.right = "20px";
+      notification.style.bottom = "70px";
+      offerForm.style.right = "20px";
+      offerForm.style.bottom = "70px";
+    }
+  }
+
   function showNotification() {
     notification.style.display = "block";
+    playSound(notificationSound);
+    positionElements();
 
     // Автозакрытие уведомления через заданное время
     autoCloseTimer = setTimeout(() => {
@@ -126,6 +164,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function showOfferForm() {
     offerForm.style.display = "block";
+    playSound(offerSound);
+    positionElements();
     startCountdownTimer();
   }
 
@@ -187,12 +227,10 @@ document.addEventListener("DOMContentLoaded", function () {
   function handleFormSubmit(e) {
     e.preventDefault();
 
-    // Валидация полей
     if (!validateForm()) {
       return;
     }
 
-    // Отправка данных (заглушка - замените на реальную отправку)
     sendFormData()
       .then(() => {
         showConfirmation();
@@ -222,18 +260,15 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function sendFormData() {
-    // Заглушка для отправки данных
-    // Замените на реальный код отправки (AJAX, Fetch API и т.д.)
     return new Promise((resolve) => {
-      // Имитация отправки
       setTimeout(resolve, 1000);
     });
   }
 
   function showConfirmation() {
     confirmation.style.display = "block";
+    positionElements();
 
-    // Автозакрытие подтверждения
     confirmationTimer = setTimeout(() => {
       confirmation.style.display = "none";
     }, TIMING.CONFIRMATION_AUTO_CLOSE);
@@ -244,7 +279,13 @@ document.addEventListener("DOMContentLoaded", function () {
     phoneInput.value = "";
   }
 
-  // Очистка таймеров при закрытии страницы (опционально)
+  // Воспроизведение звука с обработкой ошибок
+  function playSound(audioElement) {
+    audioElement
+      .play()
+      .catch((e) => console.log("Автовоспроизведение звука заблокировано:", e));
+  }
+
   window.addEventListener("beforeunload", function () {
     clearTimeout(notificationTimer);
     clearTimeout(autoCloseTimer);
