@@ -543,6 +543,11 @@ h1 {
   animation: tulip-pulse 2s infinite;
 }
 
+
+/***********Второй блок****************************************************/
+
+
+
 @media (max-width: 1280px) {
   .tulip-container-main {
     padding: 0 60px;

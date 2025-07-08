@@ -294,3 +294,5 @@ document.addEventListener("DOMContentLoaded", function () {
     clearInterval(countdownTimer);
   });
 });
+///////////////////////////////////второй блок////////////////////////////////////
+
