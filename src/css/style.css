@@ -59,7 +59,7 @@ body {
   font-weight: bold;
 }
 
-/* Основная навигация */
+/* Основная навигация - десктоп */
 .tulip-main-navigation {
   padding: 15px 0;
   border-bottom: 1px solid #eee;
@@ -75,6 +75,9 @@ body {
 .tulip-nav-items {
   display: flex;
   list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
 }
 
 .tulip-nav-items li {
@@ -90,6 +93,10 @@ body {
 
 .tulip-nav-items a:hover {
   color: var(--tulip-color-primary);
+}
+
+.tulip-nav-btn-wrapper {
+  margin-left: 15px;
 }
 
 /* Кнопки */
@@ -124,7 +131,109 @@ body {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Герой секция */
+/* Гамбургер меню */
+.tulip-mobile-menu {
+  display: none;
+  width: 30px;
+  height: 24px;
+  position: relative;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.tulip-menu-line {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: var(--tulip-color-text);
+  border-radius: 3px;
+  opacity: 1;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.tulip-line-1 {
+  top: 0;
+  transform-origin: left center;
+}
+
+.tulip-line-2 {
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: left center;
+}
+
+.tulip-line-3 {
+  bottom: 0;
+  transform-origin: left center;
+}
+
+.tulip-mobile-menu.open .tulip-line-1 {
+  transform: rotate(45deg) translateY(-2px);
+}
+
+.tulip-mobile-menu.open .tulip-line-2 {
+  opacity: 0;
+  width: 0;
+}
+
+.tulip-mobile-menu.open .tulip-line-3 {
+  transform: rotate(-45deg) translateY(2px);
+}
+
+/* Мобильное меню */
+@media (max-width: 768px) {
+  .tulip-container-main {
+    padding: 0 20px;
+  }
+
+  .tulip-mobile-menu {
+    display: block;
+    order: 1;
+  }
+
+  .tulip-main-navigation .tulip-container-main {
+    justify-content: flex-end;
+  }
+
+  .tulip-nav-items {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background: var(--tulip-color-bg);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 80px 30px 30px;
+    transition: right 0.4s ease-in-out;
+    z-index: 998;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .tulip-nav-items.active {
+    right: 0;
+  }
+
+  .tulip-nav-items li {
+    width: 100%;
+    margin: 0 0 15px 0;
+  }
+
+  .tulip-nav-btn-wrapper {
+    margin: 20px 0 0 0;
+    width: 100%;
+  }
+
+  .tulip-btn-price-list {
+    display: block;
+    width: 100%;
+  }
+}
+
+/* Остальные стили остаются без изменений */
 .tulip-hero-section {
   padding: 60px 0;
   background-color: var(--tulip-color-bg-light);
@@ -199,80 +308,46 @@ h1 {
   height: auto;
   z-index: 1;
   opacity: 0.7;
+  animation: tulip-float 15s ease-in-out infinite;
 }
 
 .tulip-flower-1 {
   top: 20%;
   left: 10%;
   transform: rotate(15deg);
+  animation-delay: 0s;
 }
 
 .tulip-flower-2 {
   top: 40%;
   left: 30%;
   transform: rotate(-10deg);
+  animation-delay: 3s;
 }
 
 .tulip-flower-3 {
   top: 30%;
   left: 70%;
   transform: rotate(5deg);
+  animation-delay: 6s;
 }
 
-/* Гамбургер меню */
-.tulip-mobile-menu {
-  display: none;
-  width: 30px;
-  height: 20px;
-  position: relative;
-  cursor: pointer;
-  z-index: 1000;
-}
-
-.tulip-mobile-menu span {
-  display: block;
-  position: absolute;
-  height: 3px;
-  width: 100%;
-  background: var(--tulip-color-text);
-  border-radius: 3px;
-  opacity: 1;
-  left: 0;
-  transform: rotate(0deg);
-  transition: 0.25s ease-in-out;
-}
-
-.tulip-mobile-menu span:nth-child(1) {
-  top: 0;
-}
-
-.tulip-mobile-menu span:nth-child(2),
-.tulip-mobile-menu span:nth-child(3) {
-  top: 10px;
-}
-
-.tulip-mobile-menu span:nth-child(4) {
-  top: 20px;
-}
-
-.tulip-mobile-menu.open span:nth-child(1) {
-  top: 10px;
-  width: 0%;
-  left: 50%;
-}
-
-.tulip-mobile-menu.open span:nth-child(2) {
-  transform: rotate(45deg);
-}
-
-.tulip-mobile-menu.open span:nth-child(3) {
-  transform: rotate(-45deg);
-}
-
-.tulip-mobile-menu.open span:nth-child(4) {
-  top: 10px;
-  width: 0%;
-  left: 50%;
+@keyframes tulip-float {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(20px, -30px) rotate(5deg);
+  }
+  50% {
+    transform: translate(40px, 10px) rotate(-5deg);
+  }
+  75% {
+    transform: translate(-20px, -20px) rotate(3deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
 }
 
 /* Бегущая строка */
@@ -345,19 +420,27 @@ h1 {
   transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
-  .tulip-contact-wrapper {
-    flex-direction: column;
-    gap: 10px;
-    padding: 0 20px;
+/* Анимации */
+@keyframes tulip-pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7);
   }
-
-  .tulip-scrolling-content {
-    font-size: 12px;
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(255, 107, 107, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
   }
 }
 
-/* Адаптация под мобильные устройства */
+.tulip-btn-animated {
+  animation: tulip-pulse 2s infinite;
+}
+
+/* Адаптация для других размеров экрана */
 @media (max-width: 1200px) {
   .tulip-container-main {
     padding: 0 50px;
@@ -382,51 +465,6 @@ h1 {
 
   .tulip-action-buttons {
     justify-content: center;
-  }
-}
-
-@media (max-width: 768px) {
-  .tulip-container-main {
-    padding: 0 20px;
-  }
-
-  .tulip-nav-items {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 80%;
-    height: 100vh;
-    background: var(--tulip-color-bg);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: 0.5s;
-    z-index: 999;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-  }
-
-  .tulip-nav-items.active {
-    right: 0;
-  }
-
-  .tulip-nav-items li {
-    margin: 15px 0;
-  }
-
-  .tulip-mobile-menu {
-    display: block;
-  }
-
-  .tulip-btn-price-list {
-    display: none;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  .tulip-hero-subtitle {
-    font-size: 1rem;
   }
 }
 

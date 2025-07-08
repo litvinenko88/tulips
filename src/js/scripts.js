@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
       flower.style.transform = `rotate(${randomRotate}deg)`;
     });
 
-    setTimeout(moveTulipFlowers, 15000); // Изменяем позицию каждые 15 секунд
+    setTimeout(moveTulipFlowers, 15000);
   }
 
   moveTulipFlowers();
@@ -61,5 +61,4 @@ const tulipScrollingContent = document.querySelector(
   ".tulip-scrolling-content"
 );
 const tulipMarqueeText = tulipScrollingContent.textContent;
-// Удваиваем текст для плавного перехода
 tulipScrollingContent.textContent = tulipMarqueeText.repeat(3);
