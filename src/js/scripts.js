@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const tulipMobileMenu = document.getElementById("tulipMobileMenu");
   const tulipNavItems = document.getElementById("tulipNavItems");
+  const tulipPriceBtn = document.querySelector(".tulip-btn-price-list");
 
   // Обработчик для гамбургер-меню
   tulipMobileMenu.addEventListener("click", function () {
@@ -28,35 +29,29 @@ document.addEventListener("DOMContentLoaded", function () {
   const tulipPriceButtons = document.querySelectorAll(
     ".tulip-btn-price-list, .tulip-btn-main"
   );
-
   tulipPriceButtons.forEach((button) => {
     button.addEventListener("click", function () {
       alert("Введите ваш email и телефон, и мы отправим вам прайс-лист");
     });
   });
 
-  // Анимация тюльпанов - случайное движение
+  // Анимация тюльпанов
   const tulipFlowers = document.querySelectorAll(".tulip-bg-flower");
-  const tulipHeroSection = document.querySelector(".tulip-hero-section");
-
   function moveTulipFlowers() {
     tulipFlowers.forEach((flower) => {
       const randomX = Math.random() * 80;
       const randomY = Math.random() * 80;
       const randomRotate = Math.random() * 360;
-
       flower.style.left = `${randomX}%`;
       flower.style.top = `${randomY}%`;
       flower.style.transform = `rotate(${randomRotate}deg)`;
     });
-
     setTimeout(moveTulipFlowers, 15000);
   }
-
   moveTulipFlowers();
 });
 
-// Инициализация бегущей строки
+// Бегущая строка
 const tulipScrollingContent = document.querySelector(
   ".tulip-scrolling-content"
 );

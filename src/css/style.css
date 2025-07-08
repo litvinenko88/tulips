@@ -59,7 +59,7 @@ body {
   font-weight: bold;
 }
 
-/* Основная навигация - десктоп */
+/* Основная навигация */
 .tulip-main-navigation {
   padding: 15px 0;
   border-bottom: 1px solid #eee;
@@ -95,10 +95,6 @@ body {
   color: var(--tulip-color-primary);
 }
 
-.tulip-nav-btn-wrapper {
-  margin-left: 15px;
-}
-
 /* Кнопки */
 .tulip-btn {
   display: inline-block;
@@ -124,6 +120,7 @@ body {
 .tulip-btn-price-list {
   background-color: var(--tulip-color-primary);
   color: var(--tulip-color-text-light);
+  margin-left: auto;
 }
 
 .tulip-btn:hover {
@@ -151,35 +148,33 @@ body {
   opacity: 1;
   left: 0;
   transition: all 0.3s ease-in-out;
+  transform-origin: center;
 }
 
 .tulip-line-1 {
   top: 0;
-  transform-origin: left center;
 }
 
 .tulip-line-2 {
   top: 50%;
   transform: translateY(-50%);
-  transform-origin: left center;
 }
 
 .tulip-line-3 {
   bottom: 0;
-  transform-origin: left center;
 }
 
 .tulip-mobile-menu.open .tulip-line-1 {
-  transform: rotate(45deg) translateY(-2px);
+  transform: translateY(10px) rotate(45deg);
 }
 
 .tulip-mobile-menu.open .tulip-line-2 {
   opacity: 0;
-  width: 0;
+  transform: scaleX(0);
 }
 
 .tulip-mobile-menu.open .tulip-line-3 {
-  transform: rotate(-45deg) translateY(2px);
+  transform: translateY(-10px) rotate(-45deg);
 }
 
 /* Мобильное меню */
@@ -190,11 +185,6 @@ body {
 
   .tulip-mobile-menu {
     display: block;
-    order: 1;
-  }
-
-  .tulip-main-navigation .tulip-container-main {
-    justify-content: flex-end;
   }
 
   .tulip-nav-items {
@@ -207,7 +197,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 80px 30px 30px;
+    padding: 100px 30px 30px;
     transition: right 0.4s ease-in-out;
     z-index: 998;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
@@ -219,21 +209,22 @@ body {
 
   .tulip-nav-items li {
     width: 100%;
-    margin: 0 0 15px 0;
-  }
-
-  .tulip-nav-btn-wrapper {
-    margin: 20px 0 0 0;
-    width: 100%;
+    margin: 0 0 20px 0;
   }
 
   .tulip-btn-price-list {
-    display: block;
-    width: 100%;
+    display: none;
+  }
+
+  .tulip-mobile-menu {
+    order: 1;
+    position: fixed;
+    right: 20px;
+    top: 20px;
   }
 }
 
-/* Остальные стили остаются без изменений */
+/* Остальные стили */
 .tulip-hero-section {
   padding: 60px 0;
   background-color: var(--tulip-color-bg-light);
@@ -301,7 +292,6 @@ h1 {
   gap: 15px;
 }
 
-/* Элементы дизайна (тюльпаны на фоне) */
 .tulip-bg-flower {
   position: absolute;
   width: 100px;
@@ -350,7 +340,6 @@ h1 {
   }
 }
 
-/* Бегущая строка */
 .tulip-scrolling-bar {
   position: fixed;
   left: 0;
@@ -378,7 +367,6 @@ h1 {
   }
 }
 
-/* Фиксированная панель контактов */
 .tulip-fixed-contact-bar {
   position: fixed;
   bottom: 0;
@@ -420,7 +408,6 @@ h1 {
   transform: scale(1.1);
 }
 
-/* Анимации */
 @keyframes tulip-pulse {
   0% {
     transform: scale(1);
@@ -440,7 +427,6 @@ h1 {
   animation: tulip-pulse 2s infinite;
 }
 
-/* Адаптация для других размеров экрана */
 @media (max-width: 1200px) {
   .tulip-container-main {
     padding: 0 50px;
