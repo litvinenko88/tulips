@@ -302,7 +302,7 @@ h1 {
   position: fixed;
   left: 0;
   right: 0;
-  bottom: 70px;
+  bottom: 68px;
   background-color: rgba(255, 255, 255, 0.9);
   padding: 8px 0;
   z-index: 1000;
@@ -563,9 +563,9 @@ h1 {
 
   .tulip-mobile-menu {
     display: block;
-    position: fixed;
+    position: absolute;
     right: 20px;
-    top: 60px;
+    top: 15px;
   }
   .tulip-contact-wrapper {
     flex-direction: column;
@@ -575,6 +575,9 @@ h1 {
 }
 
 @media (max-width: 480px) {
+  .tulip-hero-content h1 {
+    font-size: 2rem;
+  }
   .tulip-container-main {
     padding: 0 20px;
   }
@@ -585,7 +588,7 @@ h1 {
   }
 
   .tulip-hero-section {
-    padding: 30px 0;
+    padding: 60px 0;
   }
 
   .tulip-action-buttons {
@@ -599,6 +602,18 @@ h1 {
 
   .tulip-bg-flower {
     width: 60px;
+  }
+  .tulip-contact-question {
+    display: none;
+  }
+  .tulip-fixed-contact-bar {
+    padding: 5px 0;
+  }
+  .tulip-scrolling-bar {
+    bottom: 47px;
+  }
+  .tulip-form-title {
+    font-size: 16px;
   }
 }
 
