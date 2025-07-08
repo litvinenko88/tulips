@@ -705,3 +705,11 @@ h1 {
     display: none;
   }
 }
+@media (max-width: 410px) {
+  .tulip-chat-notification {
+    right: 5px;
+  }
+  .tulip-special-offer-form {
+    right: 5px;
+  }
+}
