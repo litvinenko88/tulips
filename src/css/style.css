@@ -178,6 +178,7 @@ body {
 }
 
 /* Герой секция */
+/* Герой секция */
 .tulip-hero-section {
   padding: 60px 0;
   background-color: var(--tulip-color-bg-light);
@@ -207,6 +208,7 @@ body {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 2;
+  max-width: 500px;
   width: 100%;
 }
 
@@ -420,10 +422,6 @@ h1 {
     padding: 0 30px;
   }
 
-  .tulip-mobile-menu {
-    display: block;
-  }
-
   .tulip-nav-items {
     position: fixed;
     top: 0;
@@ -454,13 +452,18 @@ h1 {
   }
 
   .tulip-mobile-menu {
+    display: block;
     position: fixed;
-    right: 30px;
-    top: 20px;
+    right: 20px;
+    top: 60px;
   }
 }
-
-@media (max-width: 576px) {
+@media (max-width: 640px) {
+  .tulip-slogan-text {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
   .tulip-container-main {
     padding: 0 20px;
   }
