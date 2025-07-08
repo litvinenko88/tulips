@@ -529,7 +529,9 @@ h1 {
   .tulip-container-main {
     padding: 0 30px;
   }
-
+  .tulip-main-navigation {
+    padding: 0;
+  }
   .tulip-nav-items {
     position: fixed;
     top: 0;
@@ -565,12 +567,13 @@ h1 {
     right: 20px;
     top: 60px;
   }
-}
-@media (max-width: 640px) {
-  .tulip-slogan-text {
-    display: none;
+  .tulip-contact-wrapper {
+    flex-direction: column;
+    padding: 0;
+    gap: 20px;
   }
 }
+
 @media (max-width: 480px) {
   .tulip-container-main {
     padding: 0 20px;
@@ -596,5 +599,16 @@ h1 {
 
   .tulip-bg-flower {
     width: 60px;
+  }
+}
+
+@media (max-width: 845px) {
+  .tulip-btn-price-list {
+    display: none;
+  }
+}
+@media (max-width: 640px) {
+  .tulip-slogan-text {
+    display: none;
   }
 }
