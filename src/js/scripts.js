@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Настройки времени (в миллисекундах)
   const TIMING = {
-    NOTIFICATION_DELAY: 17000, // 12 сек до показа уведомления
+    NOTIFICATION_DELAY: 1000, // 12 сек до показа уведомления
     NOTIFICATION_AUTO_CLOSE: 10000, // 5 сек до автозакрытия уведомления
     FORM_DELAY: 8000, // 5 сек до показа формы после уведомления
     CONFIRMATION_AUTO_CLOSE: 5000, // 5 сек до автозакрытия подтверждения
