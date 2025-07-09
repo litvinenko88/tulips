@@ -9,6 +9,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const chatClose = document.getElementById("chatClose");
   const contactForm = document.getElementById("contactForm");
   const chatForm = document.getElementById("chatForm");
+  const successNotification = document.getElementById("successNotification");
+
+  // Флаги для отслеживания взаимодействия с формой
+  let isFormInteracted = false;
+  let formAutoCloseTimeout;
 
   // Проверка, было ли уже показано уведомление
   const notificationShown = localStorage.getItem("notificationShown");
@@ -84,7 +89,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Автоматическое закрытие через 5 секунд
       setTimeout(function () {
-        closeNotification();
+        if (notification.classList.contains("show")) {
+          closeNotification();
+        }
       }, 5000);
     }, 5000);
   }
@@ -96,26 +103,42 @@ document.addEventListener("DOMContentLoaded", function () {
     // Показать форму через 0.5 секунды после закрытия уведомления
     if (!formShown) {
       setTimeout(function () {
-        offerForm.classList.add("show");
-        initTimer();
+        showOfferForm();
         localStorage.setItem("formShown", "true");
-
-        // Автоматическое закрытие через 5 секунд
-        setTimeout(function () {
-          closeOfferForm();
-        }, 5000);
       }, 500);
     }
   }
 
   notificationClose.addEventListener("click", closeNotification);
 
+  // Показать форму предложения
+  function showOfferForm() {
+    offerForm.classList.add("show");
+    initTimer();
+
+    // Автоматическое закрытие через 5 секунд, если пользователь не взаимодействовал с формой
+    if (!isFormInteracted) {
+      formAutoCloseTimeout = setTimeout(function () {
+        if (offerForm.classList.contains("show") && !isFormInteracted) {
+          closeOfferForm();
+        }
+      }, 5000);
+    }
+  }
+
   // Закрытие формы
   function closeOfferForm() {
     offerForm.classList.remove("show");
+    clearTimeout(formAutoCloseTimeout);
   }
 
   formClose.addEventListener("click", closeOfferForm);
+
+  // Отслеживание взаимодействия с формой
+  offerForm.addEventListener("input", function () {
+    isFormInteracted = true;
+    clearTimeout(formAutoCloseTimeout);
+  });
 
   // Открытие чата по клику на кнопку
   chatBtn.addEventListener("click", function (e) {
@@ -202,18 +225,32 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Слушатели событий для валидации
-  document
-    .getElementById("phone")
-    .addEventListener("input", validateContactForm);
-  document
-    .getElementById("name")
-    .addEventListener("input", validateContactForm);
+  document.getElementById("phone").addEventListener("input", function () {
+    validateContactForm();
+    isFormInteracted = true;
+    clearTimeout(formAutoCloseTimeout);
+  });
+
+  document.getElementById("name").addEventListener("input", function () {
+    validateContactForm();
+    isFormInteracted = true;
+    clearTimeout(formAutoCloseTimeout);
+  });
+
   document
     .getElementById("chatPhone")
     .addEventListener("input", validateChatForm);
   document
     .getElementById("chatName")
     .addEventListener("input", validateChatForm);
+
+  // Показать уведомление об успехе
+  function showSuccessNotification() {
+    successNotification.style.display = "block";
+    setTimeout(function () {
+      successNotification.style.display = "none";
+    }, 3000);
+  }
 
   // Отправка данных в Telegram
   function sendToTelegram(data, formType) {
@@ -239,15 +276,15 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((response) => response.json())
       .then((data) => {
         console.log("Сообщение отправлено:", data);
+        // Показываем уведомление об успехе
+        showSuccessNotification();
+
         // Закрываем форму после успешной отправки
         if (formType === "Спецпредложение") {
           closeOfferForm();
         } else {
           closeChat();
         }
-
-        // Показываем сообщение об успехе (можно добавить)
-        alert("Спасибо! Ваши данные отправлены. Мы скоро с вами свяжемся.");
       })
       .catch((error) => {
         console.error("Ошибка отправки:", error);
