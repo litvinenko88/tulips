@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="src/css/components/contact-bar.css" />
     <link rel="stylesheet" href="src/css/components/notifications.css" />
     <link rel="stylesheet" href="src/css/responsive.css" />
+    <link rel="stylesheet" href="src/css/components/tulip-chat.css" />
   </head>
   <body>
     <!-- Верхняя панель -->
@@ -116,10 +117,72 @@
       </div>
     </div>
 
+    <!-- Уведомление чата -->
+    <div class="notification" id="notification">
+      <div class="notification-close" id="notificationClose"></div>
+      <p>
+        Добрый день! Я Юля из TulipHolland. У нас сейчас действует
+        спецпредложение для опта. Оставьте ваши контакты, и я расскажу
+        подробнее!
+      </p>
+    </div>
+
+    <!-- Форма спецпредложения -->
+    <div class="offer-form" id="offerForm">
+      <div class="form-close" id="formClose"></div>
+      <h2>спецпредложение действует</h2>
+      <div class="timer" id="timer">
+        <span id="days">1</span> дн <span id="hours">18</span> ч
+        <span id="minutes">15</span> мин <span id="seconds">21</span> сек
+      </div>
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="name">Ваше имя</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Номер телефона</label>
+          <input type="tel" id="phone" name="phone" required />
+          <div class="error-message" id="phoneError">
+            Пожалуйста, введите корректный номер телефона
+          </div>
+        </div>
+        <button type="submit" class="submit-btn" id="submitBtn" disabled>
+          Получить
+        </button>
+      </form>
+    </div>
+
+    <!-- Окно чата -->
+    <div class="chat-window" id="chatWindow">
+      <div class="chat-close" id="chatClose"></div>
+      <div class="chat-message">
+        Добрый день! Я Юля из TulipHolland. У нас сейчас действует
+        спецпредложение для опта. Оставьте ваши контакты, и я расскажу
+        подробнее!
+      </div>
+      <form id="chatForm">
+        <div class="form-group">
+          <label for="chatName">Ваше имя</label>
+          <input type="text" id="chatName" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="chatPhone">Номер телефона</label>
+          <input type="tel" id="chatPhone" name="phone" required />
+          <div class="error-message" id="chatPhoneError">
+            Пожалуйста, введите корректный номер телефона
+          </div>
+        </div>
+        <button type="submit" class="submit-btn" id="chatSubmitBtn" disabled>
+          Отправить
+        </button>
+      </form>
+    </div>
+
     <!-- Скрипты -->
     <script src="/src/js/menu.js"></script>
     <script src="/src/js/forms.js"></script>
-    <script src="/src/js/chat.js"></script>
+    <script src="/src/js/tulip-chat.js"></script>
     <script src="/src/js/scripts.js"></script>
   </body>
 </html>
