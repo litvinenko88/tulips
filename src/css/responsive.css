@@ -1,0 +1,95 @@
+@media (max-width: 1280px) {
+  .container {
+    padding: 0 60px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-section .container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .contact-form {
+    max-width: 100%;
+  }
+
+  .action-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 30px;
+  }
+
+  .nav-items {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background: var(--color-bg);
+    flex-direction: column;
+    padding: 100px 30px 30px;
+    transition: right 0.4s;
+    z-index: 998;
+  }
+
+  .nav-items.active {
+    right: 0;
+  }
+
+  .nav-items li {
+    margin: 0 0 20px 0;
+  }
+
+  .btn-price {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .contact-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .scrolling-bar {
+    bottom: 108px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .contact-question {
+    display: none;
+  }
+
+  .scrolling-bar {
+    bottom: 47px;
+  }
+}

@@ -1,16 +1,14 @@
 @import "reset.css";
 @import "normalize.css";
-@import "/src/assets/font/stylesheet.css";
 
 :root {
-  /* Основные цвета */
-  --tulip-color-primary: #2e8b57;
-  --tulip-color-secondary: #6a1b9a;
-  --tulip-color-accent: #ff6b6b;
-  --tulip-color-text: #343a40;
-  --tulip-color-text-light: #ffffff;
-  --tulip-color-bg: #ffffff;
-  --tulip-color-bg-light: #f8f9fa;
+  --color-primary: #2e8b57;
+  --color-secondary: #6a1b9a;
+  --color-accent: #ff6b6b;
+  --color-text: #343a40;
+  --color-text-light: #ffffff;
+  --color-bg: #ffffff;
+  --color-bg-light: #f8f9fa;
 }
 
 * {
@@ -21,266 +19,51 @@
 }
 
 body {
-  color: var(--tulip-color-text);
-  background-color: var(--tulip-color-bg);
+  color: var(--color-text);
+  background: var(--color-bg);
   line-height: 1.6;
   overflow-x: hidden;
 }
 
-.tulip-container-main {
+.container {
   width: 100%;
   max-width: 1600px;
   margin: 0 auto;
   padding: 0 100px;
 }
 
-/* Верхняя панель */
-.tulip-top-panel {
-  background-color: var(--tulip-color-primary);
-  color: var(--tulip-color-text-light);
-  padding: 10px 0;
-  font-size: 14px;
-}
-
-.tulip-top-panel .tulip-container-main {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.tulip-logo-brand {
-  font-weight: bold;
-  font-size: 18px;
-}
-
-.tulip-phone-contact a {
-  color: var(--tulip-color-text-light);
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* Основная навигация */
-.tulip-main-navigation {
-  padding: 15px 0;
-  border-bottom: 1px solid #eee;
-  position: relative;
-}
-
-.tulip-main-navigation .tulip-container-main {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.tulip-nav-items {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  align-items: center;
-}
-
-.tulip-nav-items li {
-  margin-right: 25px;
-}
-
-.tulip-nav-items a {
-  color: var(--tulip-color-text);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.tulip-nav-items a:hover {
-  color: var(--tulip-color-primary);
-}
-
-/* Кнопки */
-.tulip-btn {
+.btn {
   display: inline-block;
   padding: 15px 20px;
   border-radius: 5px;
   font-weight: bold;
-  font-size: 16px;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.3s;
   border: none;
 }
 
-.tulip-btn-main {
-  background-color: var(--tulip-color-accent);
-  color: var(--tulip-color-text-light);
+.btn-main {
+  background: var(--color-accent);
+  color: var(--color-text-light);
 }
 
-.tulip-btn-alt {
-  background-color: var(--tulip-color-secondary);
-  color: var(--tulip-color-text-light);
+.btn-alt {
+  background: var(--color-secondary);
+  color: var(--color-text-light);
 }
 
-.tulip-btn-price-list {
-  background-color: var(--tulip-color-primary);
-  color: var(--tulip-color-text-light);
-  margin-left: auto;
+.btn-price {
+  background: var(--color-primary);
+  color: var(--color-text-light);
 }
 
-.tulip-btn:hover {
+.btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Гамбургер меню */
-.tulip-mobile-menu {
-  display: none;
-  width: 30px;
-  height: 24px;
-  position: relative;
-  cursor: pointer;
-  z-index: 1000;
-}
-
-.tulip-menu-line {
-  display: block;
-  position: absolute;
-  height: 3px;
-  width: 100%;
-  background: var(--tulip-color-text);
-  border-radius: 3px;
-  opacity: 1;
-  left: 0;
-  transition: all 0.3s ease-in-out;
-  transform-origin: center;
-}
-
-.tulip-line-1 {
-  top: 0;
-}
-
-.tulip-line-2 {
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.tulip-line-3 {
-  bottom: 0;
-}
-
-.tulip-mobile-menu.open .tulip-line-1 {
-  transform: translateY(10px) rotate(45deg);
-}
-
-.tulip-mobile-menu.open .tulip-line-2 {
-  opacity: 0;
-  transform: scaleX(0);
-}
-
-.tulip-mobile-menu.open .tulip-line-3 {
-  transform: translateY(-10px) rotate(-45deg);
-}
-
-/* Герой секция */
-.tulip-hero-section {
-  padding: 60px 0;
-  background-color: var(--tulip-color-bg-light);
-  position: relative;
-  overflow: hidden;
-}
-
-.tulip-hero-section .tulip-container-main {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 40px;
-}
-
-.tulip-hero-content {
-  flex: 1;
-  max-width: 600px;
-  position: relative;
-  z-index: 2;
-}
-
-.tulip-contact-form {
-  flex: 1;
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  position: relative;
-  z-index: 2;
-  max-width: 500px;
-  width: 100%;
-}
-
-.tulip-form-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 100%;
-}
-
-.tulip-form-title {
-  text-align: center;
-  color: var(--tulip-color-primary);
-}
-
-.tulip-form-inner input {
-  padding: 15px 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 16px;
-  width: 100%;
-}
-
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: var(--tulip-color-primary);
-  line-height: 1.2;
-}
-
-.tulip-hero-subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  color: var(--tulip-color-text);
-}
-
-.tulip-action-buttons {
-  display: flex;
-  gap: 15px;
-}
-
-.tulip-bg-flower {
-  position: absolute;
-  width: 100px;
-  height: auto;
-  z-index: 1;
-  opacity: 0.7;
-  animation: tulip-float 15s ease-in-out infinite;
-}
-
-.tulip-flower-1 {
-  top: 20%;
-  left: 10%;
-  transform: rotate(15deg);
-  animation-delay: 0s;
-}
-
-.tulip-flower-2 {
-  top: 40%;
-  left: 30%;
-  transform: rotate(-10deg);
-  animation-delay: 3s;
-}
-
-.tulip-flower-3 {
-  top: 30%;
-  left: 70%;
-  transform: rotate(5deg);
-  animation-delay: 6s;
-}
-
-@keyframes tulip-float {
+@keyframes float {
   0% {
     transform: translate(0, 0) rotate(0deg);
   }
@@ -298,233 +81,7 @@ h1 {
   }
 }
 
-.tulip-scrolling-bar {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 68px;
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 8px 0;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.tulip-scrolling-content {
-  white-space: nowrap;
-  animation: tulip-marquee 20s linear infinite;
-  font-size: 14px;
-  color: var(--tulip-color-primary);
-}
-
-@keyframes tulip-marquee {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-.tulip-fixed-contact-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(255, 255, 255, 0.95);
-  padding: 15px 0;
-  z-index: 1000;
-  border-top: 1px solid #eee;
-}
-
-.tulip-contact-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 0 100px;
-}
-
-.tulip-contact-question {
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--tulip-color-text);
-}
-
-.tulip-social-links {
-  display: flex;
-  gap: 15px;
-}
-
-.tulip-social-icon {
-  width: 30px;
-  height: 30px;
-  transition: transform 0.3s;
-}
-
-.tulip-social-icon:hover {
-  transform: scale(1.1);
-}
-
-/* Стили для чата и уведомлений */
-.tulip-chat-btn {
-  cursor: pointer;
-  position: relative; /* Для позиционирования хвостика */
-}
-
-.tulip-chat-notification {
-  position: fixed;
-  bottom: 70px;
-  right: 95px;
-  width: 300px;
-  padding: 15px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  display: none;
-  animation: tulipFadeIn 0.5s;
-}
-
-/* Хвостик для уведомления чата */
-.tulip-chat-notification::before {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  right: 20px;
-  width: 0;
-  height: 0;
-  border-left: 12px solid transparent;
-  border-right: 0px solid transparent;
-  border-top: 12px solid #fff;
-  z-index: 1001;
-}
-
-.tulip-chat-notification p {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.4;
-  position: relative;
-  z-index: 1002;
-}
-
-.tulip-close-notification,
-.tulip-close-form {
-  position: absolute;
-  top: 5px;
-  right: 10px;
-  cursor: pointer;
-  font-size: 20px;
-  color: #888;
-  z-index: 1003;
-}
-
-.tulip-special-offer-form {
-  position: fixed;
-  bottom: 70px;
-  right: 95px;
-  width: 280px;
-  padding: 15px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  display: none;
-  animation: tulipFadeIn 0.5s;
-}
-
-/* Хвостик для формы */
-.tulip-special-offer-form::before {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  right: 20px;
-  width: 0;
-  height: 0;
-  border-left: 12px solid transparent;
-  border-right: 0px solid transparent;
-  border-top: 12px solid #fff;
-  z-index: 1001;
-}
-
-.tulip-timer {
-  font-size: 12px;
-  margin-bottom: 10px;
-  text-align: center;
-  color: #d32f2f;
-  font-weight: bold;
-}
-
-.tulip-input-name,
-.tulip-input-phone {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-.tulip-get-offer-btn {
-  width: 100%;
-  padding: 10px;
-  background: #d32f2f;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-/* Стили для уведомления о получении контактов */
-.tulip-confirmation-notification {
-  position: fixed;
-  bottom: 100px;
-  right: 20px;
-  width: 280px;
-  padding: 15px;
-  background: #4caf50;
-  color: white;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  display: none;
-  animation: tulipFadeIn 0.5s;
-  text-align: center;
-}
-
-/* Хвостик для подтверждения */
-.tulip-confirmation-notification::before {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  right: 20px;
-  width: 0;
-  height: 0;
-  border-left: 12px solid transparent;
-  border-right: 0px solid transparent;
-  border-top: 12px solid #4caf50;
-  z-index: 1001;
-}
-
-.tulip-confirmation-notification p {
-  margin: 0;
-  font-size: 14px;
-  position: relative;
-  z-index: 1002;
-}
-
-@keyframes tulipFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes tulip-pulse {
+@keyframes pulse {
   0% {
     transform: scale(1);
     box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7);
@@ -539,252 +96,6 @@ h1 {
   }
 }
 
-.tulip-btn-animated {
-  animation: tulip-pulse 2s infinite;
-}
-
-/* Стили для формы */
-.tulip-form-input {
-  padding: 15px 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 16px;
-  width: 100%;
-  margin-bottom: 15px;
-  transition: border-color 0.3s;
-}
-
-.tulip-form-input:focus {
-  border-color: #2e8b57;
-  outline: none;
-}
-
-.tulip-form-input.error {
-  border-color: #ff6b6b;
-}
-
-/* Стили для уведомления */
-.tulip-notification {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: #2e8b57;
-  color: white;
-  padding: 15px 20px;
-  border-radius: 5px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  z-index: 10000;
-  transform: translateX(150%);
-  transition: transform 0.4s ease-in-out;
-  max-width: 320px;
-  display: none;
-}
-
-.tulip-notification.show {
-  transform: translateX(0);
-  display: block;
-}
-
-.tulip-notification-content {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.tulip-notification-icon {
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-}
-
-.tulip-notification-text {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.4;
-}
-
-.error-notification {
-  color: red;
-  margin-top: 10px;
-}
-.error {
-  border-color: red !important;
-}
-/***********Второй блок****************************************************/
-
-@media (max-width: 1280px) {
-  .tulip-container-main {
-    padding: 0 60px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .tulip-container-main {
-    padding: 0 60px;
-  }
-
-  .tulip-hero-section .tulip-container-main {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 30px;
-  }
-
-  .tulip-hero-content {
-    max-width: 100%;
-    text-align: center;
-  }
-
-  .tulip-contact-form {
-    max-width: 100%;
-    margin: 0 auto;
-  }
-
-  .tulip-action-buttons {
-    justify-content: center;
-  }
-  .tulip-scrolling-bar {
-    bottom: 65px;
-  }
-}
-
-@media (max-width: 768px) {
-  .tulip-container-main {
-    padding: 0 30px;
-  }
-  .tulip-main-navigation {
-    padding: 0;
-  }
-  .tulip-nav-items {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 80%;
-    height: 100vh;
-    background: var(--tulip-color-bg);
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 100px 30px 30px;
-    transition: right 0.4s ease-in-out;
-    z-index: 998;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-  }
-
-  .tulip-nav-items.active {
-    right: 0;
-  }
-
-  .tulip-nav-items li {
-    width: 100%;
-    margin: 0 0 20px 0;
-  }
-
-  .tulip-btn-price-list {
-    display: none;
-  }
-
-  .tulip-mobile-menu {
-    display: block;
-    position: absolute;
-    right: 20px;
-    top: 15px;
-  }
-  .tulip-menu-line {
-    background: #2e8b57;
-  }
-  .tulip-contact-wrapper {
-    flex-direction: column;
-    padding: 0;
-    gap: 20px;
-  }
-  .tulip-scrolling-bar {
-    bottom: 108px;
-  }
-}
-
-@media (max-width: 480px) {
-  .tulip-hero-content h1 {
-    font-size: 2rem;
-  }
-  .tulip-container-main {
-    padding: 0 20px;
-  }
-
-  .tulip-top-panel .tulip-container-main {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .tulip-hero-section {
-    padding: 60px 0;
-  }
-
-  .tulip-action-buttons {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .tulip-btn {
-    width: 100%;
-  }
-
-  .tulip-bg-flower {
-    width: 60px;
-  }
-  .tulip-contact-question {
-    display: none;
-  }
-  .tulip-fixed-contact-bar {
-    padding: 5px 0;
-  }
-  .tulip-scrolling-bar {
-    bottom: 47px;
-  }
-  .tulip-form-title {
-    font-size: 16px;
-  }
-  .tulip-mobile-menu {
-    top: 10px;
-    right: 10px;
-  }
-  .tulip-bg-flower {
-    width: 40px;
-  }
-}
-@media (max-width: 320px) {
-  .tulip-mobile-menu {
-    width: 25px;
-    height: 20px;
-  }
-  .tulip-hero-content h1 {
-    font-size: 1.5rem;
-  }
-  .tulip-hero-subtitle {
-    font-size: 1rem;
-  }
-  .tulip-btn {
-    font-size: 0.8rem;
-  }
-  .tulip-form-inner input {
-    padding: 10px 15px;
-  }
-}
-
-@media (max-width: 845px) {
-  .tulip-btn-price-list {
-    display: none;
-  }
-}
-@media (max-width: 640px) {
-  .tulip-slogan-text {
-    display: none;
-  }
-}
-@media (max-width: 410px) {
-  .tulip-chat-notification {
-    right: 5px;
-  }
-  .tulip-special-offer-form {
-    right: 5px;
-  }
+.btn-animated {
+  animation: pulse 2s infinite;
 }
