@@ -26,6 +26,12 @@ document.addEventListener("DOMContentLoaded", function () {
   let seconds = 21;
   let timerInterval;
 
+  //время
+  const openingNotification = 17000;
+  const closeNotificatio = 8000;
+  const openForm = 12000;
+  const closeForm = 8000;
+
   // Инициализация таймера
   function initTimer() {
     // Проверяем, есть ли сохраненное время в localStorage
@@ -81,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("seconds").textContent = seconds;
   }
 
-  // Показать уведомление через 5 секунд после загрузки страницы
+  // Показать уведомление через 17 секунд после загрузки страницы
   if (!notificationShown) {
     setTimeout(function () {
       notification.classList.add("show");
@@ -92,20 +98,20 @@ document.addEventListener("DOMContentLoaded", function () {
         if (notification.classList.contains("show")) {
           closeNotification();
         }
-      }, 5000);
-    }, 5000);
+      }, closeNotificatio);
+    }, openingNotification);
   }
 
   // Закрытие уведомления
   function closeNotification() {
     notification.classList.remove("show");
 
-    // Показать форму через 0.5 секунды после закрытия уведомления
+    // Показать форму через 12 секунды после закрытия уведомления
     if (!formShown) {
       setTimeout(function () {
         showOfferForm();
         localStorage.setItem("formShown", "true");
-      }, 500);
+      }, openForm);
     }
   }
 
@@ -122,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (offerForm.classList.contains("show") && !isFormInteracted) {
           closeOfferForm();
         }
-      }, 5000);
+      }, closeForm);
     }
   }
 
@@ -181,6 +187,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (phone && !validatePhone(phone)) {
       document.getElementById("phone").classList.add("error");
+      phoneError.innerHTML =
+        "Некорректный номер телефона. Пример: +7(123)456-78-90 или 81234567890";
       phoneError.style.display = "block";
       isValid = false;
     } else {
@@ -208,6 +216,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (phone && !validatePhone(phone)) {
       document.getElementById("chatPhone").classList.add("error");
+      phoneError.innerHTML =
+        "Некорректный номер телефона. Пример: +7(123)456-78-90 или 81234567890";
       phoneError.style.display = "block";
       isValid = false;
     } else {
