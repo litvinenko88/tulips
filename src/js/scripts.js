@@ -294,7 +294,105 @@ document.addEventListener("DOMContentLoaded", function () {
     clearInterval(countdownTimer);
   });
 });
+//главная форма
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("consultationForm");
+  const notification = document.getElementById("successNotification");
 
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
+    // Валидация формы
+    const nameInput = form.querySelector('input[name="name"]');
+    const phoneInput = form.querySelector('input[name="phone"]');
+    let isValid = true;
+
+    // Очищаем предыдущие ошибки
+    nameInput.classList.remove("error");
+    phoneInput.classList.remove("error");
+
+    // Проверка имени
+    if (!nameInput.value.trim()) {
+      nameInput.classList.add("error");
+      isValid = false;
+    }
+
+    // Проверка телефона
+    if (!phoneInput.value.trim()) {
+      phoneInput.classList.add("error");
+      isValid = false;
+    } else if (!/^[\d\s+\-()]{7,}$/.test(phoneInput.value)) {
+      phoneInput.classList.add("error");
+      isValid = false;
+    }
+
+    if (!isValid) return;
+
+    // Подготовка данных для отправки
+    const formData = {
+      name: nameInput.value.trim(),
+      phone: phoneInput.value.trim(),
+      source: "главная форма",
+      date: new Date().toLocaleString(),
+    };
+
+    // Отправка в Telegram бот
+    const botToken = "7757545287:AAHNWgBvNyxNfvhfz_ktJ1NCIJJqB5FxV0Y";
+    const chatId = "682859146";
+    const message = `📌 Новая заявка с сайта (${formData.source}):
+    
+👤 Имя: ${formData.name}
+📞 Телефон: ${formData.phone}
+📅 Дата: ${formData.date}`;
+
+    const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(
+      message
+    )}`;
+
+    fetch(url)
+      .then((response) => {
+        if (response.ok) {
+          // Показываем уведомление
+          notification.classList.add("show");
+
+          // Очищаем форму
+          form.reset();
+
+          // Скрываем уведомление через 5 секунд
+          setTimeout(() => {
+            notification.classList.remove("show");
+          }, 5000);
+        } else {
+          throw new Error("Ошибка отправки формы");
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        alert(
+          "Произошла ошибка при отправке формы. Пожалуйста, попробуйте позже."
+        );
+      });
+  });
+
+  // Добавляем маску для телефона (опционально)
+  const phoneInput = form.querySelector('input[name="phone"]');
+  phoneInput.addEventListener("input", function (e) {
+    let value = this.value.replace(/\D/g, "");
+
+    // Форматирование в +7 (XXX) XXX-XX-XX
+    if (value.length > 0) {
+      value =
+        "+7 (" +
+        value.substring(1, 4) +
+        ") " +
+        value.substring(4, 7) +
+        "-" +
+        value.substring(7, 9) +
+        "-" +
+        value.substring(9, 11);
+    }
+
+    this.value = value;
+  });
+});
 ///////////////////////////////////второй блок////////////////////////////////////
-

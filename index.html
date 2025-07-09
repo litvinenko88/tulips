@@ -83,14 +83,39 @@
         </div>
 
         <div class="tulip-contact-form">
-          <form class="tulip-form-inner">
+          <form class="tulip-form-inner" id="consultationForm">
             <h2 class="tulip-form-title">Получить консультацию</h2>
-            <input type="text" placeholder="Ваше имя" required />
-            <input type="tel" placeholder="Телефон" required />
+            <input
+              type="text"
+              name="name"
+              placeholder="Ваше имя"
+              required
+              class="tulip-form-input" />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Телефон"
+              required
+              class="tulip-form-input" />
             <button type="submit" class="tulip-btn tulip-btn-main">
               Получить
             </button>
           </form>
+
+          <!-- Уведомление об успешной отправке -->
+          <div class="tulip-notification" id="successNotification">
+            <div class="tulip-notification-content">
+              <svg class="tulip-notification-icon" viewBox="0 0 24 24">
+                <path
+                  fill="currentColor"
+                  d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z" />
+              </svg>
+              <p class="tulip-notification-text">
+                Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее
+                время.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
