@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const openingNotification = 17000;
   const closeNotificatio = 8000;
   const openForm = 12000;
-  const closeForm = 8000;
+  const closeForm = 10000;
 
   // Инициализация таймера
   function initTimer() {
