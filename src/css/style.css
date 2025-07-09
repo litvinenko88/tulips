@@ -603,8 +603,13 @@ h1 {
   line-height: 1.4;
 }
 
-
-
+.error-notification {
+  color: red;
+  margin-top: 10px;
+}
+.error {
+  border-color: red !important;
+}
 /***********Второй блок****************************************************/
 
 @media (max-width: 1280px) {

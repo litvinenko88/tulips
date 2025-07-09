@@ -299,13 +299,26 @@ document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("consultationForm");
   const notification = document.getElementById("successNotification");
 
+  // Создаем элемент для отображения ошибок, если его нет
+  let errorNotification = document.getElementById("errorNotification");
+  if (!errorNotification) {
+    errorNotification = document.createElement("div");
+    errorNotification.id = "errorNotification";
+    errorNotification.className = "error-notification";
+    errorNotification.style.display = "none";
+    errorNotification.style.color = "red";
+    errorNotification.style.marginTop = "10px";
+    form.appendChild(errorNotification);
+  }
+
   form.addEventListener("submit", function (e) {
     e.preventDefault();
+    errorNotification.style.display = "none";
+    errorNotification.textContent = "";
 
-    // Валидация формы
+    // Получаем элементы формы
     const nameInput = form.querySelector('input[name="name"]');
     const phoneInput = form.querySelector('input[name="phone"]');
-    let isValid = true;
 
     // Очищаем предыдущие ошибки
     nameInput.classList.remove("error");
@@ -314,35 +327,73 @@ document.addEventListener("DOMContentLoaded", function () {
     // Проверка имени
     if (!nameInput.value.trim()) {
       nameInput.classList.add("error");
-      isValid = false;
+      showError("Пожалуйста, введите ваше имя");
+      nameInput.focus();
+      return;
     }
 
     // Проверка телефона
-    if (!phoneInput.value.trim()) {
+    const phoneValue = phoneInput.value.trim();
+    if (!phoneValue) {
       phoneInput.classList.add("error");
-      isValid = false;
-    } else if (!/^[\d\s+\-()]{7,}$/.test(phoneInput.value)) {
-      phoneInput.classList.add("error");
-      isValid = false;
+      showError("Пожалуйста, введите ваш телефон");
+      phoneInput.focus();
+      return;
     }
 
-    if (!isValid) return;
+    // Нормализация номера телефона
+    const normalizedPhone = phoneValue.replace(/\D/g, "");
+
+    // Проверка формата телефона
+    if (!isValidPhone(normalizedPhone)) {
+      phoneInput.classList.add("error");
+      showError(
+        "Введите корректный номер телефона. Пример: +7 (XXX) XXX-XX-XX или 8 (XXX) XXX-XX-XX"
+      );
+      phoneInput.focus();
+      return;
+    }
 
     // Подготовка данных для отправки
     const formData = {
       name: nameInput.value.trim(),
-      phone: phoneInput.value.trim(),
+      phone: normalizedPhone.startsWith("7")
+        ? normalizedPhone
+        : "7" + normalizedPhone,
       source: "главная форма",
       date: new Date().toLocaleString(),
     };
 
     // Отправка в Telegram бот
+    sendToTelegram(formData);
+  });
+
+  // Функция проверки телефона
+  function isValidPhone(phone) {
+    // Российские номера: 11 цифр (7XXXXXXXXXX или 8XXXXXXXXXX)
+    if (
+      (phone.startsWith("7") || phone.startsWith("8")) &&
+      phone.length === 11
+    ) {
+      return true;
+    }
+    return false;
+  }
+
+  // Функция показа ошибки
+  function showError(message) {
+    errorNotification.textContent = message;
+    errorNotification.style.display = "block";
+  }
+
+  // Функция отправки в Telegram
+  function sendToTelegram(formData) {
     const botToken = "7757545287:AAHNWgBvNyxNfvhfz_ktJ1NCIJJqB5FxV0Y";
     const chatId = "682859146";
     const message = `📌 Новая заявка с сайта (${formData.source}):
     
 👤 Имя: ${formData.name}
-📞 Телефон: ${formData.phone}
+📞 Телефон: +${formData.phone}
 📅 Дата: ${formData.date}`;
 
     const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(
@@ -352,47 +403,57 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch(url)
       .then((response) => {
         if (response.ok) {
-          // Показываем уведомление
-          notification.classList.add("show");
+          // Показываем уведомление об успехе
+          if (notification) {
+            notification.style.display = "block";
+            setTimeout(() => {
+              notification.style.display = "none";
+            }, 5000);
+          }
 
           // Очищаем форму
           form.reset();
-
-          // Скрываем уведомление через 5 секунд
-          setTimeout(() => {
-            notification.classList.remove("show");
-          }, 5000);
         } else {
           throw new Error("Ошибка отправки формы");
         }
       })
       .catch((error) => {
         console.error("Error:", error);
-        alert(
+        showError(
           "Произошла ошибка при отправке формы. Пожалуйста, попробуйте позже."
         );
       });
-  });
+  }
 
-  // Добавляем маску для телефона (опционально)
+  // Маска для телефона
   const phoneInput = form.querySelector('input[name="phone"]');
   phoneInput.addEventListener("input", function (e) {
     let value = this.value.replace(/\D/g, "");
 
-    // Форматирование в +7 (XXX) XXX-XX-XX
-    if (value.length > 0) {
-      value =
-        "+7 (" +
-        value.substring(1, 4) +
-        ") " +
-        value.substring(4, 7) +
-        "-" +
-        value.substring(7, 9) +
-        "-" +
-        value.substring(9, 11);
+    // Ограничиваем длину до 11 цифр (для российских номеров)
+    if (value.length > 11) {
+      value = value.substring(0, 11);
     }
 
-    this.value = value;
+    // Форматирование в +7 (XXX) XXX-XX-XX
+    let formattedValue = "";
+    if (value.length > 0) {
+      formattedValue = "+7 ";
+      if (value.length > 1) {
+        formattedValue += "(" + value.substring(1, 4);
+      }
+      if (value.length > 4) {
+        formattedValue += ") " + value.substring(4, 7);
+      }
+      if (value.length > 7) {
+        formattedValue += "-" + value.substring(7, 9);
+      }
+      if (value.length > 9) {
+        formattedValue += "-" + value.substring(9, 11);
+      }
+    }
+
+    this.value = formattedValue;
   });
 });
 ///////////////////////////////////второй блок////////////////////////////////////
