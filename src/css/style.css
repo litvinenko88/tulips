@@ -543,10 +543,7 @@ h1 {
   animation: tulip-pulse 2s infinite;
 }
 
-
 /***********Второй блок****************************************************/
-
-
 
 @media (max-width: 1280px) {
   .tulip-container-main {
@@ -577,6 +574,9 @@ h1 {
 
   .tulip-action-buttons {
     justify-content: center;
+  }
+  .tulip-scrolling-bar {
+    bottom: 65px;
   }
 }
 
@@ -629,6 +629,9 @@ h1 {
     flex-direction: column;
     padding: 0;
     gap: 20px;
+  }
+  .tulip-scrolling-bar {
+    bottom: 108px;
   }
 }
 
