@@ -27,10 +27,10 @@ document.addEventListener("DOMContentLoaded", function () {
   let timerInterval;
 
   //время
-  const openingNotification = 2000;
-  const closeNotificatio = 2000;
-  const openForm = 2000;
-  const closeForm = 1000000;
+  const openingNotification = 17000;
+  const closeNotificatio = 12000;
+  const openForm = 10000;
+  const closeForm = 8000;
 
   // Инициализация таймера
   function initTimer() {
