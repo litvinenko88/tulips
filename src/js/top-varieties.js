@@ -88,34 +88,123 @@ document.addEventListener("DOMContentLoaded", function () {
   const nameError = document.getElementById("tulip-name-error");
   const phoneError = document.getElementById("tulip-phone-error");
 
-  orderForm.addEventListener("submit", function (e) {
+  // Функция для нормализации телефона
+  function normalizePhone(phone) {
+    return phone
+      .replace(/[^\d+]/g, "")
+      .replace(/^8/, "+7")
+      .replace(/^\+?7/, "+7");
+  }
+
+  // Функция проверки валидности телефона
+  function isValidPhone(phone) {
+    const normalized = normalizePhone(phone);
+    return /^\+7\d{10}$/.test(normalized);
+  }
+
+  // Функция отправки данных в Telegram
+  async function sendToTelegram(name, phone, cardName) {
+    const botToken = "7757545287:AAHNWgBvNyxNfvhfz_ktJ1NCIJJqB5FxV0Y";
+    const chatId = "682859146";
+    const text = `Топ 6 сортов\n\nСорт: ${cardName}\nИмя: ${name}\nТелефон: ${phone}`;
+
+    try {
+      const response = await fetch(
+        `https://api.telegram.org/bot${botToken}/sendMessage`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            chat_id: chatId,
+            text: text,
+          }),
+        }
+      );
+
+      return response.ok;
+    } catch (error) {
+      console.error("Ошибка отправки:", error);
+      return false;
+    }
+  }
+
+  orderForm.addEventListener("submit", async function (e) {
     e.preventDefault();
     let isValid = true;
 
     // Валидация имени
     if (nameInput.value.trim() === "") {
       nameError.textContent = "Пожалуйста, введите ваше имя";
+      nameError.style.display = "block";
+      isValid = false;
+    } else if (nameInput.value.trim().length < 2) {
+      nameError.textContent = "Имя должно содержать минимум 2 символа";
+      nameError.style.display = "block";
       isValid = false;
     } else {
-      nameError.textContent = "";
+      nameError.style.display = "none";
     }
 
     // Валидация телефона
-    const phoneRegex = /^[\d\+][\d\(\)\ -]{4,14}\d$/;
-    if (!phoneRegex.test(phoneInput.value)) {
-      phoneError.textContent = "Пожалуйста, введите корректный номер телефона";
+    if (!isValidPhone(phoneInput.value)) {
+      phoneError.textContent =
+        "Введите корректный номер телефона (например: +79991234567 или 89991234567)";
+      phoneError.style.display = "block";
       isValid = false;
     } else {
-      phoneError.textContent = "";
+      phoneError.style.display = "none";
     }
 
     if (isValid) {
-      // Здесь можно добавить отправку формы
-      alert(
-        `Заказ оформлен!\nСорт: ${cardNameInput.value}\nИмя: ${nameInput.value}\nТелефон: ${phoneInput.value}`
-      );
-      orderForm.reset();
-      modalOverlay.classList.remove("active");
+      const normalizedPhone = normalizePhone(phoneInput.value);
+      const cardName = cardNameInput.value;
+      const name = nameInput.value.trim();
+
+      // Отправка в Telegram
+      const isSent = await sendToTelegram(name, normalizedPhone, cardName);
+
+      if (isSent) {
+        // Успешная отправка
+        orderForm.reset();
+        modalOverlay.classList.remove("active");
+
+        // Можно добавить уведомление об успешной отправке
+        const successMessage = document.createElement("div");
+        successMessage.textContent = "Ваша заявка успешно отправлена!";
+        successMessage.style.position = "fixed";
+        successMessage.style.bottom = "20px";
+        successMessage.style.right = "20px";
+        successMessage.style.padding = "15px";
+        successMessage.style.backgroundColor = "#4CAF50";
+        successMessage.style.color = "white";
+        successMessage.style.borderRadius = "5px";
+        successMessage.style.zIndex = "1000";
+        document.body.appendChild(successMessage);
+
+        setTimeout(() => {
+          document.body.removeChild(successMessage);
+        }, 3000);
+      } else {
+        // Ошибка отправки
+        const errorMessage = document.createElement("div");
+        errorMessage.textContent =
+          "Ошибка при отправке заявки. Пожалуйста, попробуйте позже.";
+        errorMessage.style.position = "fixed";
+        errorMessage.style.bottom = "20px";
+        errorMessage.style.right = "20px";
+        errorMessage.style.padding = "15px";
+        errorMessage.style.backgroundColor = "#f44336";
+        errorMessage.style.color = "white";
+        errorMessage.style.borderRadius = "5px";
+        errorMessage.style.zIndex = "1000";
+        document.body.appendChild(errorMessage);
+
+        setTimeout(() => {
+          document.body.removeChild(errorMessage);
+        }, 3000);
+      }
     }
   });
 

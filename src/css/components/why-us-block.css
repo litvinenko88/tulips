@@ -135,6 +135,7 @@
 .modal-overlay.active {
   display: flex;
   opacity: 1;
+  padding: 0 20px;
 }
 
 .modal-form {
