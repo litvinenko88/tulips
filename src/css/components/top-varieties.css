@@ -202,6 +202,7 @@
 .modal-overlay.active {
   opacity: 1;
   visibility: visible;
+  padding: 20px;
 }
 
 .modal {
