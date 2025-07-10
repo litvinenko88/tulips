@@ -79,7 +79,7 @@
 .chat-close {
   position: absolute;
   top: 5px;
-  right: 5px;
+  right: 2px;
   width: 16px;
   height: 16px;
   cursor: pointer;
@@ -103,7 +103,7 @@
   position: absolute;
   top: 7px;
   left: 0;
-  width: 16px;
+  width: 12px;
   height: 2px;
   background-color: #333;
 }
