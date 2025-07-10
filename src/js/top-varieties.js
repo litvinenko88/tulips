@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Инициализация слайдера
-  const slider = document.querySelector(".slider");
-  const cards = document.querySelectorAll(".card");
-  const prevArrow = document.querySelector(".prev-arrow");
-  const nextArrow = document.querySelector(".next-arrow");
+  const slider = document.querySelector(".tulip-slider");
+  const cards = document.querySelectorAll(".tulip-card");
+  const prevArrow = document.querySelector(".tulip-prev-arrow");
+  const nextArrow = document.querySelector(".tulip-next-arrow");
 
   // Устанавливаем начальные позиции для карточек
   function initSlider() {
@@ -44,23 +44,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Обработчики для стрелок
   prevArrow.addEventListener("click", function () {
-    const activeCard = document.querySelector('.card[data-pos="0"]');
+    const activeCard = document.querySelector('.tulip-card[data-pos="0"]');
     const prevCard =
       activeCard.previousElementSibling || cards[cards.length - 1];
     updateActiveCard(prevCard);
   });
 
   nextArrow.addEventListener("click", function () {
-    const activeCard = document.querySelector('.card[data-pos="0"]');
+    const activeCard = document.querySelector('.tulip-card[data-pos="0"]');
     const nextCard = activeCard.nextElementSibling || cards[0];
     updateActiveCard(nextCard);
   });
 
   // Инициализация модального окна
-  const orderButtons = document.querySelectorAll(".order-btn");
-  const modalOverlay = document.querySelector(".modal-overlay");
-  const closeModal = document.querySelector(".close-modal");
-  const cardNameInput = document.getElementById("card-name");
+  const orderButtons = document.querySelectorAll(".tulip-order-btn");
+  const modalOverlay = document.querySelector(".tulip-modal-overlay");
+  const closeModal = document.querySelector(".tulip-close-modal");
+  const cardNameInput = document.getElementById("tulip-card-name");
 
   orderButtons.forEach((button) => {
     button.addEventListener("click", function (e) {
@@ -82,11 +82,11 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Валидация формы
-  const orderForm = document.getElementById("order-form");
-  const nameInput = document.getElementById("name");
-  const phoneInput = document.getElementById("phone");
-  const nameError = document.getElementById("name-error");
-  const phoneError = document.getElementById("phone-error");
+  const orderForm = document.getElementById("tulip-order-form");
+  const nameInput = document.getElementById("tulip-name");
+  const phoneInput = document.getElementById("tulip-phone");
+  const nameError = document.getElementById("tulip-name-error");
+  const phoneError = document.getElementById("tulip-phone-error");
 
   orderForm.addEventListener("submit", function (e) {
     e.preventDefault();
