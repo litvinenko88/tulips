@@ -220,6 +220,38 @@
           <button class="advantages-btn pulse-anim">Купить оптом</button>
         </div>
 
+        <!-- Модальное окно формы -->
+        <div class="modal-overlay" id="modalOverlay">
+          <div class="modal-form" id="modalForm">
+            <div class="modal-close" id="modalClose">&times;</div>
+            <h3 class="modal-title">Оставить заявку на опт</h3>
+            <form id="orderForm">
+              <div class="form-group">
+                <label for="modalName">Ваше имя</label>
+                <input type="text" id="modalName" name="name" required />
+              </div>
+              <div class="form-group">
+                <label for="modalPhone">Телефон</label>
+                <input
+                  type="tel"
+                  id="modalPhone"
+                  name="phone"
+                  placeholder="+7 (XXX) XXX-XX-XX"
+                  required />
+                <div class="error-message" id="modalPhoneError">
+                  Введите телефон в формате +7 XXX XXX-XX-XX или 8 XXX XXX-XX-XX
+                </div>
+              </div>
+              <button type="submit" class="submit-btn">Отправить заявку</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Уведомление об успешной отправке -->
+        <div class="success-notification" id="successNotification">
+          <p>Спасибо! Мы получили ваши данные и скоро свяжемся с вами.</p>
+        </div>
+
         <div class="advantages-grid">
           <div class="advantage-card slide-in-left">
             <h3>Поставки луковиц напрямую из питомника Голландии</h3>
@@ -262,5 +294,6 @@
     <script src="src/js/tulip-chat.js"></script>
     <script src="src/js/scripts.js"></script>
     <script src="src/js/floating-tulips.js"></script>
+    <script src="src/js/why-us-block.js"></script>
   </body>
 </html>

@@ -115,7 +115,101 @@
   margin-bottom: 15px;
 }
 
+/* Стили модального окна */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+  display: flex;
+  opacity: 1;
+}
+
+.modal-form {
+  background: var(--color-bg);
+  padding: 30px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 450px;
+  position: relative;
+  transform: translateY(-20px);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-form {
+  transform: translateY(0);
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--color-text);
+  transition: color 0.3s;
+}
+
+.modal-close:hover {
+  color: var(--color-accent);
+}
+
+.modal-title {
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Улучшенные стили для ошибок */
+.error-message {
+  color: var(--color-accent);
+  font-size: 12px;
+  margin-top: 5px;
+  display: none;
+}
+
+input.error {
+  border-color: var(--color-accent) !important;
+}
+
+/* Анимация успешного уведомления */
+.success-notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--color-primary);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: none;
+  z-index: 2100;
+  animation: fadeIn 0.5s;
+}
+
 /* Анимации */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 @keyframes fadeInUp {
   to {
     opacity: 1;
