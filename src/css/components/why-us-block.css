@@ -1,0 +1,260 @@
+/* Основные стили */
+.advantages-section {
+  padding: 60px 20px;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  overflow: hidden;
+}
+
+.advantages-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.advantages-header {
+  text-align: center;
+  margin-bottom: 50px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.advantages-title {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.advantages-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--color-accent);
+}
+
+.advantages-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+.advantages-btn {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border: none;
+  padding: 12px 30px;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.advantages-btn:hover {
+  background-color: var(--color-secondary);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(106, 27, 154, 0.2);
+}
+
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.advantage-card {
+  background: var(--color-bg-light);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+  border-top: 4px solid var(--color-primary);
+  opacity: 0;
+}
+
+.advantage-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.advantage-card h3 {
+  color: var(--color-secondary);
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.advantage-card p {
+  line-height: 1.6;
+}
+
+.advantage-card-wide {
+  grid-column: span 3;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  color: var(--color-text-light);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  opacity: 0;
+}
+
+.advantage-card-wide h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse-anim {
+  animation: pulse 2s infinite;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.8s ease 0.2s forwards;
+}
+
+.slide-in-top {
+  animation: slideInTop 0.8s ease 0.4s forwards;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.8s ease 0.6s forwards;
+}
+
+.scale-up {
+  animation: scaleUp 0.8s ease 0.8s forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Адаптация */
+@media (max-width: 1280px) {
+  .advantages-grid {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .advantages-title {
+    font-size: 2.2rem;
+  }
+
+  .advantage-card {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .advantages-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .advantage-card-wide {
+    grid-column: span 1;
+  }
+
+  .advantages-title {
+    font-size: 2rem;
+  }
+
+  .advantages-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .advantages-section {
+    padding: 40px 15px;
+  }
+
+  .advantages-title {
+    font-size: 1.8rem;
+  }
+
+  .advantage-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .advantages-title {
+    font-size: 1.6rem;
+  }
+
+  .advantages-btn {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+}
