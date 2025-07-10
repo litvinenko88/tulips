@@ -107,87 +107,100 @@
           Остались вопросы? Позвоните нам или напишите 🌷
         </h2>
         <div class="social-links">
-          <a href="#" class="social-item"
-            ><img src="src/icon/wat.png" alt="WhatsApp"
-          /></a>
-          <a href="#" class="social-item"
-            ><img src="src/icon/tel.png" alt="Telegram"
-          /></a>
-          <a href="tel:+79964179001" class="social-item"
-            ><img src="src/icon/iph.png" alt="Позвонить"
-          /></a>
-          <div class="social-item chat-btn">
-            <img src="src/icon/oper.png" alt="Чат онлайн" />
+          <a href="#" class="social-item">
+            <img src="src/icon/wat.png" alt="WhatsApp" />
+          </a>
+          <a href="#" class="social-item">
+            <img src="src/icon/tel.png" alt="Telegram" />
+          </a>
+          <a href="tel:+79964179001" class="social-item">
+            <img src="src/icon/iph.png" alt="Позвонить" />
+          </a>
+          <div class="chat-container">
+            <div class="social-item chat-btn" id="chatButton">
+              <img src="src/icon/oper.png" alt="Чат онлайн" />
+            </div>
+
+            <!-- Уведомление чата -->
+            <div class="notification" id="notification">
+              <div class="notification-close" id="notificationClose"></div>
+              <p>
+                Добрый день! Я Юля из TulipHolland. У нас сейчас действует
+                спецпредложение для опта. Оставьте ваши контакты, и я расскажу
+                подробнее!
+              </p>
+            </div>
+
+            <!-- Форма спецпредложения -->
+            <div class="offer-form" id="offerForm">
+              <div class="form-close" id="formClose"></div>
+              <h2>спецпредложение действует</h2>
+              <div class="timer" id="timer">
+                <span id="days">1</span> дн <span id="hours">18</span> ч
+                <span id="minutes">15</span> мин
+                <span id="seconds">21</span> сек
+              </div>
+              <form id="contactForm">
+                <div class="form-group">
+                  <label for="name">Ваше имя</label>
+                  <input type="text" id="name" name="name" required />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Номер телефона</label>
+                  <input type="tel" id="phone" name="phone" required />
+                  <div class="error-message" id="phoneError">
+                    Пожалуйста, введите корректный номер телефона
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  class="submit-btn"
+                  id="submitBtn"
+                  disabled>
+                  Получить
+                </button>
+              </form>
+            </div>
+
+            <!-- Окно чата -->
+            <div class="chat-window" id="chatWindow">
+              <div class="chat-close" id="chatClose"></div>
+              <div class="chat-message">
+                Добрый день! Я Юля из TulipHolland. У нас сейчас действует
+                спецпредложение для опта. Оставьте ваши контакты, и я расскажу
+                подробнее!
+              </div>
+              <form id="chatForm">
+                <div class="form-group">
+                  <label for="chatName">Ваше имя</label>
+                  <input type="text" id="chatName" name="name" required />
+                </div>
+                <div class="form-group">
+                  <label for="chatPhone">Номер телефона</label>
+                  <input type="tel" id="chatPhone" name="phone" required />
+                  <div class="error-message" id="chatPhoneError">
+                    Пожалуйста, введите корректный номер телефона
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  class="submit-btn"
+                  id="chatSubmitBtn"
+                  disabled>
+                  Отправить
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Уведомление чата -->
-    <div class="notification" id="notification">
-      <div class="notification-close" id="notificationClose"></div>
-      <p>
-        Добрый день! Я Юля из TulipHolland. У нас сейчас действует
-        спецпредложение для опта. Оставьте ваши контакты, и я расскажу
-        подробнее!
-      </p>
-    </div>
-
-    <!-- Форма спецпредложения -->
-    <div class="offer-form" id="offerForm">
-      <div class="form-close" id="formClose"></div>
-      <h2>спецпредложение действует</h2>
-      <div class="timer" id="timer">
-        <span id="days">1</span> дн <span id="hours">18</span> ч
-        <span id="minutes">15</span> мин <span id="seconds">21</span> сек
-      </div>
-      <form id="contactForm">
-        <div class="form-group">
-          <label for="name">Ваше имя</label>
-          <input type="text" id="name" name="name" required />
-        </div>
-        <div class="form-group">
-          <label for="phone">Номер телефона</label>
-          <input type="tel" id="phone" name="phone" required />
-          <div class="error-message" id="phoneError">
-            Пожалуйста, введите корректный номер телефона
-          </div>
-        </div>
-        <button type="submit" class="submit-btn" id="submitBtn" disabled>
-          Получить
-        </button>
-      </form>
-    </div>
-
-    <!-- Окно чата -->
-    <div class="chat-window" id="chatWindow">
-      <div class="chat-close" id="chatClose"></div>
-      <div class="chat-message">
-        Добрый день! Я Юля из TulipHolland. У нас сейчас действует
-        спецпредложение для опта. Оставьте ваши контакты, и я расскажу
-        подробнее!
-      </div>
-      <form id="chatForm">
-        <div class="form-group">
-          <label for="chatName">Ваше имя</label>
-          <input type="text" id="chatName" name="name" required />
-        </div>
-        <div class="form-group">
-          <label for="chatPhone">Номер телефона</label>
-          <input type="tel" id="chatPhone" name="phone" required />
-          <div class="error-message" id="chatPhoneError">
-            Пожалуйста, введите корректный номер телефона
-          </div>
-        </div>
-        <button type="submit" class="submit-btn" id="chatSubmitBtn" disabled>
-          Отправить
-        </button>
-      </form>
-    </div>
     <!-- Уведомление об успешной отправке -->
     <div class="success-notification" id="successNotification">
       <p>Получили ваши контакты, скоро свяжемся с вами</p>
     </div>
+
     <!-- Скрипты -->
     <script src="/src/js/menu.js"></script>
     <script src="/src/js/forms.js"></script>
