@@ -419,7 +419,7 @@
 /* 480px - мобильные устройства */
 @media (max-width: 480px) {
   .tulip-slider-section {
-    padding: 20px 10px;
+    padding: 20px;
   }
 
   /* Центральная карточка */
