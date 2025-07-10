@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const prevArrow = document.querySelector(".tulip-prev-arrow");
   const nextArrow = document.querySelector(".tulip-next-arrow");
 
+  // Таймер для автоматического переключения
+  let autoSlideInterval;
+
   // Устанавливаем начальные позиции для карточек
   function initSlider() {
     cards.forEach((card, index) => {
@@ -15,9 +18,12 @@ document.addEventListener("DOMContentLoaded", function () {
       card.addEventListener("click", function () {
         if (parseInt(this.dataset.pos) !== 0) {
           updateActiveCard(this);
+          resetAutoSlide(); // Сброс таймера при ручном переключении
         }
       });
     });
+
+    startAutoSlide(); // Запускаем автоматическое переключение
   }
 
   // Обновление активной карточки
@@ -42,18 +48,38 @@ document.addEventListener("DOMContentLoaded", function () {
     return diff;
   }
 
+  // Функция для автоматического переключения на следующий слайд
+  function autoSlideNext() {
+    const activeCard = document.querySelector('.tulip-card[data-pos="0"]');
+    const nextCard = activeCard.nextElementSibling || cards[0];
+    updateActiveCard(nextCard);
+  }
+
+  // Запуск автоматического переключения
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(autoSlideNext, 4000); // 4 секунды
+  }
+
+  // Сброс автоматического переключения
+  function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    startAutoSlide();
+  }
+
   // Обработчики для стрелок
   prevArrow.addEventListener("click", function () {
     const activeCard = document.querySelector('.tulip-card[data-pos="0"]');
     const prevCard =
       activeCard.previousElementSibling || cards[cards.length - 1];
     updateActiveCard(prevCard);
+    resetAutoSlide(); // Сброс таймера при ручном переключении
   });
 
   nextArrow.addEventListener("click", function () {
     const activeCard = document.querySelector('.tulip-card[data-pos="0"]');
     const nextCard = activeCard.nextElementSibling || cards[0];
     updateActiveCard(nextCard);
+    resetAutoSlide(); // Сброс таймера при ручном переключении
   });
 
   // Инициализация модального окна
