@@ -7,12 +7,13 @@
 @media (max-width: 1024px) {
   .hero-section .container {
     flex-direction: column;
-    gap: 30px;
+    display: block;
   }
 
   .hero-content {
     max-width: 100%;
     text-align: center;
+    margin-bottom: 50px;
   }
 
   .contact-form {
@@ -31,13 +32,13 @@
 
   .nav-items {
     position: fixed;
-    top: 0;
+    top: 50px;
     right: -100%;
-    width: 80%;
+    width: 70%;
     height: 100vh;
     background: var(--color-bg);
     flex-direction: column;
-    padding: 100px 30px 30px;
+    padding: 50px 30px 30px;
     transition: right 0.4s;
     z-index: 998;
   }
@@ -91,5 +92,19 @@
 
   .scrolling-bar {
     bottom: 47px;
+  }
+}
+
+@media (max-width: 600px) {
+  .slogan {
+    display: none;
+  }
+}
+@media (max-width: 275px) {
+  .top-panel .container {
+    display: block;
+  }
+  .nav-items {
+    top: 71px;
   }
 }
