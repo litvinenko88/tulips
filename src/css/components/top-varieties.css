@@ -306,94 +306,201 @@
   background-color: var(--color-secondary);
 }
 
-/* Адаптация */
-@media (max-width: 1024px) {
-  .tulip-card {
-    width: 280px;
-  }
+/* Основные стили остаются без изменений */
 
+/* 1280px - стандартный размер */
+@media (max-width: 1280px) {
   .tulip-card[data-pos="-1"] {
     transform: translateX(-50%) scale(0.9);
   }
-
   .tulip-card[data-pos="1"] {
     transform: translateX(50%) scale(0.9);
   }
-
   .tulip-card[data-pos="-2"] {
     transform: translateX(-80%) scale(0.8);
   }
-
   .tulip-card[data-pos="2"] {
     transform: translateX(80%) scale(0.8);
   }
 }
 
-@media (max-width: 768px) {
-  .tulip-slider-title {
-    font-size: 2rem;
-  }
-
-  .tulip-card {
-    width: 250px;
-  }
-
+/* 1024px - небольшие ноутбуки */
+@media (max-width: 1024px) {
   .tulip-card[data-pos="-1"] {
-    transform: translateX(-60%) scale(0.9);
+    transform: translateX(-45%) scale(0.85);
   }
-
   .tulip-card[data-pos="1"] {
-    transform: translateX(60%) scale(0.9);
+    transform: translateX(45%) scale(0.85);
   }
-
-  .tulip-card[data-pos="-2"],
+  .tulip-card[data-pos="-2"] {
+    transform: translateX(-75%) scale(0.75);
+  }
   .tulip-card[data-pos="2"] {
-    opacity: 0;
+    transform: translateX(75%) scale(0.75);
   }
 }
 
+/* 900px - переходной размер */
+@media (max-width: 900px) {
+  .tulip-card[data-pos="-1"] {
+    transform: translateX(-40%) scale(0.8);
+  }
+  .tulip-card[data-pos="1"] {
+    transform: translateX(40%) scale(0.8);
+  }
+  .tulip-card[data-pos="-2"] {
+    transform: translateX(-70%) scale(0.7);
+  }
+  .tulip-card[data-pos="2"] {
+    transform: translateX(70%) scale(0.7);
+  }
+}
+
+/* 768px - планшеты */
+@media (max-width: 768px) {
+  .tulip-card[data-pos="0"] {
+    transform: translateX(0) scale(1.1);
+    z-index: 5;
+  }
+  .tulip-card[data-pos="-1"] {
+    transform: translateX(-35%) scale(0.8);
+    opacity: 0.8;
+    z-index: 4;
+  }
+  .tulip-card[data-pos="1"] {
+    transform: translateX(35%) scale(0.8);
+    opacity: 0.8;
+    z-index: 4;
+  }
+  .tulip-card[data-pos="-2"] {
+    transform: translateX(-65%) scale(0.7);
+    opacity: 0.5;
+    z-index: 3;
+  }
+  .tulip-card[data-pos="2"] {
+    transform: translateX(65%) scale(0.7);
+    opacity: 0.5;
+    z-index: 3;
+  }
+}
+
+/* 700px - специальная адаптация */
+@media (max-width: 700px) {
+  .tulip-card[data-pos="-1"] {
+    transform: translateX(-30%) scale(0.75);
+  }
+  .tulip-card[data-pos="1"] {
+    transform: translateX(30%) scale(0.75);
+  }
+  .tulip-card[data-pos="-2"] {
+    transform: translateX(-60%) scale(0.65);
+  }
+  .tulip-card[data-pos="2"] {
+    transform: translateX(60%) scale(0.65);
+  }
+}
+
+/* 600px */
+@media (max-width: 600px) {
+  .tulip-card[data-pos="-1"] {
+    transform: translateX(-25%) scale(0.7);
+    opacity: 0.7;
+  }
+  .tulip-card[data-pos="1"] {
+    transform: translateX(25%) scale(0.7);
+    opacity: 0.7;
+  }
+  .tulip-card[data-pos="-2"],
+  .tulip-card[data-pos="2"] {
+    opacity: 0.3;
+  }
+}
+
+/* 480px - мобильные устройства */
 @media (max-width: 480px) {
   .tulip-slider-section {
-    padding: 30px 10px;
+    padding: 20px 10px;
   }
 
-  .tulip-slider-title {
-    font-size: 1.8rem;
+  /* Центральная карточка */
+  .tulip-card[data-pos="0"] {
+    width: calc(100% - 30px); /* 100% минус отступы по 15px с каждой стороны */
+    margin: 0 20px;
+    transform: translateX(0) scale(1.1);
+    z-index: 5;
   }
 
-  .tulip-card {
-    width: 220px;
-    padding: 15px;
+  /* Боковые карточки - скрыты за центральной */
+  .tulip-card[data-pos="-1"] {
+    transform: translateX(-15%) scale(0.8);
+    opacity: 0.4;
+    z-index: 3;
   }
 
-  .tulip-card-title {
-    font-size: 1.3rem;
+  .tulip-card[data-pos="1"] {
+    transform: translateX(15%) scale(0.8);
+    opacity: 0.4;
+    z-index: 3;
   }
 
-  .tulip-modal {
-    padding: 20px;
+  /* Крайние карточки - полностью скрыты */
+  .tulip-card[data-pos="-2"],
+  .tulip-card[data-pos="2"] {
+    display: none;
   }
 
+  /* Скрываем кнопки навигации */
   .tulip-slider-arrow {
-    width: 30px;
-    height: 30px;
-    font-size: 1rem;
+    display: none;
+  }
+
+  /* Адаптация контента */
+  .tulip-card-img {
+    height: 160px;
+  }
+
+  .tulip-card-content {
+    height: 260px;
+    font-size: 0.9rem;
+  }
+}
+
+/* 400px */
+@media (max-width: 400px) {
+  .tulip-card[data-pos="0"] {
+    transform: translateX(0) scale(1.05);
   }
 
   .tulip-card[data-pos="-1"],
   .tulip-card[data-pos="1"] {
-    opacity: 0.5;
+    opacity: 0.3;
   }
 }
 
+/* 360px - минимальный размер */
 @media (max-width: 360px) {
-  .tulip-slider-title {
-    font-size: 1.5rem;
+  .tulip-slider-section {
+    padding: 15px 5px;
   }
 
-  .tulip-slider-arrow {
-    width: 25px;
-    height: 25px;
-    font-size: 0.9rem;
+  .tulip-card[data-pos="0"] {
+    width: calc(100% - 30px);
+    margin: 0 15px;
+    transform: translateX(0) scale(1);
+  }
+
+  /* Полностью скрываем все карточки кроме центральной */
+  .tulip-card[data-pos="-1"],
+  .tulip-card[data-pos="1"] {
+    display: none;
+  }
+
+  .tulip-card-img {
+    height: 150px;
+  }
+
+  .tulip-card-content {
+    height: 240px;
+    font-size: 0.85rem;
   }
 }
