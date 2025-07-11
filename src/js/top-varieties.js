@@ -32,7 +32,18 @@ document.addEventListener("DOMContentLoaded", function () {
           e.stopPropagation();
           const cardTitle = card.querySelector(".tulip-card-title").textContent;
           cardNameInput.value = cardTitle;
-          document.body.classList.add("tulip-modal-open"); // Добавляем эту строку
+
+          // Сохраняем и фиксируем позицию скролла
+          scrollPosition = window.pageYOffset;
+          document.body.classList.add("tulip-modal-open");
+          document.body.style.setProperty(
+            "--scroll-top",
+            `-${scrollPosition}px`
+          );
+          document.body.style.top = `-${scrollPosition}px`;
+          document.body.style.position = "fixed";
+          document.body.style.width = "100%";
+
           modalOverlay.style.display = "flex";
           setTimeout(() => {
             modalOverlay.classList.add("active");
@@ -225,12 +236,19 @@ document.addEventListener("DOMContentLoaded", function () {
   function closeModal() {
     modalOverlay.classList.remove("active");
     setTimeout(() => {
+      // Восстанавливаем скролл
+      const scrollY = document.body.style.top;
       modalOverlay.style.display = "none";
-      document.body.classList.remove("tulip-modal-open"); // Добавляем эту строку
+      document.body.classList.remove("tulip-modal-open");
+      document.body.style.removeProperty("position");
+      document.body.style.removeProperty("top");
+      document.body.style.removeProperty("width");
+      window.scrollTo(0, parseInt(scrollY || "0") * -1);
+
+      orderForm.reset();
+      document.getElementById("tulip-name-error").textContent = "";
+      document.getElementById("tulip-phone-error").textContent = "";
     }, 300);
-    orderForm.reset();
-    document.getElementById("tulip-name-error").textContent = "";
-    document.getElementById("tulip-phone-error").textContent = "";
   }
 
   // Форматирование номера телефона
