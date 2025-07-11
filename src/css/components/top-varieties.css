@@ -30,7 +30,6 @@
   position: relative;
   justify-content: center;
   align-items: center;
-  margin-bottom: 40px;
 }
 
 .tulip-card {
@@ -162,6 +161,7 @@
   cursor: pointer;
   font-size: 1rem;
   transition: all 0.3s;
+  margin-top: 20px;
   display: inline-block;
 }
 
@@ -359,6 +359,15 @@
 
 /* 768px - планшеты */
 @media (max-width: 768px) {
+  .tulip-slider {
+    margin-bottom: 60px; /* Увеличиваем отступ под слайдером */
+  }
+
+  .tulip-catalog-btn {
+    margin-top: 20px; /* Добавляем отступ сверху для кнопки */
+    position: relative; /* Убеждаемся, что кнопка не позиционируется абсолютно */
+    z-index: 1; /* Поднимаем кнопку над другими элементами */
+  }
   .tulip-card[data-pos="0"] {
     transform: translateX(0) scale(1.1);
     z-index: 5;
@@ -430,7 +439,14 @@
     transform: translateX(0) scale(1.1);
     z-index: 5;
   }
+  .tulip-slider {
+    margin-bottom: 60px;
+  }
 
+  .tulip-catalog-btn {
+    margin-top: 30px;
+    padding: 10px 20px; /* Немного уменьшаем padding для мобильных */
+  }
   /* Боковые карточки - скрыты за центральной */
   .tulip-card[data-pos="-1"] {
     transform: translateX(-15%) scale(0.8);
