@@ -7,6 +7,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Таймер для автоматического переключения
   let autoSlideInterval;
+  let isUserInteracting = false;
+  let interactionTimeout;
+  let touchStartX = 0;
+  let touchEndX = 0;
 
   // Устанавливаем начальные позиции для карточек
   function initSlider() {
@@ -21,9 +25,86 @@ document.addEventListener("DOMContentLoaded", function () {
           resetAutoSlide(); // Сброс таймера при ручном переключении
         }
       });
+
+      // Добавляем обработчики для touch событий
+      card.addEventListener("touchstart", handleTouchStart, { passive: true });
+      card.addEventListener("touchend", handleTouchEnd, { passive: true });
+      card.addEventListener("mousedown", handleMouseDown);
     });
 
+    // Обработчики для всего слайдера
+    slider.addEventListener("touchstart", handleTouchStart, { passive: true });
+    slider.addEventListener("touchend", handleTouchEnd, { passive: true });
+    slider.addEventListener("mousedown", handleMouseDown);
+
     startAutoSlide(); // Запускаем автоматическое переключение
+  }
+
+  // Обработчик начала касания
+  function handleTouchStart(e) {
+    touchStartX = e.changedTouches[0].screenX;
+    setUserInteracting(true);
+  }
+
+  // Обработчик окончания касания
+  function handleTouchEnd(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+    setUserInteracting(false);
+  }
+
+  // Обработчик нажатия кнопки мыши
+  function handleMouseDown() {
+    setUserInteracting(true);
+    document.addEventListener("mouseup", handleMouseUp);
+  }
+
+  // Обработчик отпускания кнопки мыши
+  function handleMouseUp() {
+    setUserInteracting(false);
+    document.removeEventListener("mouseup", handleMouseUp);
+  }
+
+  // Обработка свайпа
+  function handleSwipe() {
+    const threshold = 50; // Минимальное расстояние для срабатывания свайпа
+    const diff = touchStartX - touchEndX;
+
+    if (Math.abs(diff) > threshold) {
+      if (diff > 0) {
+        // Свайп влево - следующий слайд
+        const activeCard = document.querySelector('.tulip-card[data-pos="0"]');
+        const nextCard = activeCard.nextElementSibling || cards[0];
+        updateActiveCard(nextCard);
+      } else {
+        // Свайп вправо - предыдущий слайд
+        const activeCard = document.querySelector('.tulip-card[data-pos="0"]');
+        const prevCard =
+          activeCard.previousElementSibling || cards[cards.length - 1];
+        updateActiveCard(prevCard);
+      }
+    }
+    resetAutoSlide();
+  }
+
+  // Установка состояния взаимодействия пользователя
+  function setUserInteracting(interacting) {
+    isUserInteracting = interacting;
+
+    // Очищаем предыдущий таймаут
+    if (interactionTimeout) {
+      clearTimeout(interactionTimeout);
+    }
+
+    // Если пользователь закончил взаимодействие, ждем 2 секунды перед возобновлением автопереключения
+    if (!interacting) {
+      interactionTimeout = setTimeout(() => {
+        resetAutoSlide();
+      }, 2000);
+    } else {
+      // Если пользователь начал взаимодействие, останавливаем автопереключение
+      clearInterval(autoSlideInterval);
+    }
   }
 
   // Обновление активной карточки
@@ -50,14 +131,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Функция для автоматического переключения на следующий слайд
   function autoSlideNext() {
-    const activeCard = document.querySelector('.tulip-card[data-pos="0"]');
-    const nextCard = activeCard.nextElementSibling || cards[0];
-    updateActiveCard(nextCard);
+    if (!isUserInteracting) {
+      const activeCard = document.querySelector('.tulip-card[data-pos="0"]');
+      const nextCard = activeCard.nextElementSibling || cards[0];
+      updateActiveCard(nextCard);
+    }
   }
 
   // Запуск автоматического переключения
   function startAutoSlide() {
-    autoSlideInterval = setInterval(autoSlideNext, 4000); // 4 секунды
+    if (!isUserInteracting) {
+      autoSlideInterval = setInterval(autoSlideNext, 4000); // 4 секунды
+    }
   }
 
   // Сброс автоматического переключения
@@ -94,16 +179,19 @@ document.addEventListener("DOMContentLoaded", function () {
       const cardName = this.getAttribute("data-card");
       cardNameInput.value = cardName;
       modalOverlay.classList.add("active");
+      setUserInteracting(true); // Останавливаем автопереключение при открытии модального окна
     });
   });
 
   closeModal.addEventListener("click", function () {
     modalOverlay.classList.remove("active");
+    setUserInteracting(false); // Возобновляем автопереключение при закрытии модального окна
   });
 
   modalOverlay.addEventListener("click", function (e) {
     if (e.target === modalOverlay) {
       modalOverlay.classList.remove("active");
+      setUserInteracting(false); // Возобновляем автопереключение при закрытии модального окна
     }
   });
 
