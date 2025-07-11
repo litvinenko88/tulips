@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
           e.stopPropagation();
           const cardTitle = card.querySelector(".tulip-card-title").textContent;
           cardNameInput.value = cardTitle;
+          document.body.classList.add("tulip-modal-open"); // Добавляем эту строку
           modalOverlay.style.display = "flex";
           setTimeout(() => {
             modalOverlay.classList.add("active");
@@ -225,6 +226,7 @@ document.addEventListener("DOMContentLoaded", function () {
     modalOverlay.classList.remove("active");
     setTimeout(() => {
       modalOverlay.style.display = "none";
+      document.body.classList.remove("tulip-modal-open"); // Добавляем эту строку
     }, 300);
     orderForm.reset();
     document.getElementById("tulip-name-error").textContent = "";
