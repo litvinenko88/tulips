@@ -9,7 +9,7 @@
 
 .tulip-slider-title {
   font-size: 2.5rem;
-  margin-bottom: 40px;
+  margin-bottom: 150px;
   color: var(--color-primary);
 }
 
@@ -161,7 +161,7 @@
   cursor: pointer;
   font-size: 1rem;
   transition: all 0.3s;
-  margin-top: 20px;
+  margin-top: 100px;
   display: inline-block;
   clear: both;
 }
@@ -413,9 +413,11 @@
   .tulip-slider {
     margin-bottom: 60px; /* Увеличиваем отступ под слайдером */
   }
-
+  .tulip-slider-title {
+    margin-bottom: 170px;
+  }
   .tulip-catalog-btn {
-    margin-top: 20px; /* Добавляем отступ сверху для кнопки */
+    margin-top: 80px; /* Добавляем отступ сверху для кнопки */
     position: relative; /* Убеждаемся, что кнопка не позиционируется абсолютно */
     z-index: 1; /* Поднимаем кнопку над другими элементами */
   }
@@ -478,7 +480,7 @@
 }
 
 /* 480px - мобильные устройства */
-@media (max-width: 480px) {
+@media (max-width: 560px) {
   .tulip-slider-section {
     padding: 20px;
   }
@@ -531,6 +533,9 @@
     height: 260px;
     font-size: 0.9rem;
   }
+  .tulip-slider-title {
+    margin-bottom: 130px;
+  }
 }
 
 /* 400px */
@@ -570,5 +575,9 @@
   .tulip-card-content {
     height: 240px;
     font-size: 0.85rem;
+  }
+  .tulip-slider-title {
+    font-size: 1.6em;
+    margin-bottom: 90px;
   }
 }
