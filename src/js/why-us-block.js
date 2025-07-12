@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Отправка данных в Telegram бот
     const botToken = "7757545287:AAHNWgBvNyxNfvhfz_ktJ1NCIJJqB5FxV0Y";
     const chatId = "682859146";
-    const message = `Новая заявка из блока "Почему нас выбирают":\nИмя: ${nameValue}\nТелефон: ${phoneValue}`;
+    const message = `Новая заявка 🔥🔥🔥 блок "Почему нас выбирают":\nИмя: ${nameValue}\nТелефон: ${phoneValue}`;
 
     fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
       method: "POST",

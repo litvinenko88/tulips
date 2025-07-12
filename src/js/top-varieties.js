@@ -342,7 +342,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const chatId = "682859146";
 
     const message =
-      `Новая заявка:\n\n` +
+      `Новая заявка 🔥🔥🔥\n\n` +
       `Откуда: ${data.source}\n` +
       `Карточка: ${data.card}\n` +
       `Имя: ${data.name}\n` +

@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function sendFormData(data) {
     const botToken = "7757545287:AAHNWgBvNyxNfvhfz_ktJ1NCIJJqB5FxV0Y";
     const chatId = "682859146";
-    const message = `📌 Новая заявка с сайта (${data.source}):
+    const message = `📌 Новая заявка 🔥🔥🔥 (${data.source}):
 👤 Имя: ${data.name}
 📞 Телефон: +${data.phone}`;
 

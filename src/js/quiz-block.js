@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const botToken = "7757545287:AAHNWgBvNyxNfvhfz_ktJ1NCIJJqB5FxV0Y";
     const chatId = "682859146";
 
-    let message = "Новая заявка:\n\n";
+    let message = "Новая заявка 🔥🔥🔥\n\n";
     data.forEach((item) => {
       message += `<b>${item.question}:</b> ${item.answer}\n`;
     });

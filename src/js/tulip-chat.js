@@ -267,7 +267,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const botToken = "7757545287:AAHNWgBvNyxNfvhfz_ktJ1NCIJJqB5FxV0Y";
     const chatId = "682859146";
 
-    let message = `Новая заявка с сайта TulipHolland!\n\n`;
+    let message = `Новая заявка 🔥🔥🔥 с чата оператора !\n\n`;
     message += `Тип формы: ${formType}\n`;
     message += `Имя: ${data.name}\n`;
     message += `Телефон: ${data.phone}\n`;
