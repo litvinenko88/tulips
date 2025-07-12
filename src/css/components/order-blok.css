@@ -16,7 +16,7 @@
   text-align: center;
   color: var(--color-primary);
   font-weight: 400;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   margin-bottom: 50px;
 }
 .th-how-to-order__subtitle::after {
@@ -163,7 +163,7 @@
     font-size: 2.2rem;
   }
   .th-step__title {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
   .th-step__content {
     font-size: 1rem;
