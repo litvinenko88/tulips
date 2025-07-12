@@ -509,7 +509,7 @@ body.tulip-modal-open {
 /* 480px - мобильные устройства */
 @media (max-width: 560px) {
   .tulip-slider-section {
-    padding: 20px;
+    padding: 20px 15px;
   }
 
   /* Центральная карточка */
