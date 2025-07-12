@@ -27,6 +27,7 @@
 .th-main-nav {
   padding: 15px 0;
   border-bottom: 1px solid #eee;
+  position: relative;
 }
 
 .th-main-nav .th-container {
@@ -76,29 +77,107 @@
   border-radius: 3px;
   opacity: 1;
   left: 0;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .th-line-1 {
   top: 0;
 }
+
 .th-line-2 {
   top: 50%;
   transform: translateY(-50%);
 }
+
 .th-line-3 {
   bottom: 0;
 }
 
-.th-mobile-menu.open .th-line-1 {
+/* Состояние открытого меню */
+.th-mobile-menu.th-open .th-line-1 {
   transform: translateY(10px) rotate(45deg);
 }
 
-.th-mobile-menu.open .th-line-2 {
+.th-mobile-menu.th-open .th-line-2 {
   opacity: 0;
   transform: scaleX(0);
 }
 
-.th-mobile-menu.open .th-line-3 {
+.th-mobile-menu.th-open .th-line-3 {
   transform: translateY(-10px) rotate(-45deg);
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+  .th-mobile-menu {
+    display: block;
+    order: 1;
+  }
+
+  .th-nav-items {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Начинаем за пределами экрана справа */
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background: var(--color-bg);
+    flex-direction: column;
+    align-items: flex-start; /* Выравнивание по левому краю */
+    justify-content: flex-start;
+    padding: 80px 30px 30px;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .th-nav-items.th-active {
+    transform: translateX(-100%); /* Сдвигаем влево на 100% ширины */
+    right: -320px;
+  }
+
+  .th-nav-items li {
+    margin: 0 0 20px 0;
+    width: 100%;
+    text-align: left;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.3s ease;
+    transition-delay: calc(0.1s * var(--i));
+  }
+
+  .th-nav-items.th-active li {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .th-nav-items a {
+    display: block;
+    padding: 10px 0;
+    font-size: 18px;
+    width: 100%;
+  }
+
+  .th-btn-price {
+    display: none;
+  }
+
+  /* Оверлей */
+  .th-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+  }
+}
+@media (max-width: 380px) {
+  .th-nav-items {
+    width: 80%;
+  }
 }

@@ -9,7 +9,11 @@
 
 .quiz-container {
   position: relative;
-  background: var(--color-bg);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -31,12 +35,16 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--color-bg);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
   z-index: 10;
 }
 
 .quiz-splash h2 {
-  color: var(--color-primary);
+  color: var(--color-text-light);
   margin-bottom: 1rem;
   font-size: 1.8rem;
 }
@@ -44,6 +52,7 @@
 .quiz-splash p {
   margin-bottom: 2rem;
   font-size: 1.1rem;
+  color: var(--color-text-light);
 }
 
 .quiz-splash.active {
@@ -117,7 +126,7 @@
 }
 
 .quiz-question h3 {
-  color: var(--color-primary);
+  color: var(--color-text-light);
   margin-bottom: 1.5rem;
   font-size: 1.4rem;
 }
@@ -188,7 +197,11 @@
   opacity: 0;
   visibility: hidden;
   transition: all 0.5s ease;
-  background: var(--color-bg);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
 }
 
 .quiz-thankyou.active {
@@ -197,12 +210,13 @@
 }
 
 .quiz-thankyou h3 {
-  color: var(--color-primary);
+  color: var(--color-text-light);
   margin-bottom: 1rem;
   font-size: 1.8rem;
 }
 
 .quiz-thankyou p {
+  color: var(--color-text-light);
   margin-bottom: 2rem;
   font-size: 1.1rem;
 }
