@@ -401,6 +401,9 @@ body.tulip-modal-open {
   .tulip-card[data-pos="2"] {
     transform: translateX(80%) scale(0.8);
   }
+  .tulip-slider-section {
+    padding: 0 60px;
+  }
 }
 
 /* 1024px - небольшие ноутбуки */
@@ -439,6 +442,9 @@ body.tulip-modal-open {
 @media (max-width: 768px) {
   .tulip-slider {
     margin-bottom: 60px; /* Увеличиваем отступ под слайдером */
+  }
+  .tulip-slider-section {
+    padding: 0 30px;
   }
   .tulip-slider-title {
     margin-bottom: 170px;
@@ -509,7 +515,7 @@ body.tulip-modal-open {
 /* 480px - мобильные устройства */
 @media (max-width: 560px) {
   .tulip-slider-section {
-    padding: 20px 15px;
+    padding: 20px 30px;
   }
 
   /* Центральная карточка */
@@ -564,7 +570,11 @@ body.tulip-modal-open {
     margin-bottom: 130px;
   }
 }
-
+@media (max-width: 560px) {
+  .tulip-slider-section {
+    padding: 20px;
+  }
+}
 /* 400px */
 @media (max-width: 400px) {
   .tulip-card[data-pos="0"] {
@@ -579,6 +589,9 @@ body.tulip-modal-open {
 
 /* 360px - минимальный размер */
 @media (max-width: 360px) {
+  .hero-section {
+    padding: 40px 20px;
+  }
   .tulip-slider-section {
     padding: 15px 5px;
   }
@@ -588,7 +601,9 @@ body.tulip-modal-open {
     margin: 0 15px;
     transform: translateX(0) scale(1);
   }
-
+  .tulip-card {
+    padding: 10px;
+  }
   /* Полностью скрываем все карточки кроме центральной */
   .tulip-card[data-pos="-1"],
   .tulip-card[data-pos="1"] {

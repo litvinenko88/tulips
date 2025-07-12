@@ -1,6 +1,6 @@
 /* Основные стили */
 .advantages-section {
-  padding: 60px 20px;
+  padding: 60px 0px;
   background-color: var(--color-bg);
   color: var(--color-text);
   overflow: hidden;
@@ -300,6 +300,9 @@ input.error {
   .advantages-grid {
     gap: 20px;
   }
+  .advantages-container {
+    padding: 0 60px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -328,13 +331,15 @@ input.error {
   .advantages-description {
     font-size: 1rem;
   }
+  .advantages-container {
+    padding: 0 30px;
+  }
 }
 
 @media (max-width: 480px) {
-  .advantages-section {
-    padding: 40px 15px;
+  .advantages-container {
+    padding: 0 20px;
   }
-
   .advantages-title {
     font-size: 1.8rem;
   }

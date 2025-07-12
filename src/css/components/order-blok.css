@@ -2,24 +2,30 @@
 .how-to-order {
   max-width: 1600px;
   margin: 0 auto;
-  padding: 60px 20px;
+  padding: 60px 0px;
 }
 
 .how-to-order__title {
   text-align: center;
   color: var(--color-primary);
   font-size: 2.5rem;
-  margin-bottom: 50px;
   position: relative;
+  margin-bottom: 5px;
 }
-
-.how-to-order__title::after {
+.how-to-order__subtitle {
+  text-align: center;
+  color: var(--color-primary);
+  font-weight: 400;
+  font-size: 1.4rem;
+  margin-bottom: 50px;
+}
+.how-to-order__subtitle::after {
   content: "";
   display: block;
   width: 100px;
   height: 4px;
   background: var(--color-secondary);
-  margin: 15px auto 0;
+  margin: 5px auto 5px;
 }
 
 .steps-container {
@@ -146,9 +152,6 @@
 
 /* Адаптация для 1280px */
 @media (max-width: 1280px) {
-  .how-to-order {
-    padding: 50px 20px;
-  }
   .step {
     padding: 25px;
   }
@@ -178,14 +181,14 @@
   }
   .how-to-order__title {
     font-size: 2rem;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
   }
 }
 
 /* Адаптация для 480px */
 @media (max-width: 480px) {
   .how-to-order {
-    padding: 40px 15px;
+    padding: 40px 20px;
   }
   .how-to-order__title {
     font-size: 1.8rem;
@@ -208,5 +211,10 @@
   }
   .step__content {
     font-size: 0.9rem;
+  }
+}
+@media (max-width: 380px) {
+  .container {
+    padding: 0px;
   }
 }
