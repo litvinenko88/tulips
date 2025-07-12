@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const steps = document.querySelectorAll(".step");
+  const steps = document.querySelectorAll(".th-step");
 
   steps.forEach((step) => {
     step.addEventListener("click", function () {
       // Добавляем/убираем класс активного состояния
-      this.classList.toggle("active");
+      this.classList.toggle("th-active");
 
       // Плавная прокрутка к секции при клике (для мобильных)
       if (window.innerWidth < 768) {

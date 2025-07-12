@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const modalOverlay = document.getElementById("modalOverlay");
-  const modalForm = document.getElementById("modalForm");
-  const orderForm = document.getElementById("orderForm");
-  const successNotification = document.getElementById("successNotification");
+  const modalOverlay = document.getElementById("thModalOverlay");
+  const modalForm = document.getElementById("thModalForm");
+  const orderForm = document.getElementById("thOrderForm");
+  const successNotification = document.getElementById("thSuccessNotification");
 
   // Открытие модального окна
   document
-    .querySelector(".advantages-btn")
+    .querySelector(".th-advantages-btn")
     .addEventListener("click", function (e) {
       e.preventDefault();
       document.body.style.overflow = "hidden";
@@ -20,15 +20,15 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   modalOverlay.addEventListener("click", function (e) {
-    if (e.target === modalOverlay || e.target.closest(".modal-close")) {
+    if (e.target === modalOverlay || e.target.closest(".th-modal-close")) {
       closeModal();
     }
   });
 
   // Валидация телефона
-  const phoneInput = document.getElementById("modalPhone");
-  const phoneError = document.getElementById("modalPhoneError");
-  const nameInput = document.getElementById("modalName"); // Добавлено поле имени
+  const phoneInput = document.getElementById("th-modalPhone");
+  const phoneError = document.getElementById("thModalPhoneError");
+  const nameInput = document.getElementById("th-modalName");
 
   phoneInput.addEventListener("input", function () {
     const phoneValue = this.value.trim();
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Проверка валидации
     const phoneValue = phoneInput.value.trim();
-    const nameValue = nameInput.value.trim(); // Получаем значение имени
+    const nameValue = nameInput.value.trim();
     const isValidPhone =
       /^(\+7|8)[\s(]?\d{3}[)\s]?\d{3}[\s-]?\d{2}[\s-]?\d{2}$/.test(phoneValue);
 

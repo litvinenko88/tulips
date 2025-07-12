@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Дополнительная анимация для тюльпанов
-  const tulips = document.querySelectorAll(".tulip");
+  const tulips = document.querySelectorAll(".th-tulip");
 
   // Функция для случайного перемещения тюльпанов
   function randomizeTulips() {
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Плавное появление тюльпанов после загрузки страницы
   setTimeout(() => {
-    document.querySelectorAll(".tulip").forEach((tulip) => {
+    document.querySelectorAll(".th-tulip").forEach((tulip) => {
       tulip.style.transition = "opacity 1.5s ease";
       tulip.style.opacity = "0.7";
     });

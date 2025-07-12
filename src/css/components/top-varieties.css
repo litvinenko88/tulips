@@ -1,4 +1,4 @@
-.tulip-slider-section {
+.th-tulip-slider-section {
   padding: 50px 20px;
   max-width: 1600px;
   padding: 0 100px;
@@ -7,13 +7,13 @@
   position: relative;
 }
 
-.tulip-slider-title {
+.th-tulip-slider-title {
   font-size: 2.5rem;
   margin-bottom: 150px;
   color: var(--color-primary);
 }
 
-.tulip-slider-container {
+.th-tulip-slider-container {
   position: relative;
   display: flex;
   align-items: center;
@@ -23,7 +23,7 @@
   perspective: 1000px;
 }
 
-.tulip-slider {
+.th-tulip-slider {
   display: flex;
   width: 100%;
   height: 500px;
@@ -32,7 +32,7 @@
   align-items: center;
 }
 
-.tulip-card {
+.th-tulip-card {
   position: absolute;
   background: var(--color-bg-light);
   border-radius: 15px;
@@ -44,7 +44,7 @@
   transform-origin: center center;
 }
 
-.tulip-card-img {
+.th-tulip-card-img {
   width: 100%;
   border-radius: 10px;
   margin-bottom: 15px;
@@ -52,20 +52,20 @@
   object-fit: cover;
 }
 
-.tulip-card-title {
+.th-tulip-card-title {
   font-size: 1.5rem;
   color: var(--color-secondary);
   margin-bottom: 5px;
 }
 
-.tulip-card-subtitle {
+.th-tulip-card-subtitle {
   font-size: 1.1rem;
   color: var(--color-primary);
   margin-bottom: 15px;
   font-weight: normal;
 }
 
-.tulip-card-content {
+.th-tulip-card-content {
   text-align: left;
   margin-bottom: 20px;
   height: 300px;
@@ -73,37 +73,37 @@
   padding-right: 5px;
 }
 
-.tulip-card-content::-webkit-scrollbar {
+.th-tulip-card-content::-webkit-scrollbar {
   width: 5px;
 }
 
-.tulip-card-content::-webkit-scrollbar-thumb {
+.th-tulip-card-content::-webkit-scrollbar-thumb {
   background-color: var(--color-primary);
   border-radius: 5px;
 }
 
-.tulip-content-title,
-.tulip-content-subtitle {
+.th-tulip-content-title,
+.th-tulip-content-subtitle {
   margin: 10px 0 5px;
   color: var(--color-text);
 }
 
-.tulip-content-title {
+.th-tulip-content-title {
   font-size: 1.1rem;
 }
 
-.tulip-content-subtitle {
+.th-tulip-content-subtitle {
   font-size: 1rem;
   color: var(--color-primary);
 }
 
-.tulip-content-text {
+.th-tulip-content-text {
   font-size: 0.9rem;
   line-height: 1.5;
   color: var(--color-text);
 }
 
-.tulip-order-btn {
+.th-tulip-order-btn {
   background-color: var(--color-primary);
   color: var(--color-text-light);
   border: none;
@@ -116,11 +116,11 @@
   width: 100%;
 }
 
-.tulip-order-btn:hover {
+.th-tulip-order-btn:hover {
   background-color: var(--color-secondary);
 }
 
-.tulip-slider-arrow {
+.th-tulip-slider-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -139,20 +139,20 @@
   z-index: 10;
 }
 
-.tulip-prev-arrow {
+.th-tulip-prev-arrow {
   left: 10px;
 }
 
-.tulip-next-arrow {
+.th-tulip-next-arrow {
   right: 10px;
 }
 
-.tulip-slider-arrow:hover {
+.th-tulip-slider-arrow:hover {
   background-color: var(--color-secondary);
   transform: translateY(-50%) scale(1.1);
 }
 
-.tulip-catalog-btn {
+.th-tulip-catalog-btn {
   background-color: var(--color-secondary);
   color: var(--color-text-light);
   border: none;
@@ -166,59 +166,59 @@
   clear: both;
 }
 
-.tulip-catalog-btn:hover {
+.th-tulip-catalog-btn:hover {
   background-color: var(--color-primary);
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Позиции карточек */
-.tulip-card[data-pos="0"] {
+.th-tulip-card[data-pos="0"] {
   transform: translateX(0) scale(1);
   opacity: 1;
   z-index: 5;
 }
 
-.tulip-card[data-pos="-1"],
-.tulip-card[data-pos="1"] {
+.th-tulip-card[data-pos="-1"],
+.th-tulip-card[data-pos="1"] {
   opacity: 0.7;
   filter: blur(1px);
 }
 
-.tulip-card[data-pos="-1"] {
+.th-tulip-card[data-pos="-1"] {
   transform: translateX(-40%) scale(0.9);
   z-index: 4;
 }
 
-.tulip-card[data-pos="1"] {
+.th-tulip-card[data-pos="1"] {
   transform: translateX(40%) scale(0.9);
   z-index: 4;
 }
 
-.tulip-card[data-pos="-2"],
-.tulip-card[data-pos="2"] {
+.th-tulip-card[data-pos="-2"],
+.th-tulip-card[data-pos="2"] {
   opacity: 0.4;
   filter: blur(2px);
 }
 
-.tulip-card[data-pos="-2"] {
+.th-tulip-card[data-pos="-2"] {
   transform: translateX(-70%) scale(0.8);
   z-index: 3;
 }
 
-.tulip-card[data-pos="2"] {
+.th-tulip-card[data-pos="2"] {
   transform: translateX(70%) scale(0.8);
   z-index: 3;
 }
 
-.tulip-card[data-pos="-3"],
-.tulip-card[data-pos="3"] {
+.th-tulip-card[data-pos="-3"],
+.th-tulip-card[data-pos="3"] {
   opacity: 0;
   pointer-events: none;
 }
 
 /* Стили для уведомлений */
-.tulip-notification {
+.th-tulip-notification {
   position: fixed;
   top: 20px;
   right: 20px;
@@ -228,23 +228,23 @@
   font-family: Arial, sans-serif;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 2000;
-  animation: tulipNotificationSlideIn 0.5s forwards;
+  animation: th-tulipNotificationSlideIn 0.5s forwards;
   max-width: 300px;
 }
 
-.tulip-notification-success {
+.th-tulip-notification-success {
   background-color: #4caf50;
 }
 
-.tulip-notification-error {
+.th-tulip-notification-error {
   background-color: #f44336;
 }
 
-.tulip-notification-hide {
-  animation: tulipNotificationSlideOut 0.3s forwards;
+.th-tulip-notification-hide {
+  animation: th-tulipNotificationSlideOut 0.3s forwards;
 }
 
-@keyframes tulipNotificationSlideIn {
+@keyframes th-tulipNotificationSlideIn {
   from {
     transform: translateX(100%);
     opacity: 0;
@@ -255,7 +255,7 @@
   }
 }
 
-@keyframes tulipNotificationSlideOut {
+@keyframes th-tulipNotificationSlideOut {
   from {
     transform: translateX(0);
     opacity: 1;
@@ -267,7 +267,7 @@
 }
 
 /* Модальное окно */
-.tulip-modal-overlay {
+.th-tulip-modal-overlay {
   display: none;
   position: fixed;
   top: 0;
@@ -283,13 +283,13 @@
   transition: all 0.3s;
 }
 
-.tulip-modal-overlay.active {
+.th-tulip-modal-overlay.active {
   display: flex;
   opacity: 1;
   visibility: visible;
 }
 
-.tulip-modal {
+.th-tulip-modal {
   background-color: var(--color-bg);
   padding: 30px;
   border-radius: 10px;
@@ -299,7 +299,7 @@
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 
-.tulip-close-modal {
+.th-tulip-close-modal {
   position: absolute;
   top: 15px;
   right: 15px;
@@ -310,23 +310,23 @@
   color: var(--color-text);
 }
 
-.tulip-modal-title {
+.th-tulip-modal-title {
   margin-bottom: 20px;
   color: var(--color-primary);
   text-align: center;
 }
 
-.tulip-form-group {
+.th-tulip-form-group {
   margin-bottom: 20px;
 }
 
-.tulip-form-label {
+.th-tulip-form-label {
   display: block;
   margin-bottom: 5px;
   color: var(--color-text);
 }
 
-.tulip-form-input {
+.th-tulip-form-input {
   width: 100%;
   padding: 10px;
   border: 1px solid #ddd;
@@ -334,14 +334,14 @@
   font-size: 1rem;
 }
 
-.tulip-error-message {
+.th-tulip-error-message {
   color: var(--color-accent);
   font-size: 0.8rem;
   margin-top: 5px;
   display: block;
 }
 
-.tulip-submit-btn {
+.th-tulip-submit-btn {
   background-color: #d63384;
   color: var(--color-text-light);
   border: none;
@@ -353,18 +353,18 @@
   transition: background-color 0.3s;
 }
 
-.tulip-submit-btn:hover {
+.th-tulip-submit-btn:hover {
   background-color: var(--color-secondary);
 }
 
 /* Новый вариант блокировки скролла */
-body.tulip-modal-open {
+body.th-tulip-modal-open {
   overflow: hidden;
   position: relative;
   width: 100%;
   height: 100%;
 }
-.tulip-modal-overlay {
+.th-tulip-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -379,7 +379,7 @@ body.tulip-modal-open {
   opacity: 0;
   transition: opacity 0.3s ease;
 }
-.tulip-modal-scroll-helper {
+.th-tulip-modal-scroll-helper {
   position: fixed;
   width: 100%;
   top: var(--scroll-top);
@@ -389,91 +389,91 @@ body.tulip-modal-open {
 
 /* 1280px - стандартный размер */
 @media (max-width: 1280px) {
-  .tulip-card[data-pos="-1"] {
+  .th-tulip-card[data-pos="-1"] {
     transform: translateX(-50%) scale(0.9);
   }
-  .tulip-card[data-pos="1"] {
+  .th-tulip-card[data-pos="1"] {
     transform: translateX(50%) scale(0.9);
   }
-  .tulip-card[data-pos="-2"] {
+  .th-tulip-card[data-pos="-2"] {
     transform: translateX(-80%) scale(0.8);
   }
-  .tulip-card[data-pos="2"] {
+  .th-tulip-card[data-pos="2"] {
     transform: translateX(80%) scale(0.8);
   }
-  .tulip-slider-section {
+  .th-tulip-slider-section {
     padding: 0 60px;
   }
 }
 
 /* 1024px - небольшие ноутбуки */
 @media (max-width: 1024px) {
-  .tulip-card[data-pos="-1"] {
+  .th-tulip-card[data-pos="-1"] {
     transform: translateX(-45%) scale(0.85);
   }
-  .tulip-card[data-pos="1"] {
+  .th-tulip-card[data-pos="1"] {
     transform: translateX(45%) scale(0.85);
   }
-  .tulip-card[data-pos="-2"] {
+  .th-tulip-card[data-pos="-2"] {
     transform: translateX(-75%) scale(0.75);
   }
-  .tulip-card[data-pos="2"] {
+  .th-tulip-card[data-pos="2"] {
     transform: translateX(75%) scale(0.75);
   }
 }
 
 /* 900px - переходной размер */
 @media (max-width: 900px) {
-  .tulip-card[data-pos="-1"] {
+  .th-tulip-card[data-pos="-1"] {
     transform: translateX(-40%) scale(0.8);
   }
-  .tulip-card[data-pos="1"] {
+  .th-tulip-card[data-pos="1"] {
     transform: translateX(40%) scale(0.8);
   }
-  .tulip-card[data-pos="-2"] {
+  .th-tulip-card[data-pos="-2"] {
     transform: translateX(-70%) scale(0.7);
   }
-  .tulip-card[data-pos="2"] {
+  .th-tulip-card[data-pos="2"] {
     transform: translateX(70%) scale(0.7);
   }
 }
 
 /* 768px - планшеты */
 @media (max-width: 768px) {
-  .tulip-slider {
-    margin-bottom: 60px; /* Увеличиваем отступ под слайдером */
+  .th-tulip-slider {
+    margin-bottom: 60px;
   }
-  .tulip-slider-section {
+  .th-tulip-slider-section {
     padding: 0 30px;
   }
-  .tulip-slider-title {
+  .th-tulip-slider-title {
     margin-bottom: 170px;
   }
-  .tulip-catalog-btn {
-    margin-top: 80px; /* Добавляем отступ сверху для кнопки */
-    position: relative; /* Убеждаемся, что кнопка не позиционируется абсолютно */
-    z-index: 1; /* Поднимаем кнопку над другими элементами */
+  .th-tulip-catalog-btn {
+    margin-top: 80px;
+    position: relative;
+    z-index: 1;
   }
-  .tulip-card[data-pos="0"] {
+  .th-tulip-card[data-pos="0"] {
     transform: translateX(0) scale(1.1);
     z-index: 5;
   }
-  .tulip-card[data-pos="-1"] {
+  .th-tulip-card[data-pos="-1"] {
     transform: translateX(-35%) scale(0.8);
     opacity: 0.8;
     z-index: 4;
   }
-  .tulip-card[data-pos="1"] {
+  .th-tulip-card[data-pos="1"] {
     transform: translateX(35%) scale(0.8);
     opacity: 0.8;
     z-index: 4;
   }
-  .tulip-card[data-pos="-2"] {
+  .th-tulip-card[data-pos="-2"] {
     transform: translateX(-65%) scale(0.7);
     opacity: 0.5;
     z-index: 3;
   }
-  .tulip-card[data-pos="2"] {
+  .th-tulip-card[data-pos="2"] {
     transform: translateX(65%) scale(0.7);
     opacity: 0.5;
     z-index: 3;
@@ -482,143 +482,139 @@ body.tulip-modal-open {
 
 /* 700px - специальная адаптация */
 @media (max-width: 700px) {
-  .tulip-card[data-pos="-1"] {
+  .th-tulip-card[data-pos="-1"] {
     transform: translateX(-30%) scale(0.75);
   }
-  .tulip-card[data-pos="1"] {
+  .th-tulip-card[data-pos="1"] {
     transform: translateX(30%) scale(0.75);
   }
-  .tulip-card[data-pos="-2"] {
+  .th-tulip-card[data-pos="-2"] {
     transform: translateX(-60%) scale(0.65);
   }
-  .tulip-card[data-pos="2"] {
+  .th-tulip-card[data-pos="2"] {
     transform: translateX(60%) scale(0.65);
   }
 }
 
 /* 600px */
 @media (max-width: 600px) {
-  .tulip-card[data-pos="-1"] {
+  .th-tulip-card[data-pos="-1"] {
     transform: translateX(-25%) scale(0.7);
     opacity: 0.7;
   }
-  .tulip-card[data-pos="1"] {
+  .th-tulip-card[data-pos="1"] {
     transform: translateX(25%) scale(0.7);
     opacity: 0.7;
   }
-  .tulip-card[data-pos="-2"],
-  .tulip-card[data-pos="2"] {
+  .th-tulip-card[data-pos="-2"],
+  .th-tulip-card[data-pos="2"] {
     opacity: 0.3;
   }
 }
 
 /* 480px - мобильные устройства */
 @media (max-width: 560px) {
-  .tulip-slider-section {
+  .th-tulip-slider-section {
     padding: 20px 30px;
   }
 
-  /* Центральная карточка */
-  .tulip-card[data-pos="0"] {
-    width: calc(100% - 30px); /* 100% минус отступы по 15px с каждой стороны */
+  .th-tulip-card[data-pos="0"] {
+    width: calc(100% - 30px);
     margin: 0 20px;
     transform: translateX(0) scale(1.1);
     z-index: 5;
   }
-  .tulip-slider {
+  .th-tulip-slider {
     margin-bottom: 60px;
   }
 
-  .tulip-catalog-btn {
+  .th-tulip-catalog-btn {
     margin-top: 30px;
-    padding: 10px 20px; /* Немного уменьшаем padding для мобильных */
+    padding: 10px 20px;
   }
-  /* Боковые карточки - скрыты за центральной */
-  .tulip-card[data-pos="-1"] {
+
+  .th-tulip-card[data-pos="-1"] {
     transform: translateX(-15%) scale(0.8);
     opacity: 0.4;
     z-index: 3;
   }
 
-  .tulip-card[data-pos="1"] {
+  .th-tulip-card[data-pos="1"] {
     transform: translateX(15%) scale(0.8);
     opacity: 0.4;
     z-index: 3;
   }
 
-  /* Крайние карточки - полностью скрыты */
-  .tulip-card[data-pos="-2"],
-  .tulip-card[data-pos="2"] {
+  .th-tulip-card[data-pos="-2"],
+  .th-tulip-card[data-pos="2"] {
     display: none;
   }
 
-  /* Скрываем кнопки навигации */
-  .tulip-slider-arrow {
+  .th-tulip-slider-arrow {
     display: none;
   }
 
-  /* Адаптация контента */
-  .tulip-card-img {
+  .th-tulip-card-img {
     height: 160px;
   }
 
-  .tulip-card-content {
+  .th-tulip-card-content {
     height: 260px;
     font-size: 0.9rem;
   }
-  .tulip-slider-title {
+  .th-tulip-slider-title {
     margin-bottom: 130px;
   }
 }
 @media (max-width: 560px) {
-  .tulip-slider-section {
+  .th-tulip-slider-section {
     padding: 20px;
   }
 }
 /* 400px */
 @media (max-width: 400px) {
-  .tulip-card[data-pos="0"] {
+  .th-tulip-card[data-pos="0"] {
     transform: translateX(0) scale(1.05);
   }
 
-  .tulip-card[data-pos="-1"],
-  .tulip-card[data-pos="1"] {
+  .th-tulip-card[data-pos="-1"],
+  .th-tulip-card[data-pos="1"] {
     opacity: 0.3;
   }
 }
 
 /* 360px - минимальный размер */
 @media (max-width: 360px) {
-  .hero-section {
+  .th-hero-section {
     padding: 40px 20px;
   }
-  .tulip-slider-section {
+  .th-tulip-slider-section {
     padding: 15px 5px;
   }
 
-  .tulip-card[data-pos="0"] {
+  .th-tulip-card[data-pos="0"] {
     width: calc(100% - 30px);
     margin: 0 15px;
     transform: translateX(0) scale(1);
   }
-  .tulip-card {
+  .th-tulip-card {
     padding: 10px;
   }
-  /* Полностью скрываем все карточки кроме центральной */
-  .tulip-card[data-pos="-1"],
-  .tulip-card[data-pos="1"] {
+
+  .th-tulip-card[data-pos="-1"],
+  .th-tulip-card[data-pos="1"] {
     display: none;
   }
 
-  .tulip-card-img {
+  .th-tulip-card-img {
     height: 150px;
   }
 
-  .tulip-card-content {
+  .th-tulip-card-content {
     height: 240px;
     font-size: 0.85rem;
   }
-  .tulip-slider-title {
+  .th-tulip-slider-title {
     font-size: 1.6em;
     margin-bottom: 90px;
   }

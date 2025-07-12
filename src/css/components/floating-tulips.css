@@ -1,5 +1,5 @@
 /* Стили для анимированных тюльпанов */
-.floating-tulips {
+.th-floating-tulips {
   position: fixed;
   top: 0;
   left: 0;
@@ -9,7 +9,7 @@
   z-index: 0;
 }
 
-.tulip {
+.th-tulip {
   position: absolute;
   width: 100px;
   height: auto;
@@ -19,21 +19,21 @@
   animation-iteration-count: infinite;
 }
 
-.tulip-1 {
+.th-tulip-1 {
   animation-name: float1;
   animation-duration: 18s;
   top: 20%;
   left: 10%;
 }
 
-.tulip-2 {
+.th-tulip-2 {
   animation-name: float2;
   animation-duration: 22s;
   top: 50%;
   left: 70%;
 }
 
-.tulip-3 {
+.th-tulip-3 {
   animation-name: float3;
   animation-duration: 25s;
   top: 70%;
@@ -95,7 +95,7 @@
 }
 
 /* Остальные стили (из предыдущего кода) */
-.fixed-contact-bar {
+.th-fixed-contact-bar {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -109,9 +109,9 @@
 /* ... остальные стили из предыдущего кода ... */
 
 /* Убедитесь, что формы и уведомления имеют z-index выше чем тюльпаны */
-.notification,
-.offer-form,
-.chat-window,
-.success-notification {
+.th-notification,
+.th-offer-form,
+.th-chat-window,
+.th-success-notification {
   z-index: 1001;
 }

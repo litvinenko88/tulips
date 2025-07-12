@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Элементы интерфейса
-  const chatBtn = document.querySelector(".chat-btn");
-  const notification = document.getElementById("notification");
-  const notificationClose = document.getElementById("notificationClose");
-  const offerForm = document.getElementById("offerForm");
-  const formClose = document.getElementById("formClose");
-  const chatWindow = document.getElementById("chatWindow");
-  const chatClose = document.getElementById("chatClose");
-  const contactForm = document.getElementById("contactForm");
-  const chatForm = document.getElementById("chatForm");
-  const successNotification = document.getElementById("successNotification");
+  const chatBtn = document.querySelector(".th-chat-btn");
+  const notification = document.getElementById("thNotification");
+  const notificationClose = document.getElementById("thNotificationClose");
+  const offerForm = document.getElementById("thOfferForm");
+  const formClose = document.getElementById("thFormClose");
+  const chatWindow = document.getElementById("thChatWindow");
+  const chatClose = document.getElementById("thChatClose");
+  const contactForm = document.getElementById("thContactForm");
+  const chatForm = document.getElementById("thChatForm");
+  const successNotification = document.getElementById("thSuccessNotification");
 
   // Флаги для отслеживания взаимодействия с формой
   let isFormInteracted = false;
@@ -81,10 +81,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function updateTimerDisplay() {
-    document.getElementById("days").textContent = days;
-    document.getElementById("hours").textContent = hours;
-    document.getElementById("minutes").textContent = minutes;
-    document.getElementById("seconds").textContent = seconds;
+    document.getElementById("th-days").textContent = days;
+    document.getElementById("th-hours").textContent = hours;
+    document.getElementById("th-minutes").textContent = minutes;
+    document.getElementById("th-seconds").textContent = seconds;
   }
 
   // Показать уведомление через 17 секунд после загрузки страницы
@@ -178,21 +178,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Валидация формы контактов
   function validateContactForm() {
-    const name = document.getElementById("name").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const phoneError = document.getElementById("phoneError");
-    const submitBtn = document.getElementById("submitBtn");
+    const name = document.getElementById("th-name").value.trim();
+    const phone = document.getElementById("th-phone").value.trim();
+    const phoneError = document.getElementById("thPhoneError");
+    const submitBtn = document.getElementById("thSubmitBtn");
 
     let isValid = true;
 
     if (phone && !validatePhone(phone)) {
-      document.getElementById("phone").classList.add("error");
+      document.getElementById("th-phone").classList.add("error");
       phoneError.innerHTML =
         "Некорректный номер телефона. Пример: +7(123)456-78-90 или 81234567890";
       phoneError.style.display = "block";
       isValid = false;
     } else {
-      document.getElementById("phone").classList.remove("error");
+      document.getElementById("th-phone").classList.remove("error");
       phoneError.style.display = "none";
     }
 
@@ -207,21 +207,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Валидация формы чата
   function validateChatForm() {
-    const name = document.getElementById("chatName").value.trim();
-    const phone = document.getElementById("chatPhone").value.trim();
-    const phoneError = document.getElementById("chatPhoneError");
-    const submitBtn = document.getElementById("chatSubmitBtn");
+    const name = document.getElementById("th-chatName").value.trim();
+    const phone = document.getElementById("th-chatPhone").value.trim();
+    const phoneError = document.getElementById("thChatPhoneError");
+    const submitBtn = document.getElementById("thChatSubmitBtn");
 
     let isValid = true;
 
     if (phone && !validatePhone(phone)) {
-      document.getElementById("chatPhone").classList.add("error");
+      document.getElementById("th-chatPhone").classList.add("error");
       phoneError.innerHTML =
         "Некорректный номер телефона. Пример: +7(123)456-78-90 или 81234567890";
       phoneError.style.display = "block";
       isValid = false;
     } else {
-      document.getElementById("chatPhone").classList.remove("error");
+      document.getElementById("th-chatPhone").classList.remove("error");
       phoneError.style.display = "none";
     }
 
@@ -235,23 +235,23 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Слушатели событий для валидации
-  document.getElementById("phone").addEventListener("input", function () {
+  document.getElementById("th-phone").addEventListener("input", function () {
     validateContactForm();
     isFormInteracted = true;
     clearTimeout(formAutoCloseTimeout);
   });
 
-  document.getElementById("name").addEventListener("input", function () {
+  document.getElementById("th-name").addEventListener("input", function () {
     validateContactForm();
     isFormInteracted = true;
     clearTimeout(formAutoCloseTimeout);
   });
 
   document
-    .getElementById("chatPhone")
+    .getElementById("th-chatPhone")
     .addEventListener("input", validateChatForm);
   document
-    .getElementById("chatName")
+    .getElementById("th-chatName")
     .addEventListener("input", validateChatForm);
 
   // Показать уведомление об успехе
@@ -310,8 +310,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (validateContactForm()) {
       const formData = {
-        name: document.getElementById("name").value.trim(),
-        phone: document.getElementById("phone").value.trim(),
+        name: document.getElementById("th-name").value.trim(),
+        phone: document.getElementById("th-phone").value.trim(),
       };
 
       sendToTelegram(formData, "Спецпредложение");
@@ -324,8 +324,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (validateChatForm()) {
       const formData = {
-        name: document.getElementById("chatName").value.trim(),
-        phone: document.getElementById("chatPhone").value.trim(),
+        name: document.getElementById("th-chatName").value.trim(),
+        phone: document.getElementById("th-chatPhone").value.trim(),
       };
 
       sendToTelegram(formData, "Чат");

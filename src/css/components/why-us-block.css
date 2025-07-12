@@ -1,26 +1,26 @@
 /* Основные стили */
-.advantages-section {
+.th-advantages-section {
   padding: 60px 0px;
   background-color: var(--color-bg);
   color: var(--color-text);
   overflow: hidden;
 }
 
-.advantages-container {
+.th-advantages-container {
   max-width: 1600px;
   margin: 0 auto;
   padding: 0 100px;
 }
 
-.advantages-header {
+.th-advantages-header {
   text-align: center;
   margin-bottom: 50px;
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeInUp 0.8s ease forwards;
+  animation: th-fadeInUp 0.8s ease forwards;
 }
 
-.advantages-title {
+.th-advantages-title {
   font-size: 2.5rem;
   color: var(--color-primary);
   margin-bottom: 20px;
@@ -28,7 +28,7 @@
   display: inline-block;
 }
 
-.advantages-title::after {
+.th-advantages-title::after {
   content: "";
   position: absolute;
   bottom: -10px;
@@ -39,14 +39,14 @@
   background: var(--color-accent);
 }
 
-.advantages-description {
+.th-advantages-description {
   font-size: 1.1rem;
   line-height: 1.6;
   max-width: 800px;
   margin: 0 auto 30px;
 }
 
-.advantages-btn {
+.th-advantages-btn {
   background-color: var(--color-primary);
   color: var(--color-text-light);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -59,19 +59,19 @@
   font-weight: 600;
 }
 
-.advantages-btn:hover {
+.th-advantages-btn:hover {
   background-color: var(--color-secondary);
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(106, 27, 154, 0.2);
 }
 
-.advantages-grid {
+.th-advantages-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
 
-.advantage-card {
+.th-advantage-card {
   background: var(--color-bg-light);
   border-radius: 15px;
   padding: 30px;
@@ -81,22 +81,22 @@
   opacity: 0;
 }
 
-.advantage-card:hover {
+.th-advantage-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
-.advantage-card h3 {
+.th-advantage-card h3 {
   color: var(--color-secondary);
   margin-bottom: 15px;
   font-size: 1.3rem;
 }
 
-.advantage-card p {
+.th-advantage-card p {
   line-height: 1.6;
 }
 
-.advantage-card-wide {
+.th-advantage-card-wide {
   grid-column: span 3;
   background: linear-gradient(
     135deg,
@@ -111,13 +111,13 @@
   opacity: 0;
 }
 
-.advantage-card-wide h3 {
+.th-advantage-card-wide h3 {
   font-size: 1.3rem;
   margin-bottom: 15px;
 }
 
 /* Стили модального окна */
-.modal-overlay {
+.th-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -133,13 +133,13 @@
   transition: opacity 0.3s ease;
 }
 
-.modal-overlay.active {
+.th-modal-overlay.active {
   display: flex;
   opacity: 1;
   padding: 0 20px;
 }
 
-.modal-form {
+.th-modal-form {
   background: var(--color-bg);
   padding: 30px;
   border-radius: 15px;
@@ -150,11 +150,11 @@
   transition: transform 0.3s ease;
 }
 
-.modal-overlay.active .modal-form {
+.th-modal-overlay.active .th-modal-form {
   transform: translateY(0);
 }
 
-.modal-close {
+.th-modal-close {
   position: absolute;
   top: 15px;
   right: 15px;
@@ -164,30 +164,30 @@
   transition: color 0.3s;
 }
 
-.modal-close:hover {
+.th-modal-close:hover {
   color: var(--color-accent);
 }
 
-.modal-title {
+.th-modal-title {
   color: var(--color-primary);
   margin-bottom: 20px;
   text-align: center;
 }
 
 /* Улучшенные стили для ошибок */
-.error-message {
+.th-error-message {
   color: var(--color-accent);
   font-size: 12px;
   margin-top: 5px;
   display: none;
 }
 
-input.error {
+input.th-error {
   border-color: var(--color-accent) !important;
 }
 
 /* Анимация успешного уведомления */
-.success-notification {
+.th-success-notification {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -198,11 +198,11 @@ input.error {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   display: none;
   z-index: 2100;
-  animation: fadeIn 0.5s;
+  animation: th-fadeIn 0.5s;
 }
 
 /* Анимации */
-@keyframes fadeIn {
+@keyframes th-fadeIn {
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -212,14 +212,14 @@ input.error {
     transform: translateY(0);
   }
 }
-@keyframes fadeInUp {
+@keyframes th-fadeInUp {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-@keyframes pulse {
+@keyframes th-pulse {
   0% {
     transform: scale(1);
   }
@@ -231,27 +231,27 @@ input.error {
   }
 }
 
-.pulse-anim {
-  animation: pulse 2s infinite;
+.th-pulse-anim {
+  animation: th-pulse 2s infinite;
 }
 
-.slide-in-left {
-  animation: slideInLeft 0.8s ease 0.2s forwards;
+.th-slide-in-left {
+  animation: th-slideInLeft 0.8s ease 0.2s forwards;
 }
 
-.slide-in-top {
-  animation: slideInTop 0.8s ease 0.4s forwards;
+.th-slide-in-top {
+  animation: th-slideInTop 0.8s ease 0.4s forwards;
 }
 
-.slide-in-right {
-  animation: slideInRight 0.8s ease 0.6s forwards;
+.th-slide-in-right {
+  animation: th-slideInRight 0.8s ease 0.6s forwards;
 }
 
-.scale-up {
-  animation: scaleUp 0.8s ease 0.8s forwards;
+.th-scale-up {
+  animation: th-scaleUp 0.8s ease 0.8s forwards;
 }
 
-@keyframes slideInLeft {
+@keyframes th-slideInLeft {
   from {
     opacity: 0;
     transform: translateX(-50px);
@@ -262,7 +262,7 @@ input.error {
   }
 }
 
-@keyframes slideInTop {
+@keyframes th-slideInTop {
   from {
     opacity: 0;
     transform: translateY(-50px);
@@ -273,7 +273,7 @@ input.error {
   }
 }
 
-@keyframes slideInRight {
+@keyframes th-slideInRight {
   from {
     opacity: 0;
     transform: translateX(50px);
@@ -284,7 +284,7 @@ input.error {
   }
 }
 
-@keyframes scaleUp {
+@keyframes th-scaleUp {
   from {
     opacity: 0;
     transform: scale(0.8);
@@ -297,64 +297,64 @@ input.error {
 
 /* Адаптация */
 @media (max-width: 1280px) {
-  .advantages-grid {
+  .th-advantages-grid {
     gap: 20px;
   }
-  .advantages-container {
+  .th-advantages-container {
     padding: 0 60px;
   }
 }
 
 @media (max-width: 1024px) {
-  .advantages-title {
+  .th-advantages-title {
     font-size: 2.2rem;
   }
 
-  .advantage-card {
+  .th-advantage-card {
     padding: 25px;
   }
 }
 
 @media (max-width: 768px) {
-  .advantages-grid {
+  .th-advantages-grid {
     grid-template-columns: 1fr;
   }
 
-  .advantage-card-wide {
+  .th-advantage-card-wide {
     grid-column: span 1;
   }
 
-  .advantages-title {
+  .th-advantages-title {
     font-size: 2rem;
   }
 
-  .advantages-description {
+  .th-advantages-description {
     font-size: 1rem;
   }
-  .advantages-container {
+  .th-advantages-container {
     padding: 0 30px;
   }
 }
 
 @media (max-width: 480px) {
-  .advantages-container {
+  .th-advantages-container {
     padding: 0 20px;
   }
-  .advantages-title {
+  .th-advantages-title {
     font-size: 1.8rem;
   }
 
-  .advantage-card {
+  .th-advantage-card {
     padding: 20px;
   }
 }
 
 @media (max-width: 360px) {
-  .advantages-title {
+  .th-advantages-title {
     font-size: 1.6rem;
   }
 
-  .advantages-btn {
+  .th-advantages-btn {
     padding: 10px 25px;
     font-size: 0.9rem;
   }

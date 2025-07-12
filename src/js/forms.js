@@ -1,7 +1,7 @@
 // Обработка форм
 document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("consultationForm");
-  const notification = document.getElementById("formNotification");
+  const form = document.getElementById("thConsultationForm");
+  const notification = document.getElementById("thFormNotification");
 
   if (form) {
     form.addEventListener("submit", function (e) {
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
     notification.style.color = "red";
 
     if (input) {
-      input.classList.add("error");
+      input.classList.add("th-error");
       input.focus();
     }
   }

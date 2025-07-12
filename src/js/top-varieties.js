@@ -1,14 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const slider = document.querySelector(".tulip-slider");
-  const cards = Array.from(document.querySelectorAll(".tulip-card"));
-  const prevArrow = document.querySelector(".tulip-prev-arrow");
-  const nextArrow = document.querySelector(".tulip-next-arrow");
-  const modalOverlay = document.querySelector(".tulip-modal-overlay");
-  const closeModalBtn = document.querySelector(".tulip-close-modal");
-  const orderForm = document.getElementById("tulip-order-form");
-  const phoneInput = document.getElementById("tulip-phone");
-  const nameInput = document.getElementById("tulip-name");
-  const cardNameInput = document.getElementById("tulip-card-name");
+  const slider = document.querySelector(".th-tulip-slider");
+  const cards = Array.from(document.querySelectorAll(".th-tulip-card"));
+  const prevArrow = document.querySelector(".th-tulip-prev-arrow");
+  const nextArrow = document.querySelector(".th-tulip-next-arrow");
+  const modalOverlay = document.querySelector(".th-tulip-modal-overlay");
+  const closeModalBtn = document.querySelector(".th-tulip-close-modal");
+  const orderForm = document.getElementById("th-tulip-order-form");
+  const phoneInput = document.getElementById("th-tulip-phone");
+  const nameInput = document.getElementById("th-tulip-name");
+  const cardNameInput = document.getElementById("th-tulip-card-name");
 
   // Таймер для автоматического переключения
   let autoSlideInterval;
@@ -26,16 +26,18 @@ document.addEventListener("DOMContentLoaded", function () {
       card.dataset.pos = pos;
 
       // Добавляем обработчик для кнопки заказа в карточке
-      const orderBtn = card.querySelector(".tulip-order-btn");
+      const orderBtn = card.querySelector(".th-tulip-order-btn");
       if (orderBtn) {
         orderBtn.addEventListener("click", function (e) {
           e.stopPropagation();
-          const cardTitle = card.querySelector(".tulip-card-title").textContent;
+          const cardTitle = card.querySelector(
+            ".th-tulip-card-title"
+          ).textContent;
           cardNameInput.value = cardTitle;
 
           // Сохраняем и фиксируем позицию скролла
           scrollPosition = window.pageYOffset;
-          document.body.classList.add("tulip-modal-open");
+          document.body.classList.add("th-tulip-modal-open");
           document.body.style.setProperty(
             "--scroll-top",
             `-${scrollPosition}px`
@@ -144,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function goToPrevCard() {
     if (isAnimating) return;
 
-    const activeCard = document.querySelector('.tulip-card[data-pos="0"]');
+    const activeCard = document.querySelector('.th-tulip-card[data-pos="0"]');
     const activeIndex = cards.indexOf(activeCard);
     const prevIndex = (activeIndex - 1 + cards.length) % cards.length;
     updateActiveCard(cards[prevIndex]);
@@ -155,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function goToNextCard() {
     if (isAnimating) return;
 
-    const activeCard = document.querySelector('.tulip-card[data-pos="0"]');
+    const activeCard = document.querySelector('.th-tulip-card[data-pos="0"]');
     const activeIndex = cards.indexOf(activeCard);
     const nextIndex = (activeIndex + 1) % cards.length;
     updateActiveCard(cards[nextIndex]);
@@ -239,15 +241,15 @@ document.addEventListener("DOMContentLoaded", function () {
       // Восстанавливаем скролл
       const scrollY = document.body.style.top;
       modalOverlay.style.display = "none";
-      document.body.classList.remove("tulip-modal-open");
+      document.body.classList.remove("th-tulip-modal-open");
       document.body.style.removeProperty("position");
       document.body.style.removeProperty("top");
       document.body.style.removeProperty("width");
       window.scrollTo(0, parseInt(scrollY || "0") * -1);
 
       orderForm.reset();
-      document.getElementById("tulip-name-error").textContent = "";
-      document.getElementById("tulip-phone-error").textContent = "";
+      document.getElementById("th-tulip-name-error").textContent = "";
+      document.getElementById("th-tulip-phone-error").textContent = "";
     }, 300);
   }
 
@@ -276,8 +278,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Валидация формы
   function validateForm() {
     let isValid = true;
-    const nameError = document.getElementById("tulip-name-error");
-    const phoneError = document.getElementById("tulip-phone-error");
+    const nameError = document.getElementById("th-tulip-name-error");
+    const phoneError = document.getElementById("th-tulip-phone-error");
 
     // Валидация имени
     if (nameInput.value.trim() === "") {
@@ -384,7 +386,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function showTulipNotification(message, type) {
     // Создаем элемент уведомления
     const notification = document.createElement("div");
-    notification.className = `tulip-notification tulip-notification-${type}`;
+    notification.className = `th-tulip-notification th-tulip-notification-${type}`;
     notification.textContent = message;
 
     // Добавляем уведомление в body
@@ -392,7 +394,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Удаляем уведомление через 5 секунд
     setTimeout(() => {
-      notification.classList.add("tulip-notification-hide");
+      notification.classList.add("th-tulip-notification-hide");
       setTimeout(() => {
         notification.remove();
       }, 300);

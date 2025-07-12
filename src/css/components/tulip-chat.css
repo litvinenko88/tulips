@@ -1,11 +1,11 @@
 /* Основные стили для контейнера чата */
-.chat-container {
+.th-chat-container {
   position: relative;
   display: inline-block;
 }
 
 /* Стили для кнопки чата */
-.chat-btn {
+.th-chat-btn {
   width: 40px;
   height: 40px;
   display: flex;
@@ -20,19 +20,19 @@
   z-index: 1001;
 }
 
-.chat-btn:hover {
+.th-chat-btn:hover {
   background-color: #e9ecef;
 }
 
-.chat-btn img {
+.th-chat-btn img {
   width: 20px;
   height: 20px;
 }
 
 /* Общие стили для уведомлений и форм */
-.notification,
-.offer-form,
-.chat-window {
+.th-notification,
+.th-offer-form,
+.th-chat-window {
   position: absolute;
   bottom: calc(100% + 10px);
   right: 0;
@@ -50,18 +50,18 @@
   z-index: 1000;
 }
 
-.notification.show,
-.offer-form.show,
-.chat-window.show {
+.th-notification.show,
+.th-offer-form.show,
+.th-chat-window.show {
   transform: translateY(0);
   opacity: 1;
   visibility: visible;
 }
 
 /* Хвостик уведомлений, направленный на кнопку чата */
-.notification::after,
-.offer-form::after,
-.chat-window::after {
+.th-notification::after,
+.th-offer-form::after,
+.th-chat-window::after {
   content: "";
   position: absolute;
   bottom: -10px;
@@ -74,9 +74,9 @@
 }
 
 /* Стили для кнопок закрытия */
-.notification-close,
-.form-close,
-.chat-close {
+.th-notification-close,
+.th-form-close,
+.th-chat-close {
   position: absolute;
   top: 5px;
   right: 2px;
@@ -87,18 +87,18 @@
   transition: opacity 0.3s;
 }
 
-.notification-close:hover,
-.form-close:hover,
-.chat-close:hover {
+.th-notification-close:hover,
+.th-form-close:hover,
+.th-chat-close:hover {
   opacity: 1;
 }
 
-.notification-close::before,
-.notification-close::after,
-.form-close::before,
-.form-close::after,
-.chat-close::before,
-.chat-close::after {
+.th-notification-close::before,
+.th-notification-close::after,
+.th-form-close::before,
+.th-form-close::after,
+.th-chat-close::before,
+.th-chat-close::after {
   content: "";
   position: absolute;
   top: 7px;
@@ -108,27 +108,27 @@
   background-color: #333;
 }
 
-.notification-close::before,
-.form-close::before,
-.chat-close::before {
+.th-notification-close::before,
+.th-form-close::before,
+.th-chat-close::before {
   transform: rotate(45deg);
 }
 
-.notification-close::after,
-.form-close::after,
-.chat-close::after {
+.th-notification-close::after,
+.th-form-close::after,
+.th-chat-close::after {
   transform: rotate(-45deg);
 }
 
 /* Специфичные стили для формы предложения */
-.offer-form h2 {
+.th-offer-form h2 {
   font-size: 16px;
   margin: 0 0 10px 0;
   color: var(--color-primary);
   text-align: center;
 }
 
-.timer {
+.th-timer {
   display: flex;
   justify-content: center;
   gap: 5px;
@@ -137,24 +137,24 @@
   color: var(--color-accent);
 }
 
-.timer span {
+.th-timer span {
   display: inline-block;
   min-width: 25px;
   text-align: center;
 }
 
 /* Стили для формы */
-.form-group {
+.th-form-group {
   margin-bottom: 10px;
 }
 
-.form-group label {
+.th-form-group label {
   display: block;
   margin-bottom: 5px;
   font-size: 13px;
 }
 
-.form-group input {
+.th-form-group input {
   width: 100%;
   padding: 8px;
   border: 1px solid #ddd;
@@ -162,18 +162,18 @@
   font-size: 14px;
 }
 
-.form-group input.error {
+.th-form-group input.error {
   border-color: #ff4444;
 }
 
-.error-message {
+.th-error-message {
   color: #ff4444;
   font-size: 12px;
   margin-top: 5px;
   display: none;
 }
 
-.submit-btn {
+.th-submit-btn {
   width: 100%;
   padding: 12px 20px;
   background-color: #d63384;
@@ -185,17 +185,17 @@
   transition: background-color 0.3s;
 }
 
-.submit-btn:hover {
+.th-submit-btn:hover {
   background-color: #c22575;
 }
 
-.submit-btn:disabled {
+.th-submit-btn:disabled {
   background-color: #cccccc;
   cursor: not-allowed;
 }
 
 /* Стили для окна чата */
-.chat-message {
+.th-chat-message {
   margin-bottom: 15px;
   padding: 10px;
   background-color: #f8f9fa;
@@ -203,7 +203,7 @@
 }
 
 /* Уведомление об успешной отправке */
-.success-notification {
+.th-success-notification {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -214,10 +214,10 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: none;
   z-index: 1100;
-  animation: fadeIn 0.5s;
+  animation: th-fadeIn 0.5s;
 }
 
-@keyframes fadeIn {
+@keyframes th-fadeIn {
   from {
     opacity: 0;
   }
@@ -227,7 +227,7 @@
 }
 
 /* Стили для фиксированной панели контактов */
-.fixed-contact-bar {
+.th-fixed-contact-bar {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -238,7 +238,7 @@
   z-index: 1000;
 }
 
-.contact-wrapper {
+.th-contact-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -247,19 +247,19 @@
   padding: 0 20px;
 }
 
-.contact-question {
+.th-contact-question {
   font-size: 16px;
   margin: 0;
   color: #333;
 }
 
-.social-links {
+.th-social-links {
   display: flex;
   gap: 15px;
   align-items: center;
 }
 
-.social-item {
+.th-social-item {
   width: 40px;
   height: 40px;
   display: flex;
@@ -270,11 +270,11 @@
   transition: background-color 0.3s;
 }
 
-.social-item:hover {
+.th-social-item:hover {
   background-color: #e9ecef;
 }
 
-.social-item img {
+.th-social-item img {
   width: 20px;
   height: 20px;
 }

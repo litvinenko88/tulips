@@ -1,25 +1,25 @@
 /* Базовые стили */
-.how-to-order {
+.th-how-to-order {
   max-width: 1600px;
   margin: 0 auto;
   padding: 60px 0px;
 }
 
-.how-to-order__title {
+.th-how-to-order__title {
   text-align: center;
   color: var(--color-primary);
   font-size: 2.5rem;
   position: relative;
   margin-bottom: 5px;
 }
-.how-to-order__subtitle {
+.th-how-to-order__subtitle {
   text-align: center;
   color: var(--color-primary);
   font-weight: 400;
   font-size: 1.4rem;
   margin-bottom: 50px;
 }
-.how-to-order__subtitle::after {
+.th-how-to-order__subtitle::after {
   content: "";
   display: block;
   width: 100px;
@@ -28,14 +28,14 @@
   margin: 5px auto 5px;
 }
 
-.steps-container {
+.th-steps-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 30px;
 }
 
-.step {
+.th-step {
   flex: 1;
   min-width: 250px;
   background: var(--color-bg-light);
@@ -49,12 +49,12 @@
   border-top: 5px solid var(--color-primary);
 }
 
-.step:hover {
+.th-step:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
-.step__number {
+.th-step__number {
   font-size: 3rem;
   font-weight: bold;
   color: rgba(46, 139, 87, 0.1);
@@ -64,24 +64,24 @@
   transition: all 0.4s ease;
 }
 
-.step:hover .step__number {
+.th-step:hover .th-step__number {
   color: rgba(106, 27, 154, 0.1);
   transform: scale(1.2);
 }
 
-.step__icon {
+.th-step__icon {
   font-size: 2.5rem;
   color: var(--color-primary);
   margin-bottom: 20px;
   transition: all 0.4s ease;
 }
 
-.step:hover .step__icon {
+.th-step:hover .th-step__icon {
   color: var(--color-secondary);
   transform: scale(1.1);
 }
 
-.step__title {
+.th-step__title {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 15px;
@@ -89,21 +89,21 @@
   transition: all 0.4s ease;
 }
 
-.step:hover .step__title {
+.th-step:hover .th-step__title {
   color: var(--color-secondary);
 }
 
-.step__content {
+.th-step__content {
   font-size: 1.1rem;
   line-height: 1.6;
   transition: all 0.4s ease;
 }
 
-.step:hover .step__content {
+.th-step:hover .th-step__content {
   color: var(--color-text);
 }
 
-.step::before {
+.th-step::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -116,7 +116,7 @@
   transition: transform 0.4s ease;
 }
 
-.step:hover::before {
+.th-step:hover::before {
   transform: scaleX(1);
 }
 
@@ -132,54 +132,54 @@
   }
 }
 
-.step {
+.th-step {
   opacity: 0;
   animation: fadeInUp 0.6s ease forwards;
 }
 
-.step:nth-child(1) {
+.th-step:nth-child(1) {
   animation-delay: 0.1s;
 }
-.step:nth-child(2) {
+.th-step:nth-child(2) {
   animation-delay: 0.3s;
 }
-.step:nth-child(3) {
+.th-step:nth-child(3) {
   animation-delay: 0.5s;
 }
-.step:nth-child(4) {
+.th-step:nth-child(4) {
   animation-delay: 0.7s;
 }
 
 /* Адаптация для 1280px */
 @media (max-width: 1280px) {
-  .step {
+  .th-step {
     padding: 25px;
   }
 }
 
 /* Адаптация для 1024px */
 @media (max-width: 1024px) {
-  .how-to-order__title {
+  .th-how-to-order__title {
     font-size: 2.2rem;
   }
-  .step__title {
+  .th-step__title {
     font-size: 1.3rem;
   }
-  .step__content {
+  .th-step__content {
     font-size: 1rem;
   }
 }
 
 /* Адаптация для 768px */
 @media (max-width: 768px) {
-  .steps-container {
+  .th-steps-container {
     flex-direction: column;
   }
-  .step {
+  .th-step {
     min-width: 100%;
     margin-bottom: 20px;
   }
-  .how-to-order__title {
+  .th-how-to-order__title {
     font-size: 2rem;
     margin-bottom: 15px;
   }
@@ -187,34 +187,34 @@
 
 /* Адаптация для 480px */
 @media (max-width: 480px) {
-  .how-to-order {
+  .th-how-to-order {
     padding: 40px 20px;
   }
-  .how-to-order__title {
+  .th-how-to-order__title {
     font-size: 1.8rem;
   }
-  .step {
+  .th-step {
     padding: 20px;
   }
-  .step__icon {
+  .th-step__icon {
     font-size: 2rem;
   }
 }
 
 /* Адаптация для 360px */
 @media (max-width: 360px) {
-  .how-to-order__title {
+  .th-how-to-order__title {
     font-size: 1.6rem;
   }
-  .step__title {
+  .th-step__title {
     font-size: 1.2rem;
   }
-  .step__content {
+  .th-step__content {
     font-size: 0.9rem;
   }
 }
 @media (max-width: 380px) {
-  .container {
+  .th-container {
     padding: 0px;
   }
 }
