@@ -1,0 +1,315 @@
+.quiz-section {
+  font-family: inherit;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: var(--color-text);
+  margin-bottom: 100px;
+}
+
+.quiz-container {
+  position: relative;
+  background: var(--color-bg);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  min-height: 400px;
+}
+
+.quiz-splash {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 2rem;
+  transition: all 0.5s ease;
+  opacity: 1;
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-bg);
+  z-index: 10;
+}
+
+.quiz-splash h2 {
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.quiz-splash p {
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+.quiz-splash.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.quiz-splash:not(.active) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.quiz-wrapper {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+  position: relative;
+}
+
+.quiz-wrapper.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.quiz-progress {
+  width: 100%;
+  background: var(--color-bg-light);
+  height: 8px;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: 4px;
+  width: 0%;
+  transition: width 0.5s ease;
+}
+
+.progress-text {
+  position: absolute;
+  right: 0;
+  top: -25px;
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+.quiz-questions {
+  position: relative;
+  min-height: 300px;
+}
+
+.quiz-question {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(20px);
+  transition: all 0.5s ease;
+}
+
+.quiz-question.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.quiz-question h3 {
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+}
+
+.quiz-answers {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.quiz-answer {
+  background: var(--color-bg-light);
+  border: 2px solid var(--color-bg-light);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.quiz-answer:hover {
+  border-color: var(--color-primary);
+}
+
+.quiz-answer:active {
+  transform: scale(0.98);
+}
+
+.quiz-contact-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.quiz-contact-form input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid var(--color-bg-light);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.quiz-contact-form input:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+.quiz-contact-form .error-message {
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  display: none;
+}
+
+.quiz-thankyou {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+  background: var(--color-bg);
+}
+
+.quiz-thankyou.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.quiz-thankyou h3 {
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.quiz-thankyou p {
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+.btn {
+  background: var(--color-primary);
+  color: var(--color-text-light);
+  border: none;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--color-secondary);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-start-quiz {
+  margin-top: 1rem;
+}
+
+.btn-submit {
+  width: 100%;
+}
+
+.btn-take-gift {
+  background: var(--color-accent);
+}
+
+/* Адаптация под разные экраны */
+@media (max-width: 1280px) {
+  .quiz-section {
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .quiz-section {
+    max-width: 600px;
+    padding: 1.5rem;
+  }
+
+  .quiz-question h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .quiz-section {
+    max-width: 500px;
+    padding: 1rem;
+  }
+
+  .quiz-splash h2 {
+    font-size: 1.5rem;
+  }
+
+  .quiz-question h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .quiz-section {
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .quiz-splash h2 {
+    font-size: 1.3rem;
+  }
+
+  .quiz-splash p,
+  .quiz-thankyou p {
+    font-size: 1rem;
+  }
+
+  .quiz-question {
+    padding: 1.5rem 1rem;
+  }
+
+  .quiz-question h3 {
+    font-size: 1.1rem;
+  }
+
+  .quiz-answer {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .quiz-splash h2 {
+    font-size: 1.2rem;
+  }
+
+  .quiz-thankyou h3 {
+    font-size: 1.4rem;
+  }
+
+  .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
