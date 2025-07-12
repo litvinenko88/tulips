@@ -204,7 +204,7 @@
 
 .quiz-thankyou p {
   margin-bottom: 2rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .btn {
@@ -268,6 +268,9 @@
 
   .quiz-question h3 {
     font-size: 1.2rem;
+  }
+  .quiz-thankyou h3 {
+    font-size: 1.4rem;
   }
 }
 
