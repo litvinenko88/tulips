@@ -6,9 +6,9 @@
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 100px;
 }
 
 .faq-reviews-grid {
@@ -94,7 +94,6 @@
 /* Стили для блока отзывов */
 .reviews-carousel {
   position: relative;
-  min-height: 400px;
   overflow: hidden;
 }
 
