@@ -14,9 +14,14 @@
 
 .th-logo {
   font-weight: bold;
-  font-size: 18px;
+  font-size: var(--fztext);
 }
-
+.th-slogan {
+  font-size: var(--fzmintext);
+}
+.th-phone {
+  font-size: var(--fztext);
+}
 .th-phone a {
   color: var(--color-text-light);
   text-decoration: none;

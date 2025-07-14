@@ -10,10 +10,11 @@
   --color-bg: #ffffff;
   --color-bg-light: #f8f9fa;
 
-  --fz25: 2.5rem;
-  --fz2: 2rem;
-  --fz16: 1.6rem;
-  --fz12: 1.2rem;
+  --fzh1: 2.5rem;
+  --fzh2: 1.8rem;
+  --fzh3: 1.2rem;
+  --fzbt: 0.9rem;
+  --fztext: 0.9rem;
 }
 
 * {
@@ -51,16 +52,19 @@ body {
 .th-btn-main {
   background: var(--color-accent);
   color: var(--color-text-light);
+  font-size: var(--fzbt);
 }
 
 .th-btn-alt {
   background: var(--color-secondary);
   color: var(--color-text-light);
+  font-size: var(--fzbt);
 }
 
 .th-btn-price {
   background: var(--color-primary);
   color: var(--color-text-light);
+  font-size: var(--fzbt);
 }
 
 .th-btn:hover {
