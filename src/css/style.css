@@ -10,14 +10,16 @@
   --color-bg: #ffffff;
   --color-bg-light: #f8f9fa;
 
-  --fzh1: 2.5rem;
-  --fzh2: 1.8rem;
-  --fzh3: 1.4rem;
-  --fzsub: 1.1rem;
-  --fzbt: 0.9rem;
-  --fztext: 0.9rem;
+  --fzh1: 4.6rem;
+  --fzh2: 2.8rem;
+  --fzh3: 2.2rem;
+  --fzsub: 1.6rem;
+  --fzbt: 1.8rem;
+  --fztext: 1.6rem;
 }
-
+html {
+  font-size: 62.5%;
+}
 * {
   margin: 0;
   padding: 0;
