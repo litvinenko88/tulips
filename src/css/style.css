@@ -9,6 +9,11 @@
   --color-text-light: #ffffff;
   --color-bg: #ffffff;
   --color-bg-light: #f8f9fa;
+
+  --fz25: 2.5rem;
+  --fz2: 2rem;
+  --fz16: 1.6rem;
+  --fz12: 1.2rem;
 }
 
 * {
