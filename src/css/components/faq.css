@@ -169,8 +169,24 @@
   background-color: var(--color-primary);
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1280px) {
+  .thfr-container {
+    padding: 0 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .thfr-container {
+    padding: 0 30px;
+  }
+
   .thfr-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .thfr-container {
+    padding: 0 20px;
   }
 }

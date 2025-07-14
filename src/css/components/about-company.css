@@ -112,6 +112,9 @@
 
 /* Адаптация под разные экраны */
 @media (max-width: 1280px) {
+  .ths-main-container {
+    padding: 0 60px;
+  }
   .ths-main-heading {
     font-size: 2.2rem;
   }
@@ -132,6 +135,9 @@
 }
 
 @media (max-width: 768px) {
+  .ths-main-container {
+    padding: 0 30px;
+  }
   .ths-supplier-info {
     padding: 40px 0;
   }
@@ -169,7 +175,7 @@
   }
 
   .ths-main-container {
-    padding: 0 15px;
+    padding: 0 20px;
   }
 }
 

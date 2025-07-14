@@ -154,6 +154,9 @@
 
 /* Адаптация для 1280px */
 @media (max-width: 1280px) {
+  .tho-order-process {
+    padding: 60px;
+  }
   .tho-process-step {
     padding: 25px;
   }
@@ -174,6 +177,9 @@
 
 /* Адаптация для 768px */
 @media (max-width: 768px) {
+  .tho-order-process {
+    padding: 30px;
+  }
   .tho-steps-wrapper {
     flex-direction: column;
   }
