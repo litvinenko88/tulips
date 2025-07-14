@@ -1,25 +1,27 @@
 /* Базовые стили */
-.th-how-to-order {
+.tho-order-process {
   max-width: 1600px;
   margin: 0 auto;
-  padding: 60px 0px;
+  padding: 60px 100px;
 }
 
-.th-how-to-order__title {
+.tho-main-title {
   text-align: center;
   color: var(--color-primary);
   font-size: 2.5rem;
   position: relative;
   margin-bottom: 5px;
 }
-.th-how-to-order__subtitle {
+
+.tho-sub-title {
   text-align: center;
   color: var(--color-primary);
   font-weight: 400;
   font-size: 1.1rem;
   margin-bottom: 50px;
 }
-.th-how-to-order__subtitle::after {
+
+.tho-sub-title::after {
   content: "";
   display: block;
   width: 100px;
@@ -28,14 +30,14 @@
   margin: 5px auto 5px;
 }
 
-.th-steps-container {
+.tho-steps-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 30px;
 }
 
-.th-step {
+.tho-process-step {
   flex: 1;
   min-width: 250px;
   background: var(--color-bg-light);
@@ -49,12 +51,12 @@
   border-top: 5px solid var(--color-primary);
 }
 
-.th-step:hover {
+.tho-process-step:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
-.th-step__number {
+.tho-step-num {
   font-size: 3rem;
   font-weight: bold;
   color: rgba(46, 139, 87, 0.1);
@@ -64,24 +66,24 @@
   transition: all 0.4s ease;
 }
 
-.th-step:hover .th-step__number {
+.tho-process-step:hover .tho-step-num {
   color: rgba(106, 27, 154, 0.1);
   transform: scale(1.2);
 }
 
-.th-step__icon {
+.tho-step-icon {
   font-size: 2.5rem;
   color: var(--color-primary);
   margin-bottom: 20px;
   transition: all 0.4s ease;
 }
 
-.th-step:hover .th-step__icon {
+.tho-process-step:hover .tho-step-icon {
   color: var(--color-secondary);
   transform: scale(1.1);
 }
 
-.th-step__title {
+.tho-step-heading {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 15px;
@@ -89,21 +91,21 @@
   transition: all 0.4s ease;
 }
 
-.th-step:hover .th-step__title {
+.tho-process-step:hover .tho-step-heading {
   color: var(--color-secondary);
 }
 
-.th-step__content {
+.tho-step-text {
   font-size: 1.1rem;
   line-height: 1.6;
   transition: all 0.4s ease;
 }
 
-.th-step:hover .th-step__content {
+.tho-process-step:hover .tho-step-text {
   color: var(--color-text);
 }
 
-.th-step::before {
+.tho-process-step::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -116,7 +118,7 @@
   transition: transform 0.4s ease;
 }
 
-.th-step:hover::before {
+.tho-process-step:hover::before {
   transform: scaleX(1);
 }
 
@@ -132,54 +134,54 @@
   }
 }
 
-.th-step {
+.tho-process-step {
   opacity: 0;
   animation: fadeInUp 0.6s ease forwards;
 }
 
-.th-step:nth-child(1) {
+.tho-process-step:nth-child(1) {
   animation-delay: 0.1s;
 }
-.th-step:nth-child(2) {
+.tho-process-step:nth-child(2) {
   animation-delay: 0.3s;
 }
-.th-step:nth-child(3) {
+.tho-process-step:nth-child(3) {
   animation-delay: 0.5s;
 }
-.th-step:nth-child(4) {
+.tho-process-step:nth-child(4) {
   animation-delay: 0.7s;
 }
 
 /* Адаптация для 1280px */
 @media (max-width: 1280px) {
-  .th-step {
+  .tho-process-step {
     padding: 25px;
   }
 }
 
 /* Адаптация для 1024px */
 @media (max-width: 1024px) {
-  .th-how-to-order__title {
+  .tho-main-title {
     font-size: 2.2rem;
   }
-  .th-step__title {
+  .tho-step-heading {
     font-size: 1.4rem;
   }
-  .th-step__content {
+  .tho-step-text {
     font-size: 1rem;
   }
 }
 
 /* Адаптация для 768px */
 @media (max-width: 768px) {
-  .th-steps-container {
+  .tho-steps-wrapper {
     flex-direction: column;
   }
-  .th-step {
+  .tho-process-step {
     min-width: 100%;
     margin-bottom: 20px;
   }
-  .th-how-to-order__title {
+  .tho-main-title {
     font-size: 2rem;
     margin-bottom: 15px;
   }
@@ -187,34 +189,35 @@
 
 /* Адаптация для 480px */
 @media (max-width: 480px) {
-  .th-how-to-order {
+  .tho-order-process {
     padding: 40px 20px;
   }
-  .th-how-to-order__title {
+  .tho-main-title {
     font-size: 1.8rem;
   }
-  .th-step {
+  .tho-process-step {
     padding: 20px;
   }
-  .th-step__icon {
+  .tho-step-icon {
     font-size: 2rem;
   }
 }
 
 /* Адаптация для 360px */
 @media (max-width: 360px) {
-  .th-how-to-order__title {
+  .tho-main-title {
     font-size: 1.6rem;
   }
-  .th-step__title {
+  .tho-step-heading {
     font-size: 1.2rem;
   }
-  .th-step__content {
+  .tho-step-text {
     font-size: 0.9rem;
   }
 }
+
 @media (max-width: 380px) {
-  .th-container {
+  .tho-container {
     padding: 0px;
   }
 }

@@ -1,23 +1,23 @@
 // Скрипт для аккордеона FAQ
 document.addEventListener("DOMContentLoaded", function () {
-  const faqItems = document.querySelectorAll(".faq-item");
+  const faqItems = document.querySelectorAll(".thfr-faq-item");
 
   faqItems.forEach((item) => {
-    const question = item.querySelector(".faq-question");
+    const question = item.querySelector(".thfr-question");
 
     question.addEventListener("click", () => {
       // Закрываем все открытые элементы
       faqItems.forEach((otherItem) => {
         if (otherItem !== item && otherItem.classList.contains("active")) {
           otherItem.classList.remove("active");
-          otherItem.querySelector(".faq-answer").style.maxHeight = "0";
-          otherItem.querySelector(".faq-answer").style.padding = "0";
+          otherItem.querySelector(".thfr-answer").style.maxHeight = "0";
+          otherItem.querySelector(".thfr-answer").style.padding = "0";
         }
       });
 
       // Открываем/закрываем текущий элемент
       item.classList.toggle("active");
-      const answer = item.querySelector(".faq-answer");
+      const answer = item.querySelector(".thfr-answer");
 
       if (item.classList.contains("active")) {
         answer.style.maxHeight = answer.scrollHeight + "px";
@@ -30,22 +30,22 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Скрипт для карусели отзывов
-  const reviews = document.querySelectorAll(".th-review");
-  const dotsContainer = document.querySelector(".carousel-dots");
-  const prevBtn = document.querySelector(".carousel-prev");
-  const nextBtn = document.querySelector(".carousel-next");
+  const reviews = document.querySelectorAll(".thfr-review");
+  const dotsContainer = document.querySelector(".thfr-dots");
+  const prevBtn = document.querySelector(".thfr-prev");
+  const nextBtn = document.querySelector(".thfr-next");
   let currentIndex = 0;
 
   // Создаем точки навигации
   reviews.forEach((_, index) => {
     const dot = document.createElement("div");
-    dot.classList.add("carousel-dot");
+    dot.classList.add("thfr-dot");
     if (index === 0) dot.classList.add("active");
     dot.addEventListener("click", () => goToReview(index));
     dotsContainer.appendChild(dot);
   });
 
-  const dots = document.querySelectorAll(".carousel-dot");
+  const dots = document.querySelectorAll(".thfr-dot");
 
   function showReview(index) {
     reviews.forEach((review, i) => {
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let interval = setInterval(nextReview, 3000);
 
   // Останавливаем автопрокрутку при наведении
-  const carousel = document.querySelector(".reviews-carousel");
+  const carousel = document.querySelector(".thfr-carousel");
   carousel.addEventListener("mouseenter", () => clearInterval(interval));
   carousel.addEventListener("mouseleave", () => {
     interval = setInterval(nextReview, 5000);

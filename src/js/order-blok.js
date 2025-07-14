@@ -1,12 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const steps = document.querySelectorAll(".th-step");
+  const steps = document.querySelectorAll(".tho-process-step");
 
   steps.forEach((step) => {
     step.addEventListener("click", function () {
-      // Добавляем/убираем класс активного состояния
-      this.classList.toggle("th-active");
+      this.classList.toggle("tho-step-active");
 
-      // Плавная прокрутка к секции при клике (для мобильных)
       if (window.innerWidth < 768) {
         this.scrollIntoView({
           behavior: "smooth",
@@ -16,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Анимация при скролле
   function animateOnScroll() {
     steps.forEach((step) => {
       const stepPosition = step.getBoundingClientRect().top;
@@ -29,5 +26,5 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   window.addEventListener("scroll", animateOnScroll);
-  animateOnScroll(); // Инициализация при загрузке
+  animateOnScroll();
 });

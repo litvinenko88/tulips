@@ -1,51 +1,44 @@
 /* Стили для секции FAQ и отзывов */
-.faq-reviews-section {
+.thfr-section {
   padding: 60px 0;
   background-color: var(--color-bg-light);
   margin-bottom: 200px;
 }
 
-.container {
+.thfr-container {
   max-width: 1600px;
   margin: 0 auto;
   padding: 0 100px;
 }
 
-.faq-reviews-grid {
+.thfr-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
 }
 
 /* Стили для блока FAQ */
-.faq-block h2,
-.reviews-block h2 {
+.thfr-faq-block h2,
+.thfr-reviews-block h2 {
   font-size: 32px;
   margin-bottom: 20px;
   color: var(--color-primary);
 }
 
-.trust-counter {
-  font-size: 18px;
-  color: var(--color-secondary);
-  margin-bottom: 30px;
-  font-weight: 500;
-}
-
-.faq-accordion {
+.thfr-accordion {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.faq-item {
+.thfr-faq-item {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   background-color: var(--color-bg);
 }
 
-.faq-question {
+.thfr-question {
   padding: 18px 20px;
   margin: 0;
   font-size: 18px;
@@ -56,11 +49,11 @@
   transition: background-color 0.3s;
 }
 
-.faq-question:hover {
+.thfr-question:hover {
   background-color: #267349;
 }
 
-.faq-question::after {
+.thfr-question::after {
   content: "+";
   position: absolute;
   right: 20px;
@@ -69,35 +62,35 @@
   font-size: 24px;
 }
 
-.faq-item.active .faq-question::after {
+.thfr-faq-item.active .thfr-question::after {
   content: "-";
 }
 
-.faq-answer {
+.thfr-answer {
   padding: 0;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-out, padding 0.3s ease;
 }
 
-.faq-item.active .faq-answer {
+.thfr-faq-item.active .thfr-answer {
   padding: 20px;
   max-height: 500px;
 }
 
-.faq-answer p {
+.thfr-answer p {
   margin: 0;
   line-height: 1.6;
   color: var(--color-text);
 }
 
 /* Стили для блока отзывов */
-.reviews-carousel {
+.thfr-carousel {
   position: relative;
   overflow: hidden;
 }
 
-.th-review {
+.thfr-review {
   position: absolute;
   top: 0;
   left: 0;
@@ -110,26 +103,26 @@
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
 }
 
-.th-review.active {
+.thfr-review.active {
   position: relative;
   opacity: 1;
 }
 
-.th-review-content h3 {
+.thfr-review-content h3 {
   color: var(--color-secondary);
   margin-top: 0;
   margin-bottom: 15px;
   font-size: 20px;
 }
 
-.th-review-content p {
+.thfr-review-content p {
   color: var(--color-text);
   line-height: 1.6;
   margin: 0;
 }
 
 /* Навигация карусели */
-.carousel-nav {
+.thfr-nav {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -137,8 +130,8 @@
   margin-top: 30px;
 }
 
-.carousel-prev,
-.carousel-next {
+.thfr-prev,
+.thfr-next {
   background: none;
   border: none;
   cursor: pointer;
@@ -153,17 +146,17 @@
   transition: background-color 0.3s;
 }
 
-.carousel-prev:hover,
-.carousel-next:hover {
+.thfr-prev:hover,
+.thfr-next:hover {
   background-color: rgba(46, 139, 87, 0.1);
 }
 
-.carousel-dots {
+.thfr-dots {
   display: flex;
   gap: 10px;
 }
 
-.carousel-dot {
+.thfr-dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -172,12 +165,12 @@
   transition: background-color 0.3s;
 }
 
-.carousel-dot.active {
+.thfr-dot.active {
   background-color: var(--color-primary);
 }
 
 @media (max-width: 992px) {
-  .faq-reviews-grid {
+  .thfr-grid {
     grid-template-columns: 1fr;
   }
 }

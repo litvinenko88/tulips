@@ -1,110 +1,110 @@
 /* Базовые стили */
-.th-supplier-section {
+.ths-supplier-info {
   padding: 60px 0;
   background-color: var(--color-bg-light);
   color: var(--color-text);
 }
 
-.th-container {
+.ths-main-container {
   max-width: 1600px;
   margin: 0 auto;
   padding: 0 100px;
 }
 
-.th-supplier-title {
+.ths-main-heading {
   color: var(--color-primary);
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 40px;
 }
 
-.th-supplier-description {
+.ths-description-text {
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 40px;
   text-align: center;
 }
 
-.th-price-link {
+.ths-price-link {
   color: var(--color-secondary);
   font-weight: 600;
   text-decoration: none;
 }
 
-.th-price-link:hover {
+.ths-price-link:hover {
   text-decoration: underline;
 }
 
-.th-benefits-grid {
+.ths-advantages-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
   margin-bottom: 50px;
 }
 
-.th-benefit-card {
+.ths-feature-card {
   background: var(--color-bg);
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-.th-benefit-card h3 {
+.ths-feature-card h3 {
   color: var(--color-primary);
   font-size: 1.5rem;
   margin-bottom: 20px;
 }
 
-.th-benefits-list,
-.th-mission-list {
+.ths-feature-list,
+.ths-mission-items {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.th-benefits-list li,
-.th-mission-list li {
+.ths-feature-list li,
+.ths-mission-items li {
   margin-bottom: 15px;
   line-height: 1.5;
   position: relative;
   padding-left: 30px;
 }
 
-.th-benefits-list li:before,
-.th-mission-list li:before {
+.ths-feature-list li:before,
+.ths-mission-items li:before {
   position: absolute;
   left: 0;
 }
 
-.th-clients-block {
+.ths-clients-section {
   background: var(--color-bg);
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-.th-clients-block h3 {
+.ths-clients-section h3 {
   color: var(--color-primary);
   font-size: 1.5rem;
   margin-bottom: 20px;
   text-align: center;
 }
 
-.th-clients-grid {
+.ths-clients-layout {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   margin-bottom: 30px;
 }
 
-.th-client-type {
+.ths-client-category {
   padding: 15px;
   background: var(--color-bg-light);
   border-radius: 8px;
   text-align: center;
 }
 
-.th-bonus-text {
+.ths-promo-text {
   text-align: center;
   font-weight: 500;
   color: var(--color-secondary);
@@ -112,78 +112,78 @@
 
 /* Адаптация под разные экраны */
 @media (max-width: 1280px) {
-  .th-supplier-title {
+  .ths-main-heading {
     font-size: 2.2rem;
   }
 }
 
 @media (max-width: 1024px) {
-  .th-benefits-grid {
+  .ths-advantages-grid {
     gap: 20px;
   }
 
-  .th-benefit-card {
+  .ths-feature-card {
     padding: 25px;
   }
 
-  .th-clients-grid {
+  .ths-clients-layout {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  .th-supplier-section {
+  .ths-supplier-info {
     padding: 40px 0;
   }
 
-  .th-supplier-title {
+  .ths-main-heading {
     font-size: 1.8rem;
     margin-bottom: 30px;
   }
 
-  .th-benefits-grid {
+  .ths-advantages-grid {
     grid-template-columns: 1fr;
   }
 
-  .th-clients-grid {
+  .ths-clients-layout {
     grid-template-columns: 1fr;
   }
 
-  .th-client-type {
+  .ths-client-category {
     text-align: left;
   }
 }
 
 @media (max-width: 480px) {
-  .th-supplier-title {
+  .ths-main-heading {
     font-size: 1.5rem;
   }
 
-  .th-benefit-card h3,
-  .th-clients-block h3 {
+  .ths-feature-card h3,
+  .ths-clients-section h3 {
     font-size: 1.3rem;
   }
 
-  .th-benefit-card {
+  .ths-feature-card {
     padding: 20px;
   }
 
-  .th-container {
+  .ths-main-container {
     padding: 0 15px;
   }
 }
 
 @media (max-width: 360px) {
-  .th-supplier-title {
+  .ths-main-heading {
     font-size: 1.3rem;
   }
 
-  .th-supplier-description {
+  .ths-description-text {
     font-size: 1rem;
   }
 
-  .th-benefits-list li,
-  .th-mission-list li {
+  .ths-feature-list li,
+  .ths-mission-items li {
     font-size: 0.9rem;
     padding-left: 25px;
   }
