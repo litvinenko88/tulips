@@ -29,6 +29,12 @@
   .th-container {
     padding: 0 30px;
   }
+  .th-contact-form h2 {
+    font-size: 1.8rem;
+  }
+  .th-hero-content h1 {
+    font-size: 3.8rem;
+  }
 
   .th-nav-items {
     position: fixed;
