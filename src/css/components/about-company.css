@@ -120,9 +120,6 @@
   .ths-main-container {
     padding: 0 60px;
   }
-  .ths-main-heading {
-    font-size: 2.2rem;
-  }
 }
 
 @media (max-width: 1024px) {

@@ -164,15 +164,6 @@
 
 /* Адаптация для 1024px */
 @media (max-width: 1024px) {
-  .tho-main-title {
-    font-size: 2.2rem;
-  }
-  .tho-step-heading {
-    font-size: 1.4rem;
-  }
-  .tho-step-text {
-    font-size: 1rem;
-  }
 }
 
 /* Адаптация для 768px */
