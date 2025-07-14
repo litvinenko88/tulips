@@ -179,7 +179,6 @@
     margin-bottom: 20px;
   }
   .tho-main-title {
-    font-size: 2rem;
     margin-bottom: 15px;
   }
 }
@@ -189,28 +188,14 @@
   .tho-order-process {
     padding: 40px 20px;
   }
-  .tho-main-title {
-    font-size: 1.8rem;
-  }
+
   .tho-process-step {
     padding: 20px;
-  }
-  .tho-step-icon {
-    font-size: 2rem;
   }
 }
 
 /* Адаптация для 360px */
 @media (max-width: 360px) {
-  .tho-main-title {
-    font-size: 1.6rem;
-  }
-  .tho-step-heading {
-    font-size: 1.2rem;
-  }
-  .tho-step-text {
-    font-size: 0.9rem;
-  }
 }
 
 @media (max-width: 380px) {

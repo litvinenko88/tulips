@@ -88,7 +88,7 @@
 
 .ths-clients-section h3 {
   color: var(--color-primary);
-  font-size: var(--fzh2);
+  font-size: var(--fzh3);
   margin-bottom: 20px;
   text-align: center;
 }
@@ -145,7 +145,6 @@
   }
 
   .ths-main-heading {
-    font-size: 1.8rem;
     margin-bottom: 30px;
   }
 
@@ -163,15 +162,6 @@
 }
 
 @media (max-width: 480px) {
-  .ths-main-heading {
-    font-size: 1.5rem;
-  }
-
-  .ths-feature-card h3,
-  .ths-clients-section h3 {
-    font-size: 1.3rem;
-  }
-
   .ths-feature-card {
     padding: 20px;
   }
@@ -182,17 +172,8 @@
 }
 
 @media (max-width: 360px) {
-  .ths-main-heading {
-    font-size: 1.3rem;
-  }
-
-  .ths-description-text {
-    font-size: 1rem;
-  }
-
   .ths-feature-list li,
   .ths-mission-items li {
-    font-size: 0.9rem;
     padding-left: 25px;
   }
 }

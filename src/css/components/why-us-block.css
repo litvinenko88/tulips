@@ -323,13 +323,6 @@ input.th-error {
     grid-column: span 1;
   }
 
-  .th-advantages-title {
-    font-size: 2rem;
-  }
-
-  .th-advantages-description {
-    font-size: 1rem;
-  }
   .th-advantages-container {
     padding: 0 30px;
   }
@@ -339,9 +332,6 @@ input.th-error {
   .th-advantages-container {
     padding: 0 20px;
   }
-  .th-advantages-title {
-    font-size: 1.8rem;
-  }
 
   .th-advantage-card {
     padding: 20px;
@@ -349,12 +339,7 @@ input.th-error {
 }
 
 @media (max-width: 360px) {
-  .th-advantages-title {
-    font-size: 1.6rem;
-  }
-
   .th-advantages-btn {
     padding: 10px 25px;
-    font-size: 0.9rem;
   }
 }

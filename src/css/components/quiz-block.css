@@ -289,27 +289,12 @@
     max-width: 700px;
     padding: 1.5rem;
   }
-
-  .quiz-question h3 {
-    font-size: 1.3rem;
-  }
 }
 
 @media (max-width: 768px) {
   .quiz-section {
     width: 100%;
     padding: 0 30px;
-  }
-
-  .quiz-splash h2 {
-    font-size: 1.4rem;
-  }
-
-  .quiz-question h3 {
-    font-size: 1.2rem;
-  }
-  .quiz-thankyou h3 {
-    font-size: 1.4rem;
   }
 }
 
@@ -319,40 +304,17 @@
     padding: 0 20px;
   }
 
-  .quiz-splash h2 {
-    font-size: 1.4rem;
-  }
-
-  .quiz-splash p,
-  .quiz-thankyou p {
-    font-size: 1rem;
-  }
-
   .quiz-question {
     padding: 1.5rem 1rem;
   }
 
-  .quiz-question h3 {
-    font-size: 1.1rem;
-  }
-
   .quiz-answer {
     padding: 0.8rem;
-    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 360px) {
-  .quiz-splash h2 {
-    font-size: 1.2rem;
-  }
-
-  .quiz-thankyou h3 {
-    font-size: 1.4rem;
-  }
-
   .btn {
     padding: 0.8rem 1.5rem;
-    font-size: 0.9rem;
   }
 }

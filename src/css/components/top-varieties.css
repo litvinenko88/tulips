@@ -560,7 +560,6 @@ body.th-tulip-modal-open {
 
   .th-tulip-card-content {
     height: 260px;
-    font-size: 0.9rem;
   }
   .th-tulip-slider-title {
     margin-bottom: 130px;
@@ -612,10 +611,8 @@ body.th-tulip-modal-open {
 
   .th-tulip-card-content {
     height: 240px;
-    font-size: 0.85rem;
   }
   .th-tulip-slider-title {
-    font-size: 1.6em;
     margin-bottom: 90px;
   }
 }
