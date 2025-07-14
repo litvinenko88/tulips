@@ -20,7 +20,7 @@
 /* Стили для блока FAQ */
 .thfr-faq-block h2,
 .thfr-reviews-block h2 {
-  font-size: 32px;
+  font-size: var(--fzh2);
   margin-bottom: 20px;
   color: var(--color-primary);
 }
@@ -41,7 +41,7 @@
 .thfr-question {
   padding: 18px 20px;
   margin: 0;
-  font-size: 18px;
+  font-size: var(--fzsub);
   cursor: pointer;
   position: relative;
   background-color: var(--color-primary);
@@ -82,6 +82,7 @@
   margin: 0;
   line-height: 1.6;
   color: var(--color-text);
+  font-size: var(--fztext);
 }
 
 /* Стили для блока отзывов */
@@ -107,12 +108,14 @@
   position: relative;
   opacity: 1;
 }
-
+.thfr-review-content p {
+  font-size: var(--fztext);
+}
 .thfr-review-content h3 {
   color: var(--color-secondary);
   margin-top: 0;
   margin-bottom: 15px;
-  font-size: 20px;
+  font-size: var(--fzsub);
 }
 
 .thfr-review-content p {

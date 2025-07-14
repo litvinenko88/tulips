@@ -13,13 +13,13 @@
 
 .ths-main-heading {
   color: var(--color-primary);
-  font-size: 2.5rem;
+  font-size: var(--fzh2);
   text-align: center;
   margin-bottom: 40px;
 }
 
 .ths-description-text {
-  font-size: 1.2rem;
+  font-size: var(--fztext);
   line-height: 1.6;
   margin-bottom: 40px;
   text-align: center;
@@ -51,10 +51,12 @@
 
 .ths-feature-card h3 {
   color: var(--color-primary);
-  font-size: 1.5rem;
+  font-size: var(--fzh3);
   margin-bottom: 20px;
 }
-
+.ths-feature-card p {
+  font-size: var(--fztext);
+}
 .ths-feature-list,
 .ths-mission-items {
   list-style: none;
@@ -68,6 +70,7 @@
   line-height: 1.5;
   position: relative;
   padding-left: 30px;
+  font-size: var(--fztext);
 }
 
 .ths-feature-list li:before,
@@ -85,7 +88,7 @@
 
 .ths-clients-section h3 {
   color: var(--color-primary);
-  font-size: 1.5rem;
+  font-size: var(--fzh2);
   margin-bottom: 20px;
   text-align: center;
 }
@@ -100,6 +103,7 @@
 .ths-client-category {
   padding: 15px;
   background: var(--color-bg-light);
+  font-size: var(--fztext);
   border-radius: 8px;
   text-align: center;
 }
@@ -108,6 +112,7 @@
   text-align: center;
   font-weight: 500;
   color: var(--color-secondary);
+  font-size: var(--fztext);
 }
 
 /* Адаптация под разные экраны */

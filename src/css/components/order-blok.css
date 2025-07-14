@@ -8,7 +8,7 @@
 .tho-main-title {
   text-align: center;
   color: var(--color-primary);
-  font-size: 2.5rem;
+  font-size: var(--fzh2);
   position: relative;
   margin-bottom: 5px;
 }
@@ -17,7 +17,7 @@
   text-align: center;
   color: var(--color-primary);
   font-weight: 400;
-  font-size: 1.1rem;
+  font-size: var(--fzsub);
   margin-bottom: 50px;
 }
 
@@ -84,7 +84,7 @@
 }
 
 .tho-step-heading {
-  font-size: 1.5rem;
+  font-size: var(--fzh3);
   font-weight: bold;
   margin-bottom: 15px;
   color: var(--color-primary);
@@ -96,7 +96,7 @@
 }
 
 .tho-step-text {
-  font-size: 1.1rem;
+  font-size: var(--fztext);
   line-height: 1.6;
   transition: all 0.4s ease;
 }
