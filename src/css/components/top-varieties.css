@@ -8,7 +8,7 @@
 }
 
 .th-tulip-slider-title {
-  font-size: 2rem;
+  font-size: var(--fzh2);
   margin-bottom: 150px;
   color: var(--color-primary);
 }
@@ -53,13 +53,13 @@
 }
 
 .th-tulip-card-title {
-  font-size: 1.5rem;
+  font-size: var(--fzh3);
   color: var(--color-secondary);
   margin-bottom: 5px;
 }
 
 .th-tulip-card-subtitle {
-  font-size: 1.1rem;
+  font-size: var(--fzsub);
   color: var(--color-primary);
   margin-bottom: 15px;
   font-weight: normal;
@@ -89,11 +89,11 @@
 }
 
 .th-tulip-content-title {
-  font-size: 1.1rem;
+  font-size: var(--fztext);
 }
 
 .th-tulip-content-subtitle {
-  font-size: 1rem;
+  font-size: var(--fzsub);
   color: var(--color-primary);
 }
 
@@ -110,7 +110,7 @@
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: var(--fzbt);
   transition: background-color 0.3s;
   margin-top: 10px;
   width: 100%;
@@ -159,7 +159,7 @@
   padding: 12px 30px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: var(--fzbt);
   transition: all 0.3s;
   margin-top: 100px;
   display: inline-block;
