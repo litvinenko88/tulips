@@ -140,7 +140,7 @@
     height: 250px;
   }
   .th-footer {
-    margin-bottom: 100px;
+    margin-bottom: 150px;
   }
 }
 
@@ -148,6 +148,7 @@
 @media (max-width: 480px) {
   .th-footer {
     padding: 30px 0 0;
+    margin-bottom: 80px;
   }
 
   .th-footer-grid {
