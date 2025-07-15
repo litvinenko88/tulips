@@ -165,7 +165,10 @@
   display: inline-block;
   clear: both;
 }
-
+.th-tulip-catalog-btn a {
+  text-decoration: none;
+  color: var(--color-bg);
+}
 .th-tulip-catalog-btn:hover {
   background-color: var(--color-primary);
   transform: translateY(-3px);

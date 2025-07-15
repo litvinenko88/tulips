@@ -50,11 +50,10 @@
       <div class="th-container">
         <ul class="th-nav-items" id="thNavItems">
           <li><a href="/">Главная</a></li>
-          <li><a href="#">Каталог</a></li>
-          <li><a href="#">Доставка</a></li>
-          <li><a href="#">Оплата</a></li>
-          <li><a href="#">Блог</a></li>
-          <li><a href="#">Контакты</a></li>
+          <li><a href="#catalog">Каталог</a></li>
+          <li><a href="#order">Как заказать</a></li>
+          <!-- <li><a href="#">Блог</a></li> -->
+          <li><a href="#faq">Отзывы</a></li>
         </ul>
         <button class="th-btn th-btn-price">
           <a href="price-list.html">Получить прайс</a>
@@ -81,9 +80,9 @@
 
           <div class="th-action-buttons">
             <button class="th-btn th-btn-main th-btn-animated">
-              Получить прайс
+              <a href="price-list.html">Получить прайс</a>
             </button>
-            <a href="#" class="th-btn th-btn-alt">Смотреть каталог</a>
+            <a href="#catalog" class="th-btn th-btn-alt">Смотреть каталог</a>
           </div>
         </div>
 
@@ -303,7 +302,7 @@
       </div>
     </section>
     <!-- Третий блок -->
-    <section class="th-tulip-slider-section">
+    <section class="th-tulip-slider-section" id="catalog">
       <h2 class="th-tulip-slider-title">Топ 6 сортов</h2>
 
       <div class="th-tulip-slider-container">
@@ -548,7 +547,9 @@
         </button>
       </div>
 
-      <button class="th-tulip-catalog-btn">Посмотреть каталог</button>
+      <button class="th-tulip-catalog-btn">
+        <a href="price-list.html">Посмотреть прайс</a>
+      </button>
     </section>
     <!-- Модальное окно -->
     <div class="th-tulip-modal-overlay">
@@ -590,7 +591,7 @@
       </div>
     </div>
     <!-- Четвертый блок -->
-    <section class="tho-order-process">
+    <section class="tho-order-process" id="order">
       <div class="tho-container">
         <h2 class="tho-main-title">Как заказать</h2>
         <h3 class="tho-sub-title">Луковицы тюльпанов оптом напрямую</h3>
@@ -802,7 +803,7 @@
             и предлагаем луковицы, что позволяет сосредоточится только на одном
             направлении и быть в нем лучшими. Ознакомиться с полным
             ассортиментом вы можете
-            <a href="#" class="ths-price-link">в нашем прайсе</a>.
+            <a href="price-list.html" class="ths-price-link">в нашем прайсе</a>.
           </p>
 
           <div class="ths-advantages-grid">
@@ -866,7 +867,7 @@
       </div>
     </section>
     <!-- Седьмой блок -->
-    <section class="thfr-section">
+    <section class="thfr-section" id="faq">
       <div class="thfr-container">
         <div class="thfr-grid">
           <!-- Блок с часто задаваемыми вопросами -->
@@ -1133,7 +1134,7 @@
         </div>
       </div>
     </section>
-    <!--  Карта -->
+    <!--  подвал -->
     <footer class="th-footer">
       <div class="th-footer-container">
         <div class="th-footer-grid">

@@ -57,7 +57,10 @@ body {
   color: var(--color-text-light);
   font-size: var(--fzbt);
 }
-
+.th-btn-main a {
+  text-decoration: none;
+  color: var(--color-bg);
+}
 .th-btn-alt {
   background: var(--color-secondary);
   color: var(--color-text-light);

@@ -5,8 +5,167 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Прайс на луковицы тюльпанов</title>
     <link rel="stylesheet" href="src/css/components/price-list.css" />
+    <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="stylesheet" href="src/css/components/header.css" />
+    <link rel="stylesheet" href="src/css/components/hero.css" />
+    <link rel="stylesheet" href="src/css/components/contact-bar.css" />
+    <link rel="stylesheet" href="src/css/responsive.css" />
+    <link rel="stylesheet" href="src/css/components/tulip-chat.css" />
+    <link rel="stylesheet" href="src/css/components/floating-tulips.css" />
   </head>
   <body>
+    <!-- Верхняя панель -->
+    <div class="th-top-panel">
+      <div class="th-container">
+        <p class="th-logo">TulipHolland</p>
+        <p class="th-slogan">Тюльпаны напрямую от фермеров</p>
+        <div class="th-phone">
+          <a href="tel:+79964179001" title="Телефон TulipHolland "
+            >+7 (996) 417-90-01</a
+          >
+        </div>
+      </div>
+    </div>
+    <!-- Основная навигация -->
+    <nav class="th-main-nav">
+      <div class="th-container">
+        <ul class="th-nav-items" id="thNavItems">
+          <li><a href="/">Главная</a></li>
+          <li><a href="index.html#catalog">Каталог</a></li>
+          <li><a href="index.html#order">Как заказать</a></li>
+          <!-- <li><a href="#">Блог</a></li> -->
+          <li><a href="index.html#faq">Отзывы</a></li>
+        </ul>
+
+        <div class="th-mobile-menu" id="thMobileMenu">
+          <span class="th-menu-line th-line-1"></span>
+          <span class="th-menu-line th-line-2"></span>
+          <span class="th-menu-line th-line-3"></span>
+        </div>
+      </div>
+    </nav>
+    <!-- Бегущая строка -->
+    <div class="th-scrolling-bar">
+      <p class="th-scrolling-content">
+        Открыт прием заказов на бронирование ассортимента Осень 2025 •
+        Индивидуальные условия для крупных оптовиков •
+      </p>
+    </div>
+    <!-- Анимированные тюльпаны -->
+    <div class="th-floating-tulips">
+      <img
+        src="src/assets/img/tul1.png"
+        alt="Тюльпан"
+        class="th-tulip th-tulip-1" />
+      <img
+        src="src/assets/img/tul2.png"
+        alt="Тюльпан"
+        class="th-tulip th-tulip-2" />
+      <img
+        src="src/assets/img/tul3.png"
+        alt="Тюльпан"
+        class="th-tulip th-tulip-3" />
+    </div>
+    <!-- Фиксированная панель контактов -->
+    <div class="th-fixed-contact-bar">
+      <div class="th-contact-wrapper">
+        <h2 class="th-contact-question">
+          Остались вопросы? Позвоните нам или напишите 🌷
+        </h2>
+        <div class="th-social-links">
+          <a href="https://wa.me/89964179001?text=" class="th-social-item">
+            <img src="src/icon/wat.png" alt="WhatsApp" />
+          </a>
+          <a href="https://t.me/litvinenko_n_v" class="th-social-item">
+            <img src="src/icon/tel.png" alt="Telegram" />
+          </a>
+          <a href="tel:+79964179001" class="th-social-item">
+            <img src="src/icon/iph.png" alt="Позвонить" />
+          </a>
+          <div class="th-chat-container">
+            <div class="th-social-item th-chat-btn" id="thChatButton">
+              <img src="src/icon/oper.png" alt="Чат онлайн" />
+            </div>
+
+            <!-- Уведомление чата -->
+            <div class="th-notification" id="thNotification">
+              <div class="th-notification-close" id="thNotificationClose"></div>
+              <p>
+                Добрый день! Я Юля из TulipHolland. У нас сейчас действует
+                спецпредложение для опта. Оставьте ваши контакты, и я расскажу
+                подробнее!
+              </p>
+            </div>
+
+            <!-- Форма спецпредложения -->
+            <div class="th-offer-form" id="thOfferForm">
+              <div class="th-form-close" id="thFormClose"></div>
+              <h2>Cпецпредложение действует</h2>
+              <div class="th-timer" id="thTimer">
+                <span id="th-days">1</span> день <span id="th-hours">18</span> ч
+                <span id="th-minutes">15</span> мин
+                <span id="th-seconds">21</span> сек
+              </div>
+              <form id="thContactForm">
+                <div class="th-form-group">
+                  <label for="th-name">Ваше имя</label>
+                  <input type="text" id="th-name" name="name" required />
+                </div>
+                <div class="th-form-group">
+                  <label for="th-phone">Номер телефона</label>
+                  <input type="tel" id="th-phone" name="phone" required />
+                  <div class="th-error-message" id="thPhoneError">
+                    Пожалуйста, введите корректный номер телефона
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  class="th-submit-btn"
+                  id="thSubmitBtn"
+                  disabled>
+                  Получить
+                </button>
+              </form>
+            </div>
+
+            <!-- Окно чата -->
+            <div class="th-chat-window" id="thChatWindow">
+              <div class="th-chat-close" id="thChatClose"></div>
+              <p class="th-chat-message">
+                Добрый день! Я Юля из TulipHolland. У нас сейчас действует
+                спецпредложение для опта. Оставьте ваши контакты, и я расскажу
+                подробнее!
+              </p>
+              <form id="thChatForm">
+                <div class="th-form-group">
+                  <label for="th-chatName">Ваше имя</label>
+                  <input type="text" id="th-chatName" name="name" required />
+                </div>
+                <div class="th-form-group">
+                  <label for="th-chatPhone">Номер телефона</label>
+                  <input type="tel" id="th-chatPhone" name="phone" required />
+                  <div class="th-error-message" id="thChatPhoneError">
+                    Пожалуйста, введите корректный номер телефона
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  class="th-submit-btn"
+                  id="thChatSubmitBtn"
+                  disabled>
+                  Отправить
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Уведомление об успешной отправке -->
+    <div class="th-success-notification" id="thSuccessNotification">
+      <p>Получили ваши контакты, скоро свяжемся с вами</p>
+    </div>
+
     <div class="container">
       <h1>Прайс-лист луковиц тюльпанов</h1>
       <h2>Предварительные цены - уточняйте</h2>
@@ -44,5 +203,10 @@
     </div>
 
     <script src="src/js/price-list.js"></script>
+    <script src="src/js/menu.js"></script>
+    <script src="src/js/forms.js"></script>
+    <script src="src/js/tulip-chat.js"></script>
+    <script src="src/js/scripts.js"></script>
+    <script src="src/js/floating-tulips.js"></script>
   </body>
 </html>
