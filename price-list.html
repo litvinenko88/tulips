@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Прайс на луковицы тюльпанов</title>
+    <link rel="stylesheet" href="src/css/components/price-list.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Прайс-лист луковиц тюльпанов</h1>
+      <h2>Предварительные цены - уточняйте</h2>
+
+      <div class="header-actions">
+        <div class="search-container">
+          <input
+            type="text"
+            id="search"
+            placeholder="Поиск по сорту, цвету или цене..." />
+        </div>
+        <a href="#" class="download-btn" id="download-excel">Скачать в Excel</a>
+      </div>
+
+      <table id="price-table">
+        <thead>
+          <tr>
+            <th>Группа</th>
+            <th>Сорт</th>
+            <th>Размер</th>
+            <th>Цвет</th>
+            <th>Цена руб. (100р/евро)</th>
+            <th>Цена евро</th>
+            <th>Цена руб. (95р/евро)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Данные будут вставлены сюда -->
+        </tbody>
+      </table>
+
+      <div class="no-results" id="no-results">
+        Ничего не найдено. Попробуйте изменить параметры поиска.
+      </div>
+    </div>
+
+    <script src="src/js/price-list.js"></script>
+  </body>
+</html>

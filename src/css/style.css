@@ -69,6 +69,10 @@ body {
   color: var(--color-text-light);
   font-size: var(--fzbt);
 }
+.th-btn-price a {
+  text-decoration: none;
+  color: var(--color-bg);
+}
 
 .th-btn:hover {
   transform: translateY(-2px);
@@ -111,4 +115,3 @@ body {
 .th-btn-animated {
   animation: th-pulse 2s infinite;
 }
-
