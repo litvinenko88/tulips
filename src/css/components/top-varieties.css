@@ -317,6 +317,7 @@
   margin-bottom: 20px;
   color: var(--color-primary);
   text-align: center;
+  font-size: var(--fzh2);
 }
 
 .th-tulip-form-group {
@@ -327,6 +328,7 @@
   display: block;
   margin-bottom: 5px;
   color: var(--color-text);
+  font-size: var(--fztext);
 }
 
 .th-tulip-form-input {
@@ -354,6 +356,7 @@
   font-size: 1rem;
   width: 100%;
   transition: background-color 0.3s;
+  font-size: var(--fztext);
 }
 
 .th-tulip-submit-btn:hover {
@@ -480,6 +483,9 @@ body.th-tulip-modal-open {
     transform: translateX(65%) scale(0.7);
     opacity: 0.5;
     z-index: 3;
+  }
+  .th-tulip-modal-title {
+    font-size: 2rem;
   }
 }
 
