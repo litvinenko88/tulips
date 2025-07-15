@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Прайс на луковицы тюльпанов</title>
-    <link rel="stylesheet" href="src/css/components/price-list.css" />
+    <title>Контакты - Луковицы тюльпанов</title>
     <link rel="stylesheet" href="src/css/style.css" />
     <link rel="stylesheet" href="src/css/components/header.css" />
     <link rel="stylesheet" href="src/css/components/hero.css" />
     <link rel="stylesheet" href="src/css/components/contact-bar.css" />
     <link rel="stylesheet" href="src/css/responsive.css" />
     <link rel="stylesheet" href="src/css/components/tulip-chat.css" />
+    <link rel="stylesheet" href="src/css/components/floating-tulips.css" />
+    <link rel="stylesheet" href="src/css/components/contact.css" />
   </head>
   <body>
     <!-- Верхняя панель -->
@@ -29,14 +30,16 @@
     <nav class="th-main-nav">
       <div class="th-container">
         <ul class="th-nav-items" id="thNavItems">
-          <li><a href="index.html">Главная</a></li>
-          <li><a href="index.html#catalog">Каталог</a></li>
-          <li><a href="index.html#order">Как заказать</a></li>
+          <li><a href="/">Главная</a></li>
+          <li><a href="#catalog">Каталог</a></li>
+          <li><a href="#order">Как заказать</a></li>
           <!-- <li><a href="#">Блог</a></li> -->
-          <li><a href="index.html#faq">Отзывы</a></li>
+          <li><a href="#faq">Отзывы</a></li>
           <li><a href="contact.html">Контакты</a></li>
         </ul>
-
+        <button class="th-btn th-btn-price">
+          <a href="price-list.html">Получить прайс</a>
+        </button>
         <div class="th-mobile-menu" id="thMobileMenu">
           <span class="th-menu-line th-line-1"></span>
           <span class="th-menu-line th-line-2"></span>
@@ -44,6 +47,7 @@
         </div>
       </div>
     </nav>
+
     <!-- Бегущая строка -->
     <div class="th-scrolling-bar">
       <p class="th-scrolling-content">
@@ -59,7 +63,7 @@
           Остались вопросы? Позвоните нам или напишите 🌷
         </h2>
         <div class="th-social-links">
-          <a href="https://wa.me/89964179001?text=" class="th-social-item">
+          <a href="https://wa.me/+79964179001?text=" class="th-social-item">
             <img src="src/icon/wat.png" alt="WhatsApp" />
           </a>
           <a href="https://t.me/litvinenko_n_v" class="th-social-item">
@@ -151,44 +155,98 @@
     <div class="th-success-notification" id="thSuccessNotification">
       <p>Получили ваши контакты, скоро свяжемся с вами</p>
     </div>
-
     <div class="container">
-      <h1>Прайс-лист луковиц тюльпанов</h1>
-      <h2>Предварительные цены - уточняйте</h2>
+      <h1>Наши контакты</h1>
 
-      <div class="header-actions">
-        <div class="search-container">
-          <input
-            type="text"
-            id="search"
-            placeholder="Поиск по сорту, цвету или цене..." />
-        </div>
-        <a href="#" class="download-btn" id="download-excel">Скачать в Excel</a>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2819.324249054518!2d41.96931631554386!3d45.04243097909824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40f9075973df16e5%3A0x3e3e1e1e1e1e1e1e!2z0KHRgtGA0L7QutCw0Y8g0YPQuy4sIDMxLCDQodGC0LDRgNC-0LvQvtCy0LAsINCh0YLQsNGA0L7Qu9C-0LLQsNGB0YzQutCwINC-0LHQuy4sIDM1NTAzNg!5e0!3m2!1sru!2sru!4v1620000000000!5m2!1sru!2sru"
+          width="100%"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"></iframe>
       </div>
 
-      <table id="price-table">
-        <thead>
-          <tr>
-            <th>Группа</th>
-            <th>Сорт</th>
-            <th>Размер</th>
-            <th>Цвет</th>
-            <th>Цена руб. (100р/евро)</th>
-            <th>Цена евро</th>
-            <th>Цена руб. (95р/евро)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Данные будут вставлены сюда -->
-        </tbody>
-      </table>
+      <div class="company-card">
+        <h2>TulipHolland"</h2>
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="icon">📍</i>
+            <span>Адрес: г. Ставрополь, ул. Черниговская, 31</span>
+          </div>
+          <div class="contact-item">
+            <i class="icon">📞</i>
+            <span
+              >Телефон: <a href="tel:+79964179001">+7 (996) 417-90-01</a></span
+            >
+          </div>
+          <div class="contact-item">
+            <i class="icon">🕒</i>
+            <span>График работы: пн-пт с 8:00 до 20:00</span>
+          </div>
+          <div class="contact-item">
+            <i class="icon">✉️</i>
+            <span
+              >Email:
+              <a href="mailto:litvinenko_n.v@mail.ru"
+                >litvinenko_n.v@mail.ru</a
+              ></span
+            >
+          </div>
+          <div class="contact-item">
+            <i class="icon">📮</i>
+            <span>Почтовый индекс: 355036</span>
+          </div>
+        </div>
+      </div>
 
-      <div class="no-results" id="no-results">
-        Ничего не найдено. Попробуйте изменить параметры поиска.
+      <div class="managers-section">
+        <h2>Наши менеджеры</h2>
+        <div class="managers-grid">
+          <div class="manager-card">
+            <div class="manager-photo">
+              <img src="src/assets/img/i.webp" alt="Иванова Анна Сергеевна" />
+            </div>
+            <h3>Иванова Анна Сергеевна</h3>
+            <p class="position">Менеджер по продажам</p>
+            <p class="description">
+              Опыт работы 5 лет. Специалист по оптовым продажам луковиц
+              тюльпанов.
+            </p>
+          </div>
+
+          <div class="manager-card">
+            <div class="manager-photo">
+              <img
+                src="src/assets/img/menmin.webp"
+                alt="Петров Дмитрий Игоревич" />
+            </div>
+            <h3>Петров Дмитрий Игоревич</h3>
+            <p class="position">Старший менеджер</p>
+            <p class="description">
+              Работает в компании 7 лет. Курирует ключевых клиентов и крупные
+              поставки.
+            </p>
+          </div>
+
+          <div class="manager-card">
+            <div class="manager-photo">
+              <img
+                src="src/assets/img/старший.jpg"
+                alt="Сидорова Елена Владимировна" />
+            </div>
+            <h3>Сидорова Елена Владимировна</h3>
+            <p class="position">Менеджер по работе с клиентами</p>
+            <p class="description">
+              Специалист по сопровождению заказов и консультациям по сортам
+              тюльпанов.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <script src="src/js/price-list.js"></script>
     <script src="src/js/menu.js"></script>
     <script src="src/js/forms.js"></script>
     <script src="src/js/tulip-chat.js"></script>
