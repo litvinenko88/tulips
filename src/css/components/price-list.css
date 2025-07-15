@@ -183,6 +183,13 @@ tr:hover {
     padding: 8px 10px;
     font-size: 1.4rem;
   }
+
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 360px) {
