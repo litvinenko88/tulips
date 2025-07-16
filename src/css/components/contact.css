@@ -5,15 +5,8 @@
   margin: 0 auto;
   padding: 60px;
   margin-bottom: 100px;
+  font-size: 1.6rem;
 }
-
-/* h1,
-h2,
-h3 {
-  color: #2e8b57;
-} */
-
-
 
 /* Карта */
 .map-container {
@@ -41,7 +34,7 @@ h3 {
 .contact-item {
   display: flex;
   align-items: center;
-  font-size: 1.1rem;
+  font-size: 1.6rem;
 }
 
 .icon {
