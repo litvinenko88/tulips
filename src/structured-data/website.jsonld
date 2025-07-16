@@ -1,0 +1,13 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Tulip Holland - голландские тюльпаны оптом",
+  "url": "https://tulipholland.ru",
+  "description": "Продажа свежих голландских тюльпанов оптом в Ставрополе",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://tulipholland.ru/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  },
+  "inLanguage": "ru"
+}

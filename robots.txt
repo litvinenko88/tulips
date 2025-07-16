@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+Sitemap: https://tulipholland.ru/sitemap.xml
+Sitemap: https://tulipholland.ru/image-sitemap.xml

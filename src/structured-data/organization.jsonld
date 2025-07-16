@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Tulip Holland",
+  "url": "https://tulipholland.ru",
+  "logo": "https://tulipholland.ru/src/assets/img/menmin.webp",
+  "description": "Оптовая продажа голландских тюльпанов в Ставрополе",
+  "foundingDate": "2023",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ул. Черниговская, 31",
+    "addressLocality": "Ставрополь",
+    "addressRegion": "Ставропольский край",
+    "postalCode": "355036",
+    "addressCountry": "RU"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+79964179001",
+    "contactType": "sales",
+    "email": "litvinenko_n.v@mail.ru",
+    "availableLanguage": ["Russian"],
+    "hoursAvailable": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "20:00"
+    }
+  }
+}

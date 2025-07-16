@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.sitemaps.org/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://tulipholland.ru/</loc>
+    <lastmod>2025-07-16</lastmod>
+    <image:image>
+      <image:loc>https://tulipholland.ru/src/assets/img/menmin.webp</image:loc>
+      <image:caption>Тюльпаны из Голландии оптом</image:caption>
+      <image:title>Тюльпаны оптом в Ставрополе</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://tulipholland.ru/src/assets/img/tul1.png</image:loc>
+      <image:caption>Красные тюльпаны оптом</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tulipholland.ru/src/assets/img/tul2.png</image:loc>
+      <image:caption>Желтые тюльпаны оптом</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tulipholland.ru/src/assets/img/tul3.png</image:loc>
+      <image:caption>Розовые тюльпаны оптом</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tulipholland.ru/src/assets/img/старший.jpg</image:loc>
+      <image:caption>Сотрудник компании Tulip Holland</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tulipholland.ru/price-list.html</loc>
+    <lastmod>2025-07-16</lastmod>
+    <image:image>
+      <image:loc>https://tulipholland.ru/src/assets/img/card/tulp1.jpeg</image:loc>
+      <image:caption>Сорт тюльпанов 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tulipholland.ru/src/assets/img/card/tulp2.jpeg</image:loc>
+      <image:caption>Сорт тюльпанов 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tulipholland.ru/src/assets/img/card/tulp3.jpg</image:loc>
+      <image:caption>Сорт тюльпанов 3</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tulipholland.ru/src/assets/img/card/tulp4.jpeg</image:loc>
+      <image:caption>Сорт тюльпанов 4</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tulipholland.ru/src/assets/img/card/tulp5.jpeg</image:loc>
+      <image:caption>Сорт тюльпанов 5</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tulipholland.ru/src/assets/img/card/tulp6.jpeg</image:loc>
+      <image:caption>Сорт тюльпанов 6</image:caption>
+    </image:image>
+  </url>
+</urlset>

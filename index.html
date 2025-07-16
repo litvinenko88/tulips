@@ -32,6 +32,31 @@
     <link rel="stylesheet" href="src/css/components/faq.css" />
     <link rel="stylesheet" href="src/css/components/footer.css" />
     <link rel="stylesheet" href="src/css/components/contact.css" />
+
+    <!-- Микроразметка -->
+    <script
+      type="application/ld+json"
+      src="/src/structured-data/organization.jsonld"></script>
+    <script
+      type="application/ld+json"
+      src="/src/structured-data/website.jsonld"></script>
+
+    <!-- Для главной страницы дополнительно: -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Главная",
+            "item": "https://tulipholland.ru/"
+          }
+        ],
+        "description": "Навигационная цепочка сайта Tulip Holland"
+      }
+    </script>
   </head>
   <body>
     <!-- Верхняя панель -->
